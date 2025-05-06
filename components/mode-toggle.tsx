@@ -1,21 +1,33 @@
 "use client"
 
-import { useState } from "react"
-import { useRouter } from "next/navigation"
+import { useEffect, useState } from "react"
+import { useRouter, usePathname, useSearchParams } from "next/navigation"
 
 type ModeType = "work" | "play" | "writing"
 
 export function ModeToggle() {
-  const [mode, setMode] = useState<ModeType>("work")
   const router = useRouter()
+  const pathname = usePathname()
+  const searchParams = useSearchParams()
+  
+  // Get the current mode from URL or default to "work"
+  const currentMode = searchParams.get('mode') as ModeType || "work"
+  const [mode, setMode] = useState<ModeType>(currentMode)
+  
+  // Update state when URL changes
+  useEffect(() => {
+    setMode(currentMode)
+  }, [currentMode])
 
   const handleModeChange = (newMode: ModeType) => {
     setMode(newMode)
-    // Add query parameter to URL without page reload
-    const url = new URL(window.location.href)
-    url.searchParams.set('mode', newMode)
-    window.history.pushState({}, '', url)
-    router.refresh()
+    
+    // Create new URLSearchParams
+    const params = new URLSearchParams(searchParams)
+    params.set('mode', newMode)
+    
+    // Use router.push to navigate safely
+    router.push(`${pathname}?${params.toString()}`)
   }
 
   return (
