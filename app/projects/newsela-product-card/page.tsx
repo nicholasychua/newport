@@ -1,9 +1,13 @@
+"use client";
+
 import { projects } from "@/lib/data"
 import { notFound } from "next/navigation"
 import Image from "next/image"
 import Link from "next/link"
 import { ArrowLeft } from "lucide-react"
 import { Button } from "@/components/ui/button"
+import { Footer } from "@/components/footer"
+import { motion } from 'framer-motion'
 
 export default function ProjectPage() {
   const project = projects.find((p) => p.id === "newsela-product-card")
@@ -22,22 +26,15 @@ export default function ProjectPage() {
       </div>
       
       {/* Hero Image Section */}
-      <div className="w-full max-w-4xl mx-auto mb-10 px-4">
-        <div className="bg-white rounded-lg shadow-md overflow-hidden">
-          <div className="p-8">
-            <h1 className="text-3xl font-bold mb-2">Instructional resources that connect and deliver</h1>
-            <p className="text-base text-gray-600 max-w-3xl">
-              Teach skill-building strategies key skills without ever sacrificing engagement 
-              with rigorous, standards-aligned activities, quizzes and resources that connect 
-              with students' interests, background knowledge, and lived experiences.
-            </p>
-          </div>
-          <div className="aspect-[16/9] relative">
+      <div className="w-full max-w-5xl mx-auto mb-12">
+        <div className="bg-white rounded-xl shadow-md overflow-hidden">
+          <div className="aspect-[16/9] w-full min-h-[400px] md:min-h-[600px] relative">
             <Image 
-              src="/newsela/images/product-card-hero.jpg" 
+              src="/newsela/images/main-page.png" 
               alt="Instructional resources that connect and deliver" 
               fill 
               className="object-contain" 
+              priority
             />
           </div>
         </div>
@@ -100,20 +97,23 @@ export default function ProjectPage() {
         </div>
       </div>
 
-      <div className="container mx-auto px-4 py-12 max-w-4xl">
+      <div className="container mx-auto px-2 py-12 max-w-8xl">
         {/* Problem Section */}
-        <div className="bg-white rounded-lg shadow-md p-8 mb-12">
-          <h2 className="text-xl font-medium uppercase mb-4">Problem</h2>
-          <p className="text-lg mb-4">
-            The product card is an essential portion of Newsela's website as an
-            interactive way to learn more about the product. <span className="font-bold">However, the
-            message and website features aren't communicated clearly</span>.
+        <motion.div
+          initial={{ opacity: 0, scale: 0.98, y: 24 }}
+          animate={{ opacity: 1, scale: 1, y: 0 }}
+          transition={{ duration: 0.35, ease: 'easeOut' }}
+          className="bg-white rounded-2xl shadow-lg p-10 mb-12 border border-gray-100 hover:shadow-xl transition-shadow focus-within:ring-2 focus-within:ring-indigo-200"
+          tabIndex={0}
+        >
+          <h2 className="text-2xl font-semibold mb-4 text-gray-800 tracking-tight">Problem</h2>
+          <p className="text-lg text-gray-600 mb-4">
+            The product card is an essential portion of Newsela's website as an interactive way to learn more about the product. <span className="font-semibold text-gray-800">However, the message and website features aren't communicated clearly.</span>
           </p>
-          <p className="text-lg">
-            Could we redesign the card to leverage the short-attention span of
-            new users to communicate the ease-of-use of the product?
+          <p className="text-lg text-gray-600">
+            Could we redesign the card to leverage the short-attention span of new users to communicate the ease-of-use of the product?
           </p>
-        </div>
+        </motion.div>
 
         {/* Interface with Numbers Image */}
         <div className="bg-white rounded-lg shadow-md p-6 mb-8">
@@ -175,219 +175,148 @@ export default function ProjectPage() {
         </div>
 
         {/* Research Section - now positioned below numbered problems */}
-        <div className="mb-12">
-          <h2 className="text-2xl font-medium mb-6">Research</h2>
-          <p className="text-lg mb-4">
-            In the current day and age, attention span is everything. We want to
-            communicate large amounts of information in the least amount of time
-            to keep users hooked onto the product. As a youth myself, I
-            understand this firsthand, but let's see what others have to say.
+        <div className="mb-32">
+          <h2 className="text-2xl font-medium mb-8">Research</h2>
+          <p className="text-lg mb-6 text-gray-600">
+            In the current day and age, attention span is everything. We want to communicate large amounts of information in the least amount of time to keep users hooked onto the product. As a youth myself, I understand this firsthand, but let's see what others have to say.
           </p>
-          <p className="text-lg mb-4">
-            After digging in with user interviews and comparing other e-learning
-            platforms, I noticed the use of short form content being utilized.
-            <span className="font-bold"> Consumers now are hooked into platforms like TikTok due to its
-            short form factor.</span> But how can be utilize this knowledge onto our
-            platform?
+          <p className="text-lg mb-6 text-gray-600">
+            After digging in with user interviews and comparing other e-learning platforms, I noticed the use of short form content being utilized.
+            <span className="font-semibold text-gray-800"> Consumers now are hooked into platforms like TikTok due to its short form factor.</span> But how can be utilize this knowledge onto our platform?
           </p>
-          <div className="bg-white rounded-lg shadow-md p-8 mt-8">
-            <h3 className="text-xl font-medium uppercase mb-4">My Vision</h3>
-            <p className="text-lg">
-              I wanted to form a system similar to TikTok to use short form
-              content for learning. Since users know the videos are short, they are
-              more inclined to watch them, incentivizing them to spend more time
-              learning about our product.
+          <motion.div
+            initial={{ opacity: 0, scale: 0.98, y: 24 }}
+            whileInView={{ opacity: 1, scale: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.35, ease: 'easeOut', delay: 0.1 }}
+            className="bg-white rounded-2xl shadow-lg p-10 mt-12 mb-32 border border-gray-100 hover:shadow-xl transition-shadow focus-within:ring-2 focus-within:ring-indigo-200"
+            tabIndex={0}
+          >
+            <h3 className="text-2xl font-semibold mb-4 text-gray-800 tracking-tight">My Vision</h3>
+            <p className="text-lg text-gray-600">
+              I wanted to form a system similar to TikTok to use short form content for learning. Since users know the videos are short, they are more inclined to watch them, incentivizing them to spend more time learning about our product.
             </p>
+          </motion.div>
+        </div>
+
+        {/* Competitive Analysis Section */}
+        <div className="space-y-24 mb-32">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-start">
+            <div>
+              <div className="uppercase text-sm font-semibold text-muted-foreground mb-1 tracking-wider">Competitive Analysis</div>
+              <h2 className="text-2xl font-bold text-gray-800 mb-2">Quizlet</h2>
+              <p className="text-lg text-gray-600 max-w-md">
+                Quizlet implemented videos about their products that play on the webpage, allowing users to see live demos of their products as they scroll. This very clearly shows the product and how it works, capturing the attention of the user to the dynamic screen.
+              </p>
+            </div>
+            <div className="flex items-center justify-center bg-white rounded-xl shadow-md p-8 min-h-[220px]">
+              <Image src="/placeholder.png" alt="Placeholder" width={320} height={180} className="object-contain" />
+            </div>
           </div>
-        </div>
 
-        {/* Process Section */}
-        <div className="prose prose-lg max-w-none mb-12">
-          <h2 className="text-2xl font-medium">Process</h2>
-          <p>
-            The product card is a visualization of instructional resources, but doesn't seem to match the rest of the interface design and branding elements.
-          </p>
-          <p>
-            The card draws on Newsela's color palette and components, but lacks some design consistency when compared to similar design elements.
-          </p>
-        </div>
-
-        {/* Mockups */}
-        <div className="mb-16">
-          <div className="bg-white rounded-lg shadow-md p-6 mb-12">
-            <h3 className="text-xl font-medium mb-6">Instructional resources that connect and deliver</h3>
-            <div className="aspect-video relative">
-              <Image 
-                src="/newsela/images/product-card-detail.jpg" 
-                alt="Product card detail" 
-                fill 
-                className="object-contain" 
-              />
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center mt-12">
+            <div className="flex items-center justify-center bg-[#F6FEFF] rounded-xl shadow-md p-8 min-h-[220px]">
+              <Image src="/placeholder.png" alt="Placeholder" width={320} height={180} className="object-contain" />
+            </div>
+            <div>
+              <h2 className="text-2xl font-bold text-gray-800 mb-2">Formative</h2>
+              <p className="text-lg text-gray-600 max-w-md">
+                Formative also implements this short form approach, using hover GIFS instead of replaying videos to deduce clutter on the webpage. They communicate the use case of their feature in a more digestible manner prioritizing comprehension of features over showcasing the actual product.
+              </p>
             </div>
           </div>
         </div>
 
-        {/* Analysis Section */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-12 mb-16">
+        {/* User Research Section */}
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center bg-transparent py-16">
           <div>
-            <h3 className="text-xl font-medium mb-4">Analysis</h3>
-            <p className="text-muted-foreground mb-4">
-              The size of the image + ratio (1:1) is unintentionally creating a visual focal point that is disrupting the hierarchy of the layout.
+            <div className="uppercase text-sm font-semibold text-muted-foreground mb-2 tracking-wider">User Research</div>
+            <h2 className="text-3xl md:text-2xl font-bold text-gray-800 mb-4 leading-tight max-w-xl">
+              Intuitive Features Separate Newsela From Other E-Learning Companies
+            </h2>
+            <p className="text-reg text-gray-600 mb-4">
+              "Using Newsela for a couple of years now, I noticed a few things about the platform's <span className="font-semibold">intuitive nature</span>. It made <span className="font-semibold">reading complex articles more digestible</span> through its platform and allowed me and other students to engage more frequently with reading unlike before."
             </p>
-            <p className="text-muted-foreground mb-4">
-              The "product card" seems to be inconsistent with other elements on the page, along with the design system.
-            </p>
-            <p className="text-muted-foreground">
-              The layout encourages left-to-right scanning which is perfect for users who engage with the "Try It" heading, but it's too close to the image, causing the user to skip over it.
-            </p>
+            <div className="text-base text-muted-foreground font-medium">Madelyn Hui (High School Senior '24)</div>
           </div>
-          <div>
-            <h3 className="text-xl font-medium mb-4">Solution</h3>
-            <p className="text-muted-foreground mb-4">
-              The image was resized to a proper rectangle ratio to create balance in the layout, making room for the updated badges.
-            </p>
-            <p className="text-muted-foreground mb-4">
-              Content was positioned to maintain logical left-to-right scanning, with a larger button and description text that improves readability.
-            </p>
-            <p className="text-muted-foreground">
-              Adjusted the call to action to have better placement and more emphasis by placing it below the primary content.
-            </p>
+          <div className="flex items-center justify-center">
+            <Image src="/placeholder.png" alt="User research placeholder" width={500} height={300} className="object-contain rounded-xl shadow-md" />
           </div>
         </div>
 
-        {/* Implementation Examples */}
-        <div className="space-y-16 mb-16">
-          <div>
-            <h3 className="text-xl font-medium mb-6">Email your team an article</h3>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
-              <div className="bg-white rounded-lg shadow-md p-4">
+        {/* Exploration Section */}
+        <div className="max-w-2xl mx-auto mt-20 mb-16">
+          <h3 className="uppercase text-sm font-semibold text-gray-700 tracking-wider mb-4">Exploration</h3>
+          <p className="text-gray-600 text-lg mb-4">
+            Equipped with this knowledge, I now thought about ways that I could implement short form content into Newsela's website. I wanted to keep the card simple like how it was currently, but add more detail and information about the product that could be picked up at a glance.
+          </p>
+          <p className="text-gray-600 text-lg">
+            Here's a look at what I came up with:
+          </p>
+        </div>
+
+        {/* Static Card Mockup Section */}
+        <section className="mb-20">
+          <h2 className="text-3xl md:text-4xl font-bold text-center mb-12 tracking-tight">Static Card Mockup</h2>
+          <div className="w-full grid grid-cols-1 lg:grid-cols-[3fr_1fr] gap-8 lg:gap-16">
+            {/* Left: Extra Large static image */}
+            <div className="flex items-center justify-center w-full">
+              <div className="bg-white rounded-2xl shadow-lg border border-gray-200 p-2 md:p-4 w-full">
                 <Image 
-                  src="/newsela/images/email-example.jpg" 
-                  alt="Email your team example" 
-                  width={400}
-                  height={280}
-                  className="w-full h-auto" 
+                  src="/newsela/images/static.png" 
+                  alt="Static card mockup" 
+                  width={2400} 
+                  height={1350} 
+                  className="object-contain w-full h-auto rounded-xl" 
+                  priority
                 />
               </div>
-              <div>
-                <p className="text-muted-foreground mb-2">
-                  Lighter background color to make sure the feature cards stand out compared to the content cards.
-                </p>
-                <p className="text-muted-foreground">
-                  Visual assets are designed to make the feature clearer to understand, which improves usability.
-                </p>
-              </div>
+            </div>
+
+            {/* Right: Numbered explanations */}
+            <div className="flex flex-col justify-between h-full">
+              <ol className="space-y-3 md:space-y-4">
+                <li className="flex items-start gap-3">
+                  <span className="flex-shrink-0 w-8 h-8 md:w-10 md:h-10 rounded-full bg-indigo-100 text-indigo-600 font-bold flex items-center justify-center text-sm md:text-base">1</span>
+                  <div className="text-gray-700 text-sm md:text-base leading-tight">
+                    Shortening the title descriptions and unbolding the lettering creates a <span className="font-semibold">more seamless visual hierarchy</span> making the main message of the card more clear.
+                  </div>
+                </li>
+                <li className="flex items-start gap-3">
+                  <span className="flex-shrink-0 w-8 h-8 md:w-10 md:h-10 rounded-full bg-indigo-100 text-indigo-600 font-bold flex items-center justify-center text-sm md:text-base">2</span>
+                  <div className="text-gray-700 text-sm md:text-base leading-tight">
+                    Short but informative card titles give a better representation of what the user can expect to read about and <span className="font-semibold">build anticipation</span> for Newsela's features, <span className="font-semibold">prompting the user to read all cards</span>.
+                  </div>
+                </li>
+                <li className="flex items-start gap-3">
+                  <span className="flex-shrink-0 w-8 h-8 md:w-10 md:h-10 rounded-full bg-indigo-100 text-indigo-600 font-bold flex items-center justify-center text-sm md:text-base">3</span>
+                  <div className="text-gray-700 text-sm md:text-base leading-tight">
+                    By having a hover GIF on the webpage (Live Demo), it allows users to get a <span className="font-semibold">better idea of how the product works</span>, showcasing the full potential of Newsela.
+                  </div>
+                </li>
+                <li className="flex items-start gap-3">
+                  <span className="flex-shrink-0 w-8 h-8 md:w-10 md:h-10 rounded-full bg-indigo-100 text-indigo-600 font-bold flex items-center justify-center text-sm md:text-base">4</span>
+                  <div className="text-gray-700 text-sm md:text-base leading-tight">
+                    A quick link to Newsela's library of short form product walkthroughs <span className="font-semibold">gives users a call to action</span> to explore other areas of Newsela like the Youtube channel to become immersed in the ecosystem.
+                  </div>
+                </li>
+              </ol>
+              <a href="#" className="inline-block bg-indigo-100 text-indigo-700 font-semibold rounded-full px-6 py-2 md:px-8 md:py-3 text-sm md:text-base hover:bg-indigo-200 transition-colors focus:outline-none focus:ring-2 focus:ring-indigo-300 shadow-sm mt-4">Live Demo</a>
             </div>
           </div>
+        </section>
 
-          <div>
-            <h3 className="text-xl font-medium mb-6">Featured Products</h3>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
-              <div className="bg-white rounded-lg shadow-md p-4">
-                <Image 
-                  src="/newsela/images/featured-products.jpg" 
-                  alt="Featured products example" 
-                  width={400}
-                  height={280}
-                  className="w-full h-auto" 
-                />
-              </div>
-              <div>
-                <p className="text-muted-foreground mb-2">
-                  The featured products have a similar card styling to provide a consistent experience.
-                </p>
-                <p className="text-muted-foreground">
-                  Clear, consistent spacing helps differentiate various UI elements.
-                </p>
-              </div>
-            </div>
-          </div>
 
-          <div>
-            <h3 className="text-xl font-medium mb-6">Isolating Features Separate Materials from Other E-Learning Companies</h3>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
-              <div className="bg-white rounded-lg shadow-md p-4">
-                <Image 
-                  src="/newsela/images/isolating-features.jpg" 
-                  alt="Isolating features example" 
-                  width={400}
-                  height={280}
-                  className="w-full h-auto" 
-                />
-              </div>
-              <div>
-                <p className="text-muted-foreground">
-                  The "block style" card creates space for a featured list, allowing users to quickly scan the benefits and differentiators. This approach highlights each feature's individual value while maintaining a cohesive card structure.
-                </p>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        {/* Static Card Mockup */}
-        <div className="mb-16">
-          <h2 className="text-2xl font-medium mb-6">Static Card Mockup</h2>
-          <div className="bg-white rounded-lg shadow-md p-6">
-            <div className="aspect-video relative">
-              <Image 
-                src="/newsela/images/static-mockup.jpg" 
-                alt="Static card mockup" 
-                fill 
-                className="object-contain" 
-              />
-            </div>
-          </div>
-        </div>
-
-        {/* Takeaways */}
-        <div className="prose prose-lg max-w-none mb-12">
-          <h2 className="text-2xl font-medium">Takeaways</h2>
-          <p>
-            The product card is much more user-friendly and visually appealing, but does it fit the design system? The product card is now consistent with other UI elements, and the use of Newsela's color palette ensures visual harmony with the rest of the interface.
-          </p>
-          <p>
-            Design consistency means users can more easily predict how to interact with different components. The clear hierarchy and improved readability helps users quickly understand the value proposition of each feature.
-          </p>
-          <p>
-            Implementing these design changes across similar elements will create a more cohesive product experience, making the platform feel more intuitive and professional.
-          </p>
-        </div>
-
-        {/* Implementation details (additional section from image) */}
-        <div className="prose prose-lg max-w-none mb-12">
-          <h2 className="text-2xl font-medium">Implementation</h2>
-          <p>
-            The static card mockup is a great starting point for the revised product card design. The clearer visual hierarchy, consistent spacing, and improved content placement makes features more discoverable and understandable.
-          </p>
-          <p>
-            Key design principles applied here include:
-          </p>
-          <ul>
-            <li>Consistent spacing between elements (12px, 16px, 24px)</li>
-            <li>Clearer visual hierarchy with improved typography and sizing</li>
-            <li>Improved component alignment with the rest of the interface</li>
-            <li>Responsive layout that works well on various screen sizes</li>
-          </ul>
-          <p>
-            Implementation details help teams understand the specific design decisions and how they contribute to a project's success.
-          </p>
-        </div>
-
-        {/* Navigation Dots */}
-        <div className="flex justify-center items-center gap-2 my-12">
-          <span className="w-2 h-2 rounded-full bg-gray-300"></span>
-          <span className="w-2 h-2 rounded-full bg-gray-500"></span>
-          <span className="w-2 h-2 rounded-full bg-gray-300"></span>
-        </div>
-
-        <div className="mt-8 flex justify-center">
-          <Button asChild className="px-8 py-6 text-base rounded-full">
-            <a href="#" target="_blank" rel="noopener noreferrer">
-              View Case Study
-            </a>
-          </Button>
-        </div>
+        {/* Summary Section */}
+        <section className="max-w-3xl mx-auto mt-24 mb-32 px-4">
+          <h2 className="text-2xl font-medium mb-6">Summary</h2>
+          <p className="text-lg mb-4 text-gray-800">The product card is arguably the most important feature on Newsela's current homepage, providing a simple mix of the product and analysis on why it works. By altering some simple aspects about the card, I received some valuable insights:</p>
+          <p className="text-lg mb-4 text-gray-900"><span className="font-semibold">Being able to adapt to users and new constraints on the fly is important.</span> With TikTok and other short form video platforms blowing up recently, I noticed an opportunity to leverage this new way of consuming information and implemented it into the website.</p>
+          <p className="text-lg mb-4 text-gray-900"><span className="font-semibold">Sometimes your greatest resources are those around you.</span> As a high schooler at the time of writing this, students around me also served as helpful resources to voice their thoughts about the product. I learned to use my age as an asset and conduct user interviews directly to the target audience to see what could be improved.</p>
+          <p className="text-lg text-gray-900"><span className="font-semibold">Communication doesn't only come in words. It comes visually too.</span> In the process of redesigning the job card, I spent countless hours making prototypes of what my vision for this new card could look like. I noticed that telling others your ideas is important, but it is even better to build it so others can visualize your same ideas.</p>
+        </section>
       </div>
+      <Footer />
     </div>
   )
 } 
