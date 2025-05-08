@@ -1,3 +1,4 @@
+"use client";
 import { Avatar } from "@/components/ui/avatar"
 import { ProjectCard } from "@/components/project-card"
 import { ArticleCard } from "@/components/article-card"
@@ -6,31 +7,28 @@ import { Menu } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { MapPin } from "lucide-react"
 import { projects, articles } from "@/lib/data"
+import { useRouter, useSearchParams } from "next/navigation";
+import { useMemo } from "react";
 
 type ModeType = "work" | "play" | "writing"
 
-interface HomeProps {
-  searchParams: Promise<{ [key: string]: string | string[] | undefined }>
-}
-
-export default async function Home({ searchParams }: HomeProps) {
-  const resolvedParams = await searchParams
-  const modeParam = resolvedParams.mode as string | undefined
-  const mode = modeParam || "work"
-  const validMode: ModeType = ["work", "play", "writing"].includes(mode) ? (mode as ModeType) : "work"
+export default function Home() {
+  const router = useRouter();
+  const searchParams = useSearchParams();
+  const modeParam = searchParams.get("mode");
+  const mode = modeParam || "work";
+  const validMode: ModeType = ["work", "play", "writing"].includes(mode) ? (mode as ModeType) : "work";
 
   return (
     <div className="min-h-screen bg-background relative flex flex-col">
       {/* Header Navigation */}
       <header className="w-full fixed top-0 z-50 py-5">
         <div className="container mx-auto px-6 flex justify-between items-center">
-          <div className="w-11 h-11 rounded-full overflow-hidden shadow-sm border border-muted/10">
-            <Avatar className="w-full h-full">
-              <img src="/placeholder-user.jpg" alt="Profile" />
-            </Avatar>
-          </div>
+          <h1 className="text-xl text-orange-500 italic" style={{ fontFamily: 'Pacifico, cursive' }}>
+            nicholas chua
+          </h1>
 
-          <div className="bg-secondary rounded-full p-1">
+          <div className="bg-secondary rounded-full p-1 absolute left-1/2 transform -translate-x-1/2">
             <a 
               href="?mode=work" 
               className={`inline-block px-5 py-2 text-sm ${validMode === 'work' ? 'bg-white rounded-full shadow-sm' : 'text-muted-foreground'}`}
@@ -55,6 +53,7 @@ export default async function Home({ searchParams }: HomeProps) {
             variant="ghost"
             size="icon"
             className="rounded-full w-11 h-11"
+            onClick={() => router.push("/about")}
           >
             <Menu className="h-5 w-5" />
             <span className="sr-only">Menu</span>
