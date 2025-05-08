@@ -2,6 +2,18 @@ import type { Project, Article } from "./types"
 
 export const projects: Project[] = [
   {
+    id: "newsela-product-card",
+    title: "The Product Card",
+    description:
+      "For prospective users, the product card is a key element in the Newsela interface, but functionally, it presented several issues; it doesn't fully communicate the efficiency of the platform or the use cases of several features. Here's what could change.",
+    image: "/newsela/images/product-card-hero.jpg",
+    logo: "/newsela/product-card.svg",
+    link: "/projects/newsela-product-card",
+    type: "work",
+    client: "Newsela",
+    year: 2024,
+  },
+  {
     id: "1",
     title: "Reduced time taken to discover new content and team resources",
     description:
