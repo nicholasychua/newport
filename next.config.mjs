@@ -21,6 +21,22 @@ const nextConfig = {
   reactStrictMode: true,
   // This is important for SEO
   poweredByHeader: false,
+  // Disable source maps in production for better performance
+  productionBrowserSourceMaps: false,
+  // Configure turbo
+  experimental: {
+    // Enable turbo features
+    turbo: {
+      loaders: {
+        // Provide specific options for mdx-loader
+        '.mdx': {
+          // Your Turbopack loader options if needed
+        },
+      },
+      // Reduce logging
+      logLevel: 'error',
+    },
+  },
 }
 
 export default nextConfig

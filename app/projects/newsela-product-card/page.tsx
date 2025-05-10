@@ -99,21 +99,21 @@ export default function ProjectPage() {
 
       <div className="container mx-auto px-2 py-12 max-w-8xl">
         {/* Problem Section */}
-        <motion.div
-          initial={{ opacity: 0, scale: 0.98, y: 24 }}
-          animate={{ opacity: 1, scale: 1, y: 0 }}
-          transition={{ duration: 0.35, ease: 'easeOut' }}
-          className="bg-white rounded-2xl shadow-lg p-10 mb-12 border border-gray-100 hover:shadow-xl transition-shadow focus-within:ring-2 focus-within:ring-indigo-200"
-          tabIndex={0}
-        >
-          <h2 className="text-2xl font-semibold mb-4 text-gray-800 tracking-tight">Problem</h2>
-          <p className="text-lg text-gray-600 mb-4">
-            The product card is an essential portion of Newsela's website as an interactive way to learn more about the product. <span className="font-semibold text-gray-800">However, the message and website features aren't communicated clearly.</span>
-          </p>
-          <p className="text-lg text-gray-600">
-            Could we redesign the card to leverage the short-attention span of new users to communicate the ease-of-use of the product?
-          </p>
-        </motion.div>
+        <div className="bg-white rounded-2xl shadow-lg p-10 mb-12 border border-gray-100 hover:shadow-xl transition-shadow focus-within:ring-2 focus-within:ring-indigo-200">
+          <motion.div
+            initial={{ opacity: 0, scale: 0.98, y: 24 }}
+            animate={{ opacity: 1, scale: 1, y: 0 }}
+            transition={{ duration: 0.35, ease: 'easeOut' }}
+          >
+            <h2 className="text-2xl font-semibold mb-4 text-gray-800 tracking-tight">Problem</h2>
+            <p className="text-lg text-gray-600 mb-4">
+              The product card is an essential portion of Newsela's website as an interactive way to learn more about the product. <span className="font-semibold text-gray-800">However, the message and website features aren't communicated clearly.</span>
+            </p>
+            <p className="text-lg text-gray-600">
+              Could we redesign the card to leverage the short-attention span of new users to communicate the ease-of-use of the product?
+            </p>
+          </motion.div>
+        </div>
 
         {/* Interface with Numbers Image */}
         <div className="bg-white rounded-lg shadow-md p-6 mb-8">
@@ -184,19 +184,19 @@ export default function ProjectPage() {
             After digging in with user interviews and comparing other e-learning platforms, I noticed the use of short form content being utilized.
             <span className="font-semibold text-gray-800"> Consumers now are hooked into platforms like TikTok due to its short form factor.</span> But how can be utilize this knowledge onto our platform?
           </p>
-          <motion.div
-            initial={{ opacity: 0, scale: 0.98, y: 24 }}
-            whileInView={{ opacity: 1, scale: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.35, ease: 'easeOut', delay: 0.1 }}
-            className="bg-white rounded-2xl shadow-lg p-10 mt-12 mb-32 border border-gray-100 hover:shadow-xl transition-shadow focus-within:ring-2 focus-within:ring-indigo-200"
-            tabIndex={0}
-          >
-            <h3 className="text-2xl font-semibold mb-4 text-gray-800 tracking-tight">My Vision</h3>
-            <p className="text-lg text-gray-600">
-              I wanted to form a system similar to TikTok to use short form content for learning. Since users know the videos are short, they are more inclined to watch them, incentivizing them to spend more time learning about our product.
-            </p>
-          </motion.div>
+          <div className="bg-white rounded-2xl shadow-lg p-10 mt-12 mb-32 border border-gray-100 hover:shadow-xl transition-shadow focus-within:ring-2 focus-within:ring-indigo-200">
+            <motion.div
+              initial={{ opacity: 0, scale: 0.98, y: 24 }}
+              whileInView={{ opacity: 1, scale: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.35, ease: 'easeOut', delay: 0.1 }}
+            >
+              <h3 className="text-2xl font-semibold mb-4 text-gray-800 tracking-tight">My Vision</h3>
+              <p className="text-lg text-gray-600">
+                I wanted to form a system similar to TikTok to use short form content for learning. Since users know the videos are short, they are more inclined to watch them, incentivizing them to spend more time learning about our product.
+              </p>
+            </motion.div>
+          </div>
         </div>
 
         {/* Competitive Analysis Section */}

@@ -22,12 +22,14 @@ export function ArticleCard({ article }: ArticleCardProps) {
         <Card className="overflow-hidden card-hover border-muted/20">
           <div className="relative">
             <AspectRatio ratio={2 / 1} className="bg-muted image-gradient">
-              <Image
-                src={article.coverImage}
-                alt={article.title}
-                fill
-                className="object-cover"
-              />
+              {article.coverImage && (
+                <Image
+                  src={article.coverImage}
+                  alt={article.title}
+                  fill
+                  className="object-cover"
+                />
+              )}
             </AspectRatio>
           </div>
           <CardContent className="p-6">
