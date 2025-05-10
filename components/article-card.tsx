@@ -3,9 +3,26 @@
 import { Article } from "@/lib/types"
 import { Card, CardContent } from "@/components/ui/card"
 import { AspectRatio } from "@/components/ui/aspect-ratio"
+import { Badge } from "@/components/ui/badge"
 import Image from "next/image"
 import Link from "next/link"
 import { motion } from "framer-motion"
+
+// Function to get color based on category
+function getCategoryColor(category: string): string {
+  switch (category) {
+    case "Startups":
+      return "#4f46e5"; // Indigo
+    case "Life Lessons":
+      return "#0ea5e9"; // Sky blue
+    case "Personal":
+      return "#f97316"; // Orange
+    case "Tech":
+      return "#8b5cf6"; // Violet
+    default:
+      return "#6b7280"; // Gray
+  }
+}
 
 interface ArticleCardProps {
   article: Article
@@ -31,9 +48,27 @@ export function ArticleCard({ article }: ArticleCardProps) {
                 />
               )}
             </AspectRatio>
+            <div className="absolute top-3 left-3">
+              <Badge 
+                className="font-medium text-xs capitalize shadow-sm"
+                style={{
+                  backgroundColor: getCategoryColor(article.category),
+                  color: 'white'
+                }}
+              >
+                {article.category}
+              </Badge>
+            </div>
           </div>
           <CardContent className="p-6">
-            <div className="space-y-2">
+            <div className="space-y-3">
+              <div className="flex flex-wrap gap-2">
+                {article.tags.map((tag) => (
+                  <Badge key={tag} variant="secondary" className="font-normal text-xs">
+                    {tag}
+                  </Badge>
+                ))}
+              </div>
               <h3 className="font-heading text-xl md:text-2xl font-medium">{article.title}</h3>
               <p className="text-sm text-muted-foreground">{article.date} · {article.readTime}</p>
               <p className="text-muted-foreground leading-relaxed">{article.excerpt}</p>

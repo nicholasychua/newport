@@ -23,19 +23,12 @@ const nextConfig = {
   poweredByHeader: false,
   // Disable source maps in production for better performance
   productionBrowserSourceMaps: false,
-  // Configure turbo
+  // Simple turbopack config without invalid properties
+  turbopack: {
+    // Add valid turbopack options here if needed
+  },
   experimental: {
-    // Enable turbo features
-    turbo: {
-      loaders: {
-        // Provide specific options for mdx-loader
-        '.mdx': {
-          // Your Turbopack loader options if needed
-        },
-      },
-      // Reduce logging
-      logLevel: 'error',
-    },
+    // Other experimental features can go here if needed
   },
 }
 

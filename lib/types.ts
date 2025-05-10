@@ -18,4 +18,6 @@ export interface Article {
   readTime: string
   slug: string
   coverImage?: string
+  tags: string[]
+  category: "Startups" | "Life Lessons" | "Personal" | "Tech"
 }

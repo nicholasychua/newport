@@ -6,7 +6,7 @@ export const projects: Project[] = [
     title: "The Product Card",
     description:
       "For prospective users, the product card is a key element in the Newsela interface, but functionally, it presented several issues; it doesn't fully communicate the efficiency of the platform or the use cases of several features. Here's what could change.",
-    image: "/newsela/images/product-card-hero.jpg",
+    image: "/newsela/images/main-page.png",
     logo: "/newsela/product-card.svg",
     link: "/projects/newsela-product-card",
     type: "work",
@@ -120,6 +120,8 @@ export const articles: Article[] = [
     readTime: "8 min read",
     slug: "designing-for-accessibility",
     coverImage: "/placeholder.svg?height=400&width=800",
+    tags: ["Design", "Accessibility", "UX"],
+    category: "Tech"
   },
   {
     id: "2",
@@ -129,6 +131,8 @@ export const articles: Article[] = [
     readTime: "6 min read",
     slug: "future-of-ui-design",
     coverImage: "/placeholder.svg?height=400&width=800",
+    tags: ["Design", "UI", "Trends"],
+    category: "Tech"
   },
   {
     id: "3",
@@ -138,6 +142,8 @@ export const articles: Article[] = [
     readTime: "10 min read",
     slug: "design-systems-that-scale",
     coverImage: "/placeholder.svg?height=400&width=800",
+    tags: ["Design Systems", "Development", "Enterprise"],
+    category: "Startups"
   },
   {
     id: "4",
@@ -148,6 +154,8 @@ export const articles: Article[] = [
     readTime: "7 min read",
     slug: "remote-user-research",
     coverImage: "/placeholder.svg?height=400&width=800",
+    tags: ["Research", "Remote Work", "UX"],
+    category: "Life Lessons"
   },
   {
     id: "5",
@@ -157,5 +165,7 @@ export const articles: Article[] = [
     readTime: "9 min read",
     slug: "psychology-of-color",
     coverImage: "/placeholder.svg?height=400&width=800",
+    tags: ["Design", "Psychology", "Color Theory"],
+    category: "Personal"
   },
 ]
