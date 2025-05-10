@@ -3,6 +3,8 @@
 import Image from "next/image";
 import Link from "next/link";
 import { motion } from "framer-motion";
+import { Button } from "@/components/ui/button";
+import { useRouter } from "next/navigation";
 
 // Define custom HTML attributes with motion props
 const MotionHeader = motion.h1;
@@ -10,24 +12,63 @@ const MotionParagraph = motion.p;
 const MotionDiv = motion.div;
 
 export default function AboutPage() {
+  const router = useRouter();
+
   return (
-    <div className="min-h-screen bg-background px-4 py-10">
-      <div className="max-w-5xl mx-auto">
-        {/* Header */}
-        <div className="text-2xl text-orange-500 italic mb-2" style={{ fontFamily: 'Pacifico, cursive' }}>
-          <motion.div
-            initial={{ opacity: 0, y: -20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.4, ease: "easeOut" }}
-          >
-            nicholas chua
-          </motion.div>
+    <div className="min-h-screen bg-background relative flex flex-col">
+      {/* Header Navigation */}
+      <header className="w-full fixed top-0 z-50 py-8">
+        <div className="container mx-auto px-6 flex items-center justify-between relative">
+          <div className="flex items-center min-w-[180px]">
+            <h1 className="text-xl text-orange-500 italic" style={{ fontFamily: 'Pacifico, cursive' }}>
+              nicholas chua
+            </h1>
+          </div>
+
+          {/* Absolutely centered invisible mode selector for layout consistency */}
+          <div className="bg-secondary rounded-full p-1.5 shadow-md flex min-w-[240px] absolute left-1/2 -translate-x-1/2 z-10 invisible">
+            <a 
+              href="#" 
+              className="inline-block px-6 py-3 text-base font-medium text-muted-foreground"
+            >
+              work
+            </a>
+            <a 
+              href="#" 
+              className="inline-block px-6 py-3 text-base font-medium text-muted-foreground"
+            >
+              writing
+            </a>
+            <a 
+              href="#" 
+              className="inline-block px-6 py-3 text-base font-medium text-muted-foreground"
+            >
+              play
+            </a>
+          </div>
+
+          <div className="flex items-center min-w-[80px] justify-end">
+            <Button
+              variant="ghost"
+              size="icon"
+              className="rounded-full w-16 h-16"
+              onClick={() => router.push("/")}
+              style={{ marginRight: 0, boxShadow: '0 4px 24px 0 rgba(0,0,0,0.10), 0 0 0 1px rgba(0,0,0,0.02)' }}
+            >
+              <svg width="60" height="60" viewBox="0 0 44 44" fill="none" xmlns="http://www.w3.org/2000/svg" style={{ display: 'block', margin: 'auto' }}>
+                <path d="M28 4L12 22L28 40" stroke="#A3A3A3" strokeWidth="2.5" fill="none" strokeLinecap="round" strokeLinejoin="round"/>
+              </svg>
+              <span className="sr-only">Back</span>
+            </Button>
+          </div>
         </div>
-        
+      </header>
+
+      <div className="container mx-auto px-4 pt-20 pb-24 flex-grow flex flex-col">
         {/* Content Grid */}
-        <div className="w-full grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+        <div className="w-full grid grid-cols-1 md:grid-cols-2 gap-12 items-center justify-items-center">
           {/* Left: Description Card */}
-          <div className="flex flex-col items-start max-w-xl mx-auto md:mx-0">
+          <div className="flex flex-col items-start max-w-xl mx-auto md:mx-0 md:ml-auto">
             <motion.div
               initial={{ opacity: 0, x: -30 }}
               animate={{ opacity: 1, x: 0 }}

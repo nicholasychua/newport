@@ -114,58 +114,24 @@ export const projects: Project[] = [
 export const articles: Article[] = [
   {
     id: "1",
-    title: "Designing for Accessibility: A Practical Guide",
-    excerpt: "How to make your digital products more accessible and inclusive for all users.",
-    date: "May 15, 2023",
-    readTime: "8 min read",
-    slug: "designing-for-accessibility",
+    title: "Building AI Products That People Actually Want to Use",
+    excerpt: "Lessons learned from building and shipping AI products that solve real user problems, not just technical ones.",
+    date: "March 15, 2024",
+    readTime: "5 min read",
+    slug: "building-ai-products",
     coverImage: "/placeholder.svg?height=400&width=800",
-    tags: ["Design", "Accessibility", "UX"],
+    tags: ["AI", "Product", "Technology"],
     category: "Tech"
   },
   {
     id: "2",
-    title: "The Future of UI Design: Trends to Watch in 2023",
-    excerpt: "Exploring emerging design patterns and technologies that will shape user interfaces in the coming year.",
-    date: "April 22, 2023",
-    readTime: "6 min read",
-    slug: "future-of-ui-design",
+    title: "What I Wish I Knew Before Starting College",
+    excerpt: "Reflections on navigating academics, relationships, and personal growth during my time at Berkeley.",
+    date: "March 10, 2024",
+    readTime: "4 min read",
+    slug: "college-lessons",
     coverImage: "/placeholder.svg?height=400&width=800",
-    tags: ["Design", "UI", "Trends"],
-    category: "Tech"
-  },
-  {
-    id: "3",
-    title: "Building Design Systems That Scale",
-    excerpt: "Lessons learned from creating and maintaining design systems for large organizations.",
-    date: "March 10, 2023",
-    readTime: "10 min read",
-    slug: "design-systems-that-scale",
-    coverImage: "/placeholder.svg?height=400&width=800",
-    tags: ["Design Systems", "Development", "Enterprise"],
-    category: "Startups"
-  },
-  {
-    id: "4",
-    title: "User Research Methods for Remote Teams",
-    excerpt:
-      "Effective techniques for conducting user research when your team is distributed across different locations.",
-    date: "February 5, 2023",
-    readTime: "7 min read",
-    slug: "remote-user-research",
-    coverImage: "/placeholder.svg?height=400&width=800",
-    tags: ["Research", "Remote Work", "UX"],
+    tags: ["Life", "Education", "Personal Growth"],
     category: "Life Lessons"
-  },
-  {
-    id: "5",
-    title: "The Psychology of Color in Digital Products",
-    excerpt: "How color choices influence user perception and behavior in digital interfaces.",
-    date: "January 18, 2023",
-    readTime: "9 min read",
-    slug: "psychology-of-color",
-    coverImage: "/placeholder.svg?height=400&width=800",
-    tags: ["Design", "Psychology", "Color Theory"],
-    category: "Personal"
   },
 ]
