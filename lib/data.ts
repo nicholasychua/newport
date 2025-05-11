@@ -119,7 +119,7 @@ export const articles: Article[] = [
     date: "March 15, 2024",
     readTime: "5 min read",
     slug: "building-ai-products",
-    coverImage: "/placeholder.svg?height=400&width=800",
+    coverImage: "/hackathon.png",
     tags: ["AI", "Product", "Technology"],
     category: "Tech"
   },

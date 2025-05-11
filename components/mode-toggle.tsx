@@ -20,14 +20,31 @@ export function ModeToggle() {
   }, [currentMode])
 
   const handleModeChange = (newMode: ModeType) => {
+    // First update the UI state immediately for responsive feel
     setMode(newMode)
     
-    // Create new URLSearchParams
-    const params = new URLSearchParams(searchParams)
-    params.set('mode', newMode)
+    // Get current scroll position
+    const scrollPosition = window.scrollY
     
-    // Use router.push to navigate safely
-    router.push(`${pathname}?${params.toString()}`)
+    // If we're at the bottom of the page (or close to it), smooth scroll to top first
+    const nearBottom = scrollPosition > window.innerHeight / 2
+    
+    if (nearBottom) {
+      // Smooth scroll to top
+      window.scrollTo({ top: 0, behavior: 'smooth' })
+      
+      // Then update URL after animation (reduced to 300ms)
+      setTimeout(() => {
+        const params = new URLSearchParams(searchParams)
+        params.set('mode', newMode)
+        router.push(`${pathname}?${params.toString()}`)
+      }, 300)
+    } else {
+      // If we're already near the top, just update the URL immediately
+      const params = new URLSearchParams(searchParams)
+      params.set('mode', newMode)
+      router.push(`${pathname}?${params.toString()}`)
+    }
   }
 
   return (

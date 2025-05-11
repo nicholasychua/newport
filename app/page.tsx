@@ -31,6 +31,30 @@ export default function Home() {
   const modeParam = searchParams.get("mode");
   const mode = modeParam || "work";
   const validMode: ModeType = ["work", "play", "writing"].includes(mode) ? (mode as ModeType) : "work";
+  const mainRef = useRef<HTMLDivElement>(null);
+  const scrollPositions = useRef<{ [key: string]: number }>({});
+  const [isTransitioning, setIsTransitioning] = useState(false);
+
+  // Save scroll position before transition
+  const handleModeChange = (newMode: ModeType) => {
+    if (mainRef.current) {
+      scrollPositions.current[validMode] = mainRef.current.scrollTop;
+    }
+    setIsTransitioning(true);
+    router.push(`?mode=${newMode}`);
+  };
+
+  // Restore scroll position after transition
+  useEffect(() => {
+    if (mainRef.current && !isTransitioning && scrollPositions.current[validMode] !== undefined) {
+      requestAnimationFrame(() => {
+        if (mainRef.current) {
+          mainRef.current.scrollTop = scrollPositions.current[validMode];
+        }
+      });
+    }
+    setIsTransitioning(false);
+  }, [validMode, isTransitioning]);
 
   return (
     <div className="min-h-screen bg-background relative flex flex-col">
@@ -45,24 +69,24 @@ export default function Home() {
 
           {/* Absolutely centered mode selector */}
           <div className="bg-secondary rounded-full p-1.5 shadow-md flex min-w-[240px] absolute left-1/2 -translate-x-1/2 z-10">
-            <a 
-              href="?mode=work" 
+            <button 
+              onClick={() => handleModeChange('work')}
               className={`inline-block px-6 py-3 text-base font-medium ${validMode === 'work' ? 'bg-white rounded-full shadow-md' : 'text-muted-foreground'}`}
             >
               work
-            </a>
-            <a 
-              href="?mode=writing" 
+            </button>
+            <button 
+              onClick={() => handleModeChange('writing')}
               className={`inline-block px-6 py-3 text-base font-medium ${validMode === 'writing' ? 'bg-white rounded-full shadow-md' : 'text-muted-foreground'}`}
             >
               writing
-            </a>
-            <a 
-              href="?mode=play" 
+            </button>
+            <button 
+              onClick={() => handleModeChange('play')}
               className={`inline-block px-6 py-3 text-base font-medium ${validMode === 'play' ? 'bg-white rounded-full shadow-md' : 'text-muted-foreground'}`}
             >
               play
-            </a>
+            </button>
           </div>
 
           <div className="flex items-center min-w-[80px] justify-end">
@@ -85,39 +109,58 @@ export default function Home() {
       </header>
 
       {/* Main content */}
-      <main className="container mx-auto px-4 pt-36 pb-24 flex-grow flex flex-col">
-        <div className="mx-auto text-center max-w-[560px] pt-24 pb-16">
-          <h1 className="text-[80px] font-heading font-normal text-foreground leading-none mb-8">
-            hi, i'm <span className="text-foreground">nicholas</span>
-          </h1>
+      <main ref={mainRef} className="container mx-auto px-4 pt-36 pb-24 flex-grow flex flex-col overflow-y-auto">
+        <AnimatePresence mode="wait">
+          <MotionDiv
+            key={mode}
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            transition={{ duration: 1, ease: "easeInOut" }}
+            className="mx-auto text-center max-w-[560px] pt-24 pb-16"
+          >
+            <h1 className="text-[80px] font-heading font-normal text-foreground leading-none mb-8">
+              hi, i'm <span className="text-foreground">nicholas</span>
+            </h1>
 
-          <div className="flex items-center justify-center gap-1 text-muted-foreground mb-6">
-            <MapPin className="h-4 w-4" />
-            <span className="text-sm">san francisco, ca</span>
-          </div>
+            <div className="flex items-center justify-center gap-1 text-muted-foreground mb-6">
+              <MapPin className="h-4 w-4" />
+              <span className="text-sm">san francisco, ca</span>
+            </div>
 
-          {validMode === 'work' && (
-            <p className="text-muted-foreground text-lg max-w-md mx-auto">
-              currently building{" "}
-              <a href="#" className="text-foreground hover:text-foreground/80 transition-colors">
-                tami
-              </a>
-              , an ai second brain for automated task management based on your google calendar.
-            </p>
-          )}
-          {validMode === 'writing' && (
-            <p className="text-muted-foreground text-lg max-w-md mx-auto">
-              sharing essays, stories, and lessons learned—explore my thoughts on startups, tech, and life.
-            </p>
-          )}
-          {validMode === 'play' && (
-            <p className="text-muted-foreground text-lg max-w-md mx-auto">
-              outside of work, you'll find me exploring new hobbies, playing music, and seeking inspiration in the everyday.
-            </p>
-          )}
-        </div>
+            {validMode === 'work' && (
+              <p className="text-muted-foreground text-lg max-w-md mx-auto">
+                currently building{" "}
+                <a href="#" className="text-foreground hover:text-foreground/80 transition-colors">
+                  tami
+                </a>
+                , an ai second brain for automated task management based on your google calendar.
+              </p>
+            )}
+            {validMode === 'writing' && (
+              <p className="text-muted-foreground text-lg max-w-md mx-auto">
+                sharing essays, stories, and lessons learned—explore my thoughts on startups, tech, and life.
+              </p>
+            )}
+            {validMode === 'play' && (
+              <p className="text-muted-foreground text-lg max-w-md mx-auto">
+                outside of work, you'll find me exploring new hobbies, playing music, and seeking inspiration in the everyday.
+              </p>
+            )}
+          </MotionDiv>
+        </AnimatePresence>
 
-        <ContentSection mode={validMode} />
+        <AnimatePresence mode="wait">
+          <MotionDiv
+            key={mode}
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            transition={{ duration: 1, ease: "easeInOut" }}
+          >
+            <ContentSection mode={validMode} />
+          </MotionDiv>
+        </AnimatePresence>
       </main>
 
       <Footer />
