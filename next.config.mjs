@@ -30,6 +30,13 @@ const nextConfig = {
   experimental: {
     // Other experimental features can go here if needed
   },
+  webpack: (config) => {
+    config.resolve.alias = {
+      ...config.resolve.alias,
+      '@': './src',
+    }
+    return config
+  },
 }
 
 export default nextConfig
