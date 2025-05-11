@@ -37,6 +37,8 @@ const nextConfig = {
     }
     return config
   },
+  // Add source directory configuration
+  distDir: '.next',
 }
 
 export default nextConfig
