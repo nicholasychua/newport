@@ -9,7 +9,7 @@ import { Badge } from "@/components/ui/badge"
 import { MapPin } from "lucide-react"
 import { projects, articles } from "@/lib/data"
 import { useRouter, useSearchParams } from "next/navigation";
-import { useMemo, useState, useRef, useEffect } from "react";
+import { useMemo, useState, useRef, useEffect, Suspense } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 
 type ModeType = "work" | "play" | "writing"
@@ -25,7 +25,8 @@ const MotionDiv = motion.div as React.ComponentType<React.HTMLAttributes<HTMLDiv
   layout?: boolean;
 }>;
 
-export default function Home() {
+// New component to handle search params
+function ModeHandler() {
   const router = useRouter();
   const searchParams = useSearchParams();
   const modeParam = searchParams.get("mode");
@@ -176,7 +177,15 @@ export default function Home() {
 
       <Footer />
     </div>
-  )
+  );
+}
+
+export default function Home() {
+  return (
+    <Suspense fallback={<div>Loading...</div>}>
+      <ModeHandler />
+    </Suspense>
+  );
 }
 
 interface ContentSectionProps {
