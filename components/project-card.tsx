@@ -26,42 +26,46 @@ export function ProjectCard({ project, index }: ProjectCardProps) {
       transition={{ duration: 0.4, delay: index * 0.1, ease: "easeOut" }}
     >
       <Link href={project.link} className="group">
-        <Card className="overflow-hidden card-hover border-muted/20">
+        <Card className="overflow-hidden card-hover border-none bg-gray-50">
           <div className={`md:grid md:grid-cols-2 gap-0 ${isImageRight ? 'md:grid-flow-row-dense' : ''}`}>
-            <div className={`relative p-5 md:p-6 bg-white ${isImageRight ? 'md:order-last' : ''}`}>
-              <div className="relative h-full min-h-[280px] md:min-h-[320px] rounded-md overflow-hidden border border-gray-200 shadow-sm">
+            {/* Image Side */}
+            <div className={`relative flex items-center justify-center bg-white ${isImageRight ? 'md:order-last' : ''}`}> 
+              <div className="relative w-full h-[220px] md:h-[300px]">
                 <Image
                   src={project.image}
                   alt={project.title}
                   fill
-                  className="object-contain p-3 transition-transform duration-500 group-hover:scale-105"
+                  className="object-contain"
+                  priority={index === 0}
                 />
               </div>
             </div>
-            <CardContent className="p-7 md:p-10 flex flex-col">
-              <div className="mb-5 flex items-center">
-                <div className="mr-3 flex h-8 w-8 items-center justify-center rounded-full overflow-hidden bg-muted">
-                  <Avatar className="h-full w-full">
-                    <img src={project.logo} alt={project.client} />
-                  </Avatar>
+            {/* Text Side */}
+            <CardContent className="p-8 flex flex-col bg-transparent justify-center">
+              {/* Logo */}
+              <div className="mb-6">
+                <div className="h-14 w-14 flex items-center justify-center rounded-lg bg-[var(--logo-bg,theme(colors.blue.100))]">
+                  <img src={project.logo} alt={project.client} className="h-8 w-8 object-contain" />
                 </div>
-                <div className="flex flex-col">
-                  <span className="text-base font-medium">{project.client}</span>
-                  <span className="text-sm text-muted-foreground">{project.year}</span>
+              </div>
+              {/* Project Title */}
+              <h3 className="text-4xl font-bold text-gray-900 mb-3 leading-tight tracking-tight">
+                {project.title}
+              </h3>
+              {/* Project Type */}
+              <div className="mb-5">
+                <span className="text-base uppercase font-semibold text-gray-500 tracking-wider">{project.type.toUpperCase()}</span>
+              </div>
+              {/* Description */}
+              <p className="text-lg text-gray-600 leading-relaxed mb-8 font-normal">
+                {project.description}
+              </p>
+              {/* Button */}
+              <div className="mt-auto">
+                <div className="w-full inline-flex items-center gap-2 px-6 py-3 bg-white rounded-xl shadow text-lg font-medium text-gray-800 hover:bg-gray-100 transition-colors justify-center">
+                  <span>See the Live Site</span>
+                  <ArrowUpRight className="h-5 w-5" />
                 </div>
-                <Badge variant="outline" className="ml-auto">
-                  {project.type}
-                </Badge>
-              </div>
-              <div className="space-y-5 flex-grow">
-                <h3 className="font-heading text-2xl md:text-3xl font-medium leading-tight">
-                  {project.title}
-                </h3>
-                <p className="text-base md:text-lg text-muted-foreground">{project.description}</p>
-              </div>
-              <div className="pt-7 flex items-center text-base font-medium text-primary">
-                <span>View Project</span>
-                <ArrowUpRight className="h-5 w-5 ml-1.5 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
               </div>
             </CardContent>
           </div>
