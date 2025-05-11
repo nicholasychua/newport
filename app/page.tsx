@@ -110,45 +110,56 @@ export default function Home() {
 
       {/* Main content */}
       <main ref={mainRef} className="container mx-auto px-4 pt-36 pb-24 flex-grow flex flex-col overflow-y-auto">
-        <AnimatePresence mode="wait">
-          <MotionDiv
-            key={mode}
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            exit={{ opacity: 0 }}
-            transition={{ duration: 1, ease: "easeInOut" }}
-            className="mx-auto text-center max-w-[560px] pt-24 pb-16"
-          >
-            <h1 className="text-[80px] font-heading font-normal text-foreground leading-none mb-8">
-              hi, i'm <span className="text-foreground">nicholas</span>
-            </h1>
-
-            <div className="flex items-center justify-center gap-1 text-muted-foreground mb-6">
-              <MapPin className="h-4 w-4" />
-              <span className="text-sm">san francisco, ca</span>
-            </div>
-
-            {validMode === 'work' && (
-              <p className="text-muted-foreground text-lg max-w-md mx-auto">
-                currently building{" "}
-                <a href="#" className="text-foreground hover:text-foreground/80 transition-colors">
-                  tami
-                </a>
-                , an ai second brain for automated task management based on your google calendar.
-              </p>
-            )}
-            {validMode === 'writing' && (
-              <p className="text-muted-foreground text-lg max-w-md mx-auto">
-                sharing essays, stories, and lessons learned—explore my thoughts on startups, tech, and life.
-              </p>
-            )}
-            {validMode === 'play' && (
-              <p className="text-muted-foreground text-lg max-w-md mx-auto">
-                outside of work, you'll find me exploring new hobbies, playing music, and seeking inspiration in the everyday.
-              </p>
-            )}
-          </MotionDiv>
-        </AnimatePresence>
+        {/* Full-width background gradient and blobs */}
+        <div aria-hidden="true" className="absolute top-0 left-0 w-full h-[560px] z-0 pointer-events-none">
+          {/* Soft gradient */}
+          <div className="absolute inset-0 bg-gradient-to-br from-orange-50 via-white to-white opacity-80" />
+          {/* Blurred blob top left */}
+          <div className="absolute -top-16 -left-20 w-96 h-96 bg-orange-200 rounded-full filter blur-3xl opacity-40" />
+          {/* Blurred blob bottom right, softer and more inward */}
+          <div className="absolute top-32 right-0 w-[420px] h-[420px] bg-blue-200 rounded-full filter blur-3xl opacity-20" />
+          {/* Downward fade overlay, taller and more gradual */}
+          <div className="absolute bottom-0 left-0 w-full h-48 bg-gradient-to-b from-transparent to-white" />
+        </div>
+        <div className="relative mx-auto max-w-[560px] w-full z-10">
+          <AnimatePresence mode="wait">
+            <MotionDiv
+              key={mode}
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              exit={{ opacity: 0 }}
+              transition={{ duration: 1, ease: "easeInOut" }}
+              className="relative text-center max-w-[560px] pt-24 pb-16"
+            >
+              <h1 className="text-[80px] font-heading font-normal text-foreground leading-none mb-8">
+                hi, i'm <span className="text-foreground">nicholas</span>
+              </h1>
+              <div className="flex items-center justify-center gap-1 text-muted-foreground mb-6">
+                <MapPin className="h-4 w-4" />
+                <span className="text-sm">san francisco, ca</span>
+              </div>
+              {validMode === 'work' && (
+                <p className="text-muted-foreground text-lg max-w-md mx-auto">
+                  currently building{" "}
+                  <a href="#" className="text-foreground hover:text-foreground/80 transition-colors">
+                    tami
+                  </a>
+                  , an ai second brain for automated task management based on your google calendar.
+                </p>
+              )}
+              {validMode === 'writing' && (
+                <p className="text-muted-foreground text-lg max-w-md mx-auto">
+                  sharing essays, stories, and lessons learned—explore my thoughts on startups, tech, and life.
+                </p>
+              )}
+              {validMode === 'play' && (
+                <p className="text-muted-foreground text-lg max-w-md mx-auto">
+                  outside of work, you'll find me exploring new hobbies, playing music, and seeking inspiration in the everyday.
+                </p>
+              )}
+            </MotionDiv>
+          </AnimatePresence>
+        </div>
 
         <AnimatePresence mode="wait">
           <MotionDiv
