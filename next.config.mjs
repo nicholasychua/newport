@@ -23,10 +23,6 @@ const nextConfig = {
   poweredByHeader: false,
   // Disable source maps in production for better performance
   productionBrowserSourceMaps: false,
-  // Simple turbopack config without invalid properties
-  turbopack: {
-    // Add valid turbopack options here if needed
-  },
   experimental: {
     // Other experimental features can go here if needed
   },
