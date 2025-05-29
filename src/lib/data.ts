@@ -1,4 +1,4 @@
-import type { Project, Article } from "./types"
+import type { Project, Article, Job } from "./types"
 
 export const projects: Project[] = [
   {
@@ -134,4 +134,79 @@ export const articles: Article[] = [
     tags: ["Life", "Education", "Personal Growth"],
     category: "Life Lessons"
   },
+]
+
+export const jobs: Job[] = [
+  {
+    id: "job-1",
+    title: "Product",
+    company: "Lenovo",
+    description: "vc arm - scouting ai sales agents",
+    startDate: "January 2025",
+    endDate: "May 2025",
+    year: 2025,
+    technologies: [],
+    logo: "/logos/lenovo.svg",
+    subTeam: "Contract"
+  },
+  {
+    id: "job-2",
+    title: "Technical Product Manager",
+    company: "Oracle",
+    description: "vector database expansion/GTM",
+    startDate: "September 2024",
+    endDate: "December 2024",
+    year: 2024,
+    technologies: [],
+    logo: "/logos/oracle.svg",
+    subTeam: "Contract"
+  },
+  {
+    id: "job-3",
+    title: "AI Product Analyst",
+    company: "Newsela",
+    description: "edtech unicorn; optimized user experience and AI usability",
+    startDate: "March 2024",
+    endDate: "August 2024",
+    year: 2024,
+    technologies: [],
+    logo: "/logos/newsela.svg",
+    subTeam: "Internship"
+  },
+  {
+    id: "job-4",
+    title: "Product",
+    company: "Berkeley SkyDeck",
+    description: "early-stage product dev @ pre-seed startups (welfie & sotira)",
+    startDate: "May 2022",
+    endDate: "July 2024",
+    year: 2024,
+    technologies: [],
+    logo: "/logos/berkeley-skydeck.svg",
+    subTeam: "Accelerator"
+  },
+  {
+    id: "job-5",
+    title: "Product Management Intern",
+    company: "Welfie",
+    description: "user research + design -> created an AI mental health database",
+    startDate: "May 2022",
+    endDate: "June 2024",
+    year: 2022,
+    technologies: [],
+    logo: "/logos/welfie.svg",
+    subTeam: "Internship"
+  },
+  {
+    id: "job-6",
+    title: "Business Development Intern",
+    company: "Sotira",
+    description: "growth marketing strategies -> optimizing cold outreach",
+    startDate: "May 2023",
+    endDate: "August 2023",
+    year: 2023,
+    technologies: [],
+    logo: "/logos/sotira.svg",
+    subTeam: "Internship"
+  }
 ]

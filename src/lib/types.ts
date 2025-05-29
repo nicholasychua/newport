@@ -21,3 +21,16 @@ export interface Article {
   tags: string[]
   category: "Startups" | "Life Lessons" | "Personal" | "Tech"
 }
+
+export interface Job {
+  id: string
+  title: string
+  company: string
+  description: string
+  startDate: string
+  endDate: string
+  year: number
+  technologies: string[]
+  logo?: string
+  subTeam?: string
+}

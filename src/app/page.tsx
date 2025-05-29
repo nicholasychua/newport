@@ -7,10 +7,11 @@ import { Menu, X, ChevronDown, Filter } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { Badge } from "@/components/ui/badge"
 import { MapPin } from "lucide-react"
-import { projects, articles } from "@/lib/data"
+import { projects, articles, jobs } from "@/lib/data"
 import { useRouter, useSearchParams } from "next/navigation";
 import { useMemo, useState, useRef, useEffect, Suspense } from "react";
 import { motion, AnimatePresence } from "framer-motion";
+import { JobTimeline } from "@/components/job-timeline";
 
 type ModeType = "work" | "play" | "writing"
 
@@ -30,8 +31,8 @@ function ModeHandler() {
   const router = useRouter();
   const searchParams = useSearchParams();
   const modeParam = searchParams.get("mode");
-  const mode = modeParam || "work";
-  const validMode: ModeType = ["work", "play", "writing"].includes(mode) ? (mode as ModeType) : "work";
+  const mode = modeParam || "play";
+  const validMode: ModeType = ["play", "work", "writing"].includes(mode) ? (mode as ModeType) : "play";
   const mainRef = useRef<HTMLDivElement>(null);
   const scrollPositions = useRef<{ [key: string]: number }>({});
   const [isTransitioning, setIsTransitioning] = useState(false);
@@ -71,6 +72,12 @@ function ModeHandler() {
           {/* Absolutely centered mode selector */}
           <div className="bg-secondary rounded-full p-1.5 shadow-md flex min-w-[240px] absolute left-1/2 -translate-x-1/2 z-10">
             <button 
+              onClick={() => handleModeChange('play')}
+              className={`inline-block px-6 py-3 text-base font-medium ${validMode === 'play' ? 'bg-white rounded-full shadow-md' : 'text-muted-foreground'}`}
+            >
+              play
+            </button>
+            <button 
               onClick={() => handleModeChange('work')}
               className={`inline-block px-6 py-3 text-base font-medium ${validMode === 'work' ? 'bg-white rounded-full shadow-md' : 'text-muted-foreground'}`}
             >
@@ -81,12 +88,6 @@ function ModeHandler() {
               className={`inline-block px-6 py-3 text-base font-medium ${validMode === 'writing' ? 'bg-white rounded-full shadow-md' : 'text-muted-foreground'}`}
             >
               writing
-            </button>
-            <button 
-              onClick={() => handleModeChange('play')}
-              className={`inline-block px-6 py-3 text-base font-medium ${validMode === 'play' ? 'bg-white rounded-full shadow-md' : 'text-muted-foreground'}`}
-            >
-              play
             </button>
           </div>
 
@@ -139,6 +140,11 @@ function ModeHandler() {
                 <MapPin className="h-4 w-4" />
                 <span className="text-sm">san francisco, ca</span>
               </div>
+              {validMode === 'play' && (
+                <p className="text-muted-foreground text-lg max-w-md mx-auto">
+                  a timeline of my professional journey from 2022 to present, highlighting my experience and growth as a product designer and founder.
+                </p>
+              )}
               {validMode === 'work' && (
                 <p className="text-muted-foreground text-lg max-w-md mx-auto">
                   currently building{" "}
@@ -151,11 +157,6 @@ function ModeHandler() {
               {validMode === 'writing' && (
                 <p className="text-muted-foreground text-lg max-w-md mx-auto">
                   sharing essays, stories, and lessons learned—explore my thoughts on startups, tech, and life.
-                </p>
-              )}
-              {validMode === 'play' && (
-                <p className="text-muted-foreground text-lg max-w-md mx-auto">
-                  outside of work, you'll find me exploring new hobbies, playing music, and seeking inspiration in the everyday.
                 </p>
               )}
             </MotionDiv>
@@ -488,6 +489,8 @@ function ContentSection({ mode }: ContentSectionProps) {
             </a>
           </MotionDiv>
         </>
+      ) : mode === "play" ? (
+        <JobTimeline jobs={jobs} />
       ) : (
         <div className="space-y-12">
           {projects
