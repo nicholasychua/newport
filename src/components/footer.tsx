@@ -25,31 +25,6 @@ export function Footer() {
     <footer className="py-12 border-t border-muted/30 bg-muted/40">
       <div className="container mx-auto px-4">
         <div className="flex flex-col items-center justify-center space-y-8">
-          {/* Navigation Links */}
-          <div className="flex justify-center space-x-8 mb-4">
-            <Link 
-              href="/" 
-              onClick={(e) => handleNavigation(e, '/')}
-              className="text-muted-foreground hover:text-foreground transition-colors"
-            >
-              Home
-            </Link>
-            <Link 
-              href="/writing" 
-              onClick={(e) => handleNavigation(e, '/writing')}
-              className="text-muted-foreground hover:text-foreground transition-colors"
-            >
-              Writing
-            </Link>
-            <Link 
-              href="/about" 
-              onClick={(e) => handleNavigation(e, '/about')}
-              className="text-muted-foreground hover:text-foreground transition-colors"
-            >
-              About
-            </Link>
-          </div>
-          
           {/* Social Icons */}
           <div className="flex justify-center space-x-6">
             <motion.div whileHover={{ y: -3 }} transition={{ duration: 0.2 }}>

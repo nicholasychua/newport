@@ -138,28 +138,16 @@ export const articles: Article[] = [
 
 export const jobs: Job[] = [
   {
-    id: "job-1",
-    title: "Product",
-    company: "Lenovo",
-    description: "vc arm - scouting ai sales agents",
+    id: "job-9",
+    title: "Founder",
+    company: "subspace",
+    description: "currently building subspace :)...",
     startDate: "January 2025",
-    endDate: "May 2025",
+    endDate: "Present",
     year: 2025,
     technologies: [],
-    logo: "/logos/lenovo.svg",
-    subTeam: "Contract"
-  },
-  {
-    id: "job-2",
-    title: "Technical Product Manager",
-    company: "Oracle",
-    description: "vector database expansion/GTM",
-    startDate: "September 2024",
-    endDate: "December 2024",
-    year: 2024,
-    technologies: [],
-    logo: "/logos/oracle.svg",
-    subTeam: "Contract"
+    logo: "/logos/subspace.svg",
+    subTeam: "Startup"
   },
   {
     id: "job-3",
@@ -177,10 +165,10 @@ export const jobs: Job[] = [
     id: "job-4",
     title: "Product",
     company: "Berkeley SkyDeck",
-    description: "early-stage product dev @ pre-seed startups (welfie & sotira)",
+    description: "helped early startups figure out what to build first",
     startDate: "May 2022",
     endDate: "July 2024",
-    year: 2024,
+    year: 2023,
     technologies: [],
     logo: "/logos/berkeley-skydeck.svg",
     subTeam: "Accelerator"
@@ -192,7 +180,7 @@ export const jobs: Job[] = [
     description: "user research + design -> created an AI mental health database",
     startDate: "May 2022",
     endDate: "June 2024",
-    year: 2022,
+    year: 2023,
     technologies: [],
     logo: "/logos/welfie.svg",
     subTeam: "Internship"
@@ -208,5 +196,29 @@ export const jobs: Job[] = [
     technologies: [],
     logo: "/logos/sotira.svg",
     subTeam: "Internship"
-  }
+  },
+  {
+    id: "job-8",
+    title: "Hackathon Winner",
+    company: "Meta",
+    description: "Won Meta's Global Hackathon (Top 5 of 800+); created a social media algorithm to reduce addiction",
+    startDate: "March 2023",
+    endDate: "March 2023",
+    year: 2024,
+    technologies: [],
+    logo: "/logos/meta.svg",
+    subTeam: "Global Hackathon"
+  },
+  {
+    id: "job-7",
+    title: "Teaching Assistant",
+    company: "UC Berkeley",
+    description: "Taught a computer-aided design course to 20+ students. Learned how to break down complex topics into bite-sized analogies.",
+    startDate: "January 2023",
+    endDate: "May 2023",
+    year: 2023,
+    technologies: [],
+    logo: "/logos/berkeley.svg",
+    subTeam: "Student TA"
+  },
 ]

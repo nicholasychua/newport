@@ -23,14 +23,20 @@ const nextConfig = {
   poweredByHeader: false,
   // Disable source maps in production for better performance
   productionBrowserSourceMaps: false,
-  experimental: {
-    // Other experimental features can go here if needed
+  // Performance optimizations
+  compiler: {
+    removeConsole: process.env.NODE_ENV === 'production',
   },
-  webpack: (config) => {
+  experimental: {
+    // Optimize bundling for faster builds
+    optimizePackageImports: ['lucide-react', 'framer-motion'],
+  },
+  webpack: (config, { dev, isServer }) => {
     config.resolve.alias = {
       ...config.resolve.alias,
       '@': './src',
     }
+    
     return config
   },
   // Add source directory configuration
