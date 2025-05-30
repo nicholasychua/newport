@@ -146,7 +146,7 @@ export const jobs: Job[] = [
     endDate: "Present",
     year: 2025,
     technologies: [],
-    logo: "/logos/subspace.svg",
+    logo: "/logos/fintech.svg",
     subTeam: "Startup"
   },
   {
@@ -158,7 +158,7 @@ export const jobs: Job[] = [
     endDate: "August 2024",
     year: 2024,
     technologies: [],
-    logo: "/logos/newsela.svg",
+    logo: "/logos/newsela.png",
     subTeam: "Internship"
   },
   {
@@ -170,7 +170,7 @@ export const jobs: Job[] = [
     endDate: "July 2024",
     year: 2023,
     technologies: [],
-    logo: "/logos/berkeley-skydeck.svg",
+    logo: "/logos/skydeck.jpeg",
     subTeam: "Accelerator"
   },
   {
@@ -182,7 +182,7 @@ export const jobs: Job[] = [
     endDate: "June 2024",
     year: 2023,
     technologies: [],
-    logo: "/logos/welfie.svg",
+    logo: "/logos/welfie.jpeg",
     subTeam: "Internship"
   },
   {
@@ -194,7 +194,7 @@ export const jobs: Job[] = [
     endDate: "August 2023",
     year: 2023,
     technologies: [],
-    logo: "/logos/sotira.svg",
+    logo: "/logos/sotira.webp",
     subTeam: "Internship"
   },
   {

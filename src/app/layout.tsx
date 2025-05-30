@@ -15,7 +15,7 @@ const playfair = Playfair_Display({
 })
 
 export const metadata = {
-  title: "Your Name | Portfolio",
+  title: "nicholas chua",
   description: "A portfolio showcasing my professional work, personal projects, and writing samples.",
   generator: 'Next.js'
 }
