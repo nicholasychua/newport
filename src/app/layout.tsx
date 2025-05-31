@@ -17,7 +17,10 @@ const playfair = Playfair_Display({
 export const metadata = {
   title: "nicholas chua",
   description: "A portfolio showcasing my professional work, personal projects, and writing samples.",
-  generator: 'Next.js'
+  generator: 'Next.js',
+  icons: {
+    icon: '/logos/tablogo.png',
+  },
 }
 
 export default function RootLayout({

@@ -80,24 +80,45 @@ export function JobTimeline({ jobs }: JobTimelineProps) {
                       ) : job.id === "job-9" ? (
                         // Special formatting for Subspace - building with company container
                         <div className="flex items-center gap-1 flex-wrap">
-                          <span className="text-base text-gray-700">curently building</span>
-                          <div className="inline-flex items-center gap-2 bg-gray-100 rounded-full px-3 py-1 border border-gray-200 mx-1">
-                            {job.logo && (
-                              <img src={job.logo} alt={job.company} className="h-4 w-4 object-contain" />
-                            )}
-                            <span className="font-medium text-gray-900 text-sm">{job.company}</span>
-                          </div>
-                          <span className="text-base text-gray-700">:)...</span>
+                          <span className="text-base text-gray-700">currently building</span>
+                          <a href={job.link || '#'} className="focus:outline-none" tabIndex={0} target="_blank" rel="noopener noreferrer">
+                            <div className="inline-flex items-center gap-2 rounded-full px-3 py-1 border mx-1" style={{ backgroundColor: '#E6F9FB', borderColor: '#A8DDE6' }}>
+                              {job.logo && (
+                                <img src={job.logo} alt={job.company} className="h-4 w-4 object-contain" />
+                              )}
+                              <span className="font-medium text-gray-900 text-sm">{job.company}</span>
+                            </div>
+                          </a>
+                          <span className="text-base text-gray-700">:)... </span>
                         </div>
                       ) : (
                         <>
                           <span className="text-base text-gray-700">{job.title} at</span>
-                          <div className="inline-flex items-center gap-2 bg-gray-100 rounded-full px-3 py-1 border border-gray-200 mx-1">
-                            {job.logo && (
-                              <img src={job.logo} alt={job.company} className="h-4 w-4 object-contain" />
-                            )}
-                            <span className="font-medium text-gray-900 text-sm">{job.company}</span>
-                          </div>
+                          <a href={job.link || '#'} className="focus:outline-none" tabIndex={0} target="_blank" rel="noopener noreferrer">
+                            <div className={`inline-flex items-center gap-2 rounded-full px-3 py-1 border mx-1
+                              ${job.company === "Newsela" ? ''
+                                : job.company === "Berkeley SkyDeck" ? ''
+                                : job.company === "Sotira" ? ''
+                                : job.company === "Welfie" ? ''
+                                : job.company === "subspace" ? ''
+                                : 'border-gray-200 bg-gray-100'}`}
+                              style={job.company === "Newsela"
+                                ? { backgroundColor: '#E6F0FF', borderColor: '#B2D4FF' }
+                                : job.company === "Berkeley SkyDeck"
+                                  ? { backgroundColor: '#E6EBF4', borderColor: '#A0ABC2' }
+                                : job.company === "Sotira"
+                                  ? { backgroundColor: '#E6F4ED', borderColor: '#A8D8C2' }
+                                : job.company === "Welfie"
+                                  ? { backgroundColor: '#EAF3F6', borderColor: '#BCD8E4' }
+                                : job.company === "subspace"
+                                  ? { backgroundColor: '#E6F9FB', borderColor: '#A8DDE6' }
+                                : {}}>
+                              {job.logo && (
+                                <img src={job.logo} alt={job.company} className="h-4 w-4 object-contain" />
+                              )}
+                              <span className="font-medium text-gray-900 text-sm">{job.company}</span>
+                            </div>
+                          </a>
                           <span className="text-base text-gray-700">-</span>
                           <span className="text-base text-gray-700">{job.description}</span>
                         </>

@@ -33,4 +33,5 @@ export interface Job {
   technologies: string[]
   logo?: string
   subTeam?: string
+  link?: string
 }

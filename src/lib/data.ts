@@ -147,7 +147,8 @@ export const jobs: Job[] = [
     year: 2025,
     technologies: [],
     logo: "/logos/fintech.svg",
-    subTeam: "Startup"
+    subTeam: "Startup",
+    link: "#"
   },
   {
     id: "job-3",
@@ -159,7 +160,8 @@ export const jobs: Job[] = [
     year: 2024,
     technologies: [],
     logo: "/logos/newsela.png",
-    subTeam: "Internship"
+    subTeam: "Internship",
+    link: "https://newsela.com"
   },
   {
     id: "job-4",
@@ -171,7 +173,8 @@ export const jobs: Job[] = [
     year: 2023,
     technologies: [],
     logo: "/logos/skydeck.jpeg",
-    subTeam: "Accelerator"
+    subTeam: "Accelerator",
+    link: "#"
   },
   {
     id: "job-5",
@@ -183,7 +186,8 @@ export const jobs: Job[] = [
     year: 2023,
     technologies: [],
     logo: "/logos/welfie.jpeg",
-    subTeam: "Internship"
+    subTeam: "Internship",
+    link: "https://welfie.com"
   },
   {
     id: "job-6",
@@ -195,7 +199,8 @@ export const jobs: Job[] = [
     year: 2023,
     technologies: [],
     logo: "/logos/sotira.webp",
-    subTeam: "Internship"
+    subTeam: "Internship",
+    link: "https://sotira.co"
   },
   {
     id: "job-8",
