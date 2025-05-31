@@ -125,13 +125,14 @@ export const articles: Article[] = [
   },
   {
     id: "2",
-    title: "What I Wish I Knew Before Starting College",
-    excerpt: "Reflections on navigating academics, relationships, and personal growth during my time at Berkeley.",
+    title: "how to win @ life; explained in poker terms",
+    excerpt: "entrepreneurial lessons on the felt",
+    subtitle: "entrepreneurial lessons on the felt",
     date: "March 10, 2024",
     readTime: "4 min read",
     slug: "college-lessons",
-    coverImage: "/placeholder.svg?height=400&width=800",
-    tags: ["Life", "Education", "Personal Growth"],
+    coverImage: "/pokerdisplayimage.webp",
+    tags: ["Poker", "Entrepreneurship", "Strategy"],
     category: "Life Lessons"
   },
 ]

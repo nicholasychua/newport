@@ -14,6 +14,7 @@ export interface Article {
   id: string
   title: string
   excerpt: string
+  subtitle?: string
   date: string
   readTime: string
   slug: string
