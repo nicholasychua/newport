@@ -174,7 +174,7 @@ export const jobs: Job[] = [
     technologies: [],
     logo: "/logos/skydeck.jpeg",
     subTeam: "Accelerator",
-    link: "#"
+    link: "https://skydeck.berkeley.edu/"
   },
   {
     id: "job-5",
@@ -187,7 +187,8 @@ export const jobs: Job[] = [
     technologies: [],
     logo: "/logos/welfie.jpeg",
     subTeam: "Internship",
-    link: "https://welfie.com"
+    link: "https://welfie.com",
+    parentJobId: "job-4"
   },
   {
     id: "job-6",
@@ -200,7 +201,8 @@ export const jobs: Job[] = [
     technologies: [],
     logo: "/logos/sotira.webp",
     subTeam: "Internship",
-    link: "https://sotira.co"
+    link: "https://sotira.co",
+    parentJobId: "job-4"
   },
   {
     id: "job-8",

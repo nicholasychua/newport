@@ -34,4 +34,5 @@ export interface Job {
   logo?: string
   subTeam?: string
   link?: string
+  parentJobId?: string
 }
