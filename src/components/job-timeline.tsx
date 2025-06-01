@@ -33,7 +33,7 @@ export function JobTimeline({ jobs }: JobTimelineProps) {
   return (
     <div className="relative w-full max-w-4xl mx-auto py-6">
       {/* Timeline Title */}
-      <div className="mb-8">
+      <div className="mb-8 ml-[20px]">
         <h2 className="text-3xl font-bold text-gray-900 tracking-tight">Timeline</h2>
       </div>
       
@@ -75,7 +75,7 @@ export function JobTimeline({ jobs }: JobTimelineProps) {
                     transition={{ duration: 0.2 }}
                   >
                     {/* Bullet point */}
-                    <div className="w-2 h-2 rounded-full bg-orange-400 mt-2 flex-shrink-0"></div>
+                    <div className="w-2 h-2 rounded-full bg-orange-400 mt-2.5 flex-shrink-0"></div>
                     
                     {/* Job content */}
                     <div className="flex flex-col space-y-3 w-full">
@@ -91,7 +91,7 @@ export function JobTimeline({ jobs }: JobTimelineProps) {
                           <span className="text-base text-gray-700">Built a web-app to simulate ad campaigns — to battle cancel culture; recognized by leaders @ Groq, Supabase, and more</span>
                         ) : job.id === "job-9" ? (
                           // Special formatting for Subspace - building with company container
-                          <div className="flex items-center gap-1 flex-wrap">
+                          <div className="flex items-center gap-2 -mt-0.5">
                             <span className="text-base text-gray-700">currently building</span>
                             <a href={job.link || '#'} className="focus:outline-none" tabIndex={0} target="_blank" rel="noopener noreferrer">
                               <div className="inline-flex items-center gap-2 rounded-full px-3 py-1 border mx-1" style={{ backgroundColor: '#E6F9FB', borderColor: '#A8DDE6' }}>
@@ -101,7 +101,7 @@ export function JobTimeline({ jobs }: JobTimelineProps) {
                                 <span className="font-medium text-gray-900 text-sm">{job.company}</span>
                               </div>
                             </a>
-                            <span className="text-base text-gray-700">:)... </span>
+                            <span className="text-base text-gray-700">:)...</span>
                           </div>
                         ) : (
                           <>
@@ -153,9 +153,9 @@ export function JobTimeline({ jobs }: JobTimelineProps) {
                               whileHover={{ x: 2 }}
                             >
                               {/* Hollow bullet point for sub-items */}
-                              <div className="w-2 h-2 rounded-full bg-white border border-orange-300 mt-2 flex-shrink-0"></div>
+                              <div className="w-2 h-2 rounded-full bg-white border border-orange-300 mt-1 flex-shrink-0"></div>
                               
-                              <div className="flex items-center gap-1 flex-wrap">
+                              <div className="flex items-center gap-1 flex-wrap -mt-1">
                                 <span className="text-sm text-gray-700">{childJob.title} at</span>
                                 <a href={childJob.link || '#'} className="focus:outline-none" tabIndex={0} target="_blank" rel="noopener noreferrer">
                                   <div className={`inline-flex items-center gap-1.5 rounded-full px-2.5 py-0.5 border mx-1`}

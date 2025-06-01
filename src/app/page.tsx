@@ -141,8 +141,10 @@ function ModeHandler() {
                 <span className="text-sm">san francisco, ca</span>
               </div>
               {validMode === 'play' && (
-                <p className="text-muted-foreground text-lg max-w-md mx-auto">
-                  a timeline of my professional journey from 2022 to present, highlighting my experience and growth as a product designer and founder.
+                <p className="text-muted-foreground text-lg max-w-xl mx-auto">
+                  engineering and design @ uc berkeley
+                  <br />
+                  building <a href="https://subspace.app" target="_blank" rel="noopener noreferrer" className="text-foreground underline decoration-2 underline-offset-2 decoration-muted-foreground">subspace</a> — an ai productivity platform for students.
                 </p>
               )}
               {validMode === 'work' && (
