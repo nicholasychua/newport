@@ -52,18 +52,24 @@ export function ProjectCard({ project, index }: ProjectCardProps) {
                 </Badge>
               </div>
               {/* Project Title */}
-              <h3 className="text-2xl font-bold text-gray-900 mb-2 leading-tight tracking-tight">
+              <h3 className="text-3xl md:text-4xl font-bold text-gray-900 mb-3 leading-tight tracking-tight">
                 {project.title}
               </h3>
+              {/* Client and Year */}
+              <div className="flex items-center text-gray-500 mb-4 text-sm font-medium tracking-wider uppercase">
+                <span>{project.client}</span>
+                <span className="mx-2">•</span>
+                <span>{project.year}</span>
+              </div>
               {/* Description */}
-              <p className="text-base text-gray-600 leading-relaxed mb-6 font-normal">
+              <p className="text-lg md:text-xl text-gray-600 leading-relaxed mb-6 font-normal">
                 {project.description}
               </p>
               {/* Button */}
               <div className="mt-auto">
-                <div className="inline-flex items-center gap-2 px-4 py-2 bg-white rounded-lg shadow-sm text-sm font-medium text-gray-800 hover:bg-gray-50 transition-colors">
+                <div className="inline-flex items-center gap-2 px-6 py-3 bg-white rounded-lg shadow-sm text-base font-medium text-gray-800 hover:bg-gray-50 transition-colors">
                   <span>View Case Study</span>
-                  <ArrowUpRight className="h-4 w-4" />
+                  <ArrowUpRight className="h-5 w-5" />
                 </div>
               </div>
             </CardContent>

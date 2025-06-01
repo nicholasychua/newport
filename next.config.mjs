@@ -37,6 +37,11 @@ const nextConfig = {
       '@': './src',
     }
     
+    // Disable webpack persistent caching to fix file rename errors
+    if (dev) {
+      config.cache = false;
+    }
+    
     return config
   },
   // Add source directory configuration

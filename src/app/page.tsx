@@ -12,6 +12,8 @@ import { useRouter, useSearchParams } from "next/navigation";
 import { useMemo, useState, useRef, useEffect, Suspense } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { JobTimeline } from "@/components/job-timeline";
+import { DesignShowcase } from "@/components/design-showcase";
+import { designImages } from "@/lib/design-data";
 
 type ModeType = "work" | "play" | "writing"
 
@@ -149,16 +151,14 @@ function ModeHandler() {
               )}
               {validMode === 'work' && (
                 <p className="text-muted-foreground text-lg max-w-md mx-auto">
-                  currently building{" "}
-                  <a href="#" className="text-foreground hover:text-foreground/80 transition-colors">
-                    tami
-                  </a>
-                  , an ai second brain for automated task management based on your google calendar.
+                  working with startups and unicorns to build products that users will love.
                 </p>
               )}
               {validMode === 'writing' && (
                 <p className="text-muted-foreground text-lg max-w-md mx-auto">
-                  sharing essays, stories, and lessons learned—explore my thoughts on startups, tech, and life.
+                  documenting my thoughts on tech and startups
+                  <br />
+                  read more on <a href="https://nicholaschua.substack.com" target="_blank" rel="noopener noreferrer" className="text-foreground underline decoration-2 underline-offset-2 decoration-muted-foreground">substack</a>.
                 </p>
               )}
             </MotionDiv>
@@ -463,7 +463,7 @@ function ContentSection({ mode }: ContentSectionProps) {
             className="mt-20 mb-8 flex flex-col items-center"
           >
             <div className="mb-6 text-muted-foreground text-lg text-center">
-              Want to read more? Check out my full collection of essays on Substack.
+              check out my full collection of essays on substack
             </div>
             <a
               href="https://nicholaschua.substack.com"
@@ -492,15 +492,26 @@ function ContentSection({ mode }: ContentSectionProps) {
           </MotionDiv>
         </>
       ) : mode === "play" ? (
-        <JobTimeline jobs={jobs} />
+        <>
+          <JobTimeline jobs={jobs} />
+        </>
       ) : (
-        <div className="space-y-12">
-          {projects
-            .filter((project) => project.type === mode)
-            .map((project, index) => (
-              <ProjectCard key={project.id} project={project} index={index} />
-            ))}
-        </div>
+        <>
+          {/* Case Studies Header */}
+          <div className="mb-12">
+            <h2 className="text-3xl font-bold text-gray-900 tracking-tight">Case Studies</h2>
+            <p className="text-gray-600 mt-2">Selected projects showcasing product design and strategy</p>
+          </div>
+
+          <div className="space-y-12 mb-16">
+            {projects
+              .filter((project) => project.type === mode)
+              .map((project, index) => (
+                <ProjectCard key={project.id} project={project} index={index} />
+              ))}
+          </div>
+          <DesignShowcase images={designImages} />
+        </>
       )}
     </div>
   )
