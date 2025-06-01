@@ -86,6 +86,9 @@ export function JobTimeline({ jobs }: JobTimelineProps) {
                         ) : job.id === "job-8" ? (
                           // Special formatting for Meta hackathon - no company container
                           <span className="text-base text-gray-700">Won Meta's Global Hackathon (Top 5 of 800+); created a social media algorithm to reduce addiction</span>
+                        ) : job.id === "job-10" ? (
+                          // Special formatting for Personal Project - no company container
+                          <span className="text-base text-gray-700">Built a web-app to simulate ad campaigns — to battle cancel culture; recognized by leaders @ Groq, Supabase, and more</span>
                         ) : job.id === "job-9" ? (
                           // Special formatting for Subspace - building with company container
                           <div className="flex items-center gap-1 flex-wrap">
