@@ -64,7 +64,7 @@ export function Footer() {
 
           {/* Copyright */}
           <div className="text-sm text-muted-foreground text-center">
-            Copyright © {new Date().getFullYear()} Nicholas Chua. All rights reserved.
+            designed and built by nicholas chua :)
           </div>
         </div>
       </div>

@@ -135,27 +135,27 @@ function ModeHandler() {
               transition={{ duration: 1, ease: "easeInOut" }}
               className="relative text-center max-w-[560px] pt-24 pb-16"
             >
-              <h1 className="text-[80px] font-heading font-normal text-foreground leading-none mb-8">
-                hi, i'm <span className="text-foreground">nicholas</span>
+              <h1 className="text-[80px] font-serif font-medium leading-none mb-8 tracking-tight bg-gradient-to-r from-gray-500 via-gray-700 to-gray-900 bg-clip-text text-transparent">
+                hi, i'm nicholas
               </h1>
-              <div className="flex items-center justify-center gap-1 text-muted-foreground mb-6">
+              <div className="flex items-center justify-center gap-1 text-gray-500 mb-6">
                 <MapPin className="h-4 w-4" />
-                <span className="text-sm">san francisco, ca</span>
+                <span className="text-lg">san francisco, ca</span>
               </div>
               {validMode === 'play' && (
-                <p className="text-muted-foreground text-lg max-w-xl mx-auto">
+                <p className="text-gray-500 text-lg max-w-xl mx-auto">
                   engineering and design @ uc berkeley
                   <br />
                   building <a href="https://subspace.app" target="_blank" rel="noopener noreferrer" className="text-foreground underline decoration-2 underline-offset-2 decoration-muted-foreground">subspace</a> — an ai productivity platform for students.
                 </p>
               )}
               {validMode === 'work' && (
-                <p className="text-muted-foreground text-lg max-w-md mx-auto">
+                <p className="text-gray-500 text-lg max-w-md mx-auto">
                   working with startups and unicorns to build products that users will love.
                 </p>
               )}
               {validMode === 'writing' && (
-                <p className="text-muted-foreground text-lg max-w-md mx-auto">
+                <p className="text-gray-500 text-lg max-w-md mx-auto">
                   documenting my thoughts on tech and startups
                   <br />
                   read more on <a href="https://nicholaschua.substack.com" target="_blank" rel="noopener noreferrer" className="text-foreground underline decoration-2 underline-offset-2 decoration-muted-foreground">substack</a>.
@@ -339,14 +339,14 @@ function ContentSection({ mode }: ContentSectionProps) {
                 
                 {selectedTags.length > 0 && (
                   <div className="flex items-center gap-2">
-                    <div className="text-sm text-muted-foreground">
+                    <div className="text-sm text-gray-500">
                       {selectedTags.length} {selectedTags.length === 1 ? 'tag' : 'tags'} selected
                     </div>
                     <Button 
                       variant="ghost" 
                       size="sm" 
                       onClick={() => setSelectedTags([])}
-                      className="h-8 px-2 text-xs text-muted-foreground"
+                      className="h-8 px-2 text-xs text-gray-500"
                     >
                       Clear
                     </Button>
@@ -386,7 +386,7 @@ function ContentSection({ mode }: ContentSectionProps) {
                         variant="ghost" 
                         size="sm" 
                         onClick={() => setSelectedTags([])}
-                        className="h-7 text-xs text-muted-foreground"
+                        className="h-7 text-xs text-gray-500"
                       >
                         Clear all
                       </Button>
@@ -418,7 +418,7 @@ function ContentSection({ mode }: ContentSectionProps) {
           </div>
           
           {/* Results count */}
-          <div className="mb-6 text-sm text-muted-foreground">
+          <div className="mb-6 text-sm text-gray-500">
             Showing {filteredArticles.length} {filteredArticles.length === 1 ? 'article' : 'articles'}
             {(selectedCategories.length > 0 || selectedTags.length > 0) && ' with current filters'}
           </div>
@@ -462,7 +462,7 @@ function ContentSection({ mode }: ContentSectionProps) {
             style={{ width: '100%' }}
             className="mt-20 mb-8 flex flex-col items-center"
           >
-            <div className="mb-6 text-muted-foreground text-lg text-center">
+            <div className="mb-6 text-gray-500 text-lg text-center">
               check out my full collection of essays on substack
             </div>
             <a
