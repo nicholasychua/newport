@@ -115,61 +115,60 @@ export default function ProjectPage() {
           </motion.div>
         </div>
 
-        {/* Interface with Numbers Image */}
-        <div className="bg-white rounded-lg shadow-md p-6 mb-8 max-w-4xl mx-auto">
-          <div className="aspect-[16/9] relative">
-            <Image 
-              src="/newsela/images/interface-numbered.png" 
-              alt="Newsela interface with numbered annotations" 
-              fill 
-              className="object-contain" 
-            />
-          </div>
-        </div>
-
-        {/* Numbered Explanations */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-x-12 gap-y-8 mb-16 max-w-4xl mx-auto">
-          <div className="flex gap-4 items-start">
-            <div className="flex-shrink-0 w-8 h-8 bg-red-100 rounded-full flex items-center justify-center text-red-500 font-bold">
-              1
-            </div>
-            <div>
-              <p className="text-gray-700">
-                Long title descriptions and all bold words <span className="font-bold">hinder the main message</span> that is conveyed for users quickly scrolling through the platform at a glance.
-              </p>
+        {/* Numbered Explanations + Image in unified container */}
+        <div className="bg-gray-100 rounded-3xl shadow-sm border border-gray-200 px-6 md:px-12 py-12 mb-16 max-w-4xl mx-auto">
+          <div className="flex flex-col items-center w-full mb-10">
+            <div className="aspect-[16/9] w-full max-w-3xl min-h-[220px] md:min-h-[280px] relative">
+              <Image 
+                src="/newsela/images/interface-numbered.png" 
+                alt="Newsela interface with numbered annotations" 
+                fill 
+                className="object-contain rounded-xl" 
+                style={{ objectFit: 'contain' }}
+                priority={false}
+              />
             </div>
           </div>
-          
-          <div className="flex gap-4 items-start">
-            <div className="flex-shrink-0 w-8 h-8 bg-red-100 rounded-full flex items-center justify-center text-red-500 font-bold">
-              3
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-x-12 gap-y-8">
+            <div className="flex gap-4 items-start">
+              <div className="flex-shrink-0 w-8 h-8 bg-red-100 rounded-full flex items-center justify-center text-red-500 font-bold">
+                1
+              </div>
+              <div>
+                <p className="text-gray-700">
+                  Long title descriptions and all bold words <span className="font-bold">hinder the main message</span> that is conveyed for users quickly scrolling through the platform at a glance.
+                </p>
+              </div>
             </div>
-            <div>
-              <p className="text-gray-700">
-                The static page lacks direction with multiple stimuli for the user and <span className="font-bold">opens opportunity for dynamic short-form videos</span> showing how the product works.
-              </p>
+            <div className="flex gap-4 items-start">
+              <div className="flex-shrink-0 w-8 h-8 bg-red-100 rounded-full flex items-center justify-center text-red-500 font-bold">
+                2
+              </div>
+              <div>
+                <p className="text-gray-700">
+                  The side category descriptions <span className="font-bold">does not communicate the actual feature that is being showcased.</span> The title cards do not hint at the actual Newsela feature.
+                </p>
+              </div>
             </div>
-          </div>
-          
-          <div className="flex gap-4 items-start">
-            <div className="flex-shrink-0 w-8 h-8 bg-red-100 rounded-full flex items-center justify-center text-red-500 font-bold">
-              2
+            <div className="flex gap-4 items-start">
+              <div className="flex-shrink-0 w-8 h-8 bg-red-100 rounded-full flex items-center justify-center text-red-500 font-bold">
+                3
+              </div>
+              <div>
+                <p className="text-gray-700">
+                  The static page lacks direction with multiple stimuli for the user and <span className="font-bold">opens opportunity for dynamic short-form videos</span> showing how the product works.
+                </p>
+              </div>
             </div>
-            <div>
-              <p className="text-gray-700">
-                The side category descriptions <span className="font-bold">does not communicate the actual feature that is being showcased.</span> The title cards do not hint at the actual Newsela feature.
-              </p>
-            </div>
-          </div>
-          
-          <div className="flex gap-4 items-start">
-            <div className="flex-shrink-0 w-8 h-8 bg-red-100 rounded-full flex items-center justify-center text-red-500 font-bold">
-              4
-            </div>
-            <div>
-              <p className="text-gray-700">
-                Newsela already makes a multitude of short form content. There isn't any call to action, so we should connect the user to a hub <span className="font-bold">showcasing all of our other resources.</span>
-              </p>
+            <div className="flex gap-4 items-start">
+              <div className="flex-shrink-0 w-8 h-8 bg-red-100 rounded-full flex items-center justify-center text-red-500 font-bold">
+                4
+              </div>
+              <div>
+                <p className="text-gray-700">
+                  Newsela already makes a multitude of short form content. There isn't any call to action, so we should connect the user to a hub <span className="font-bold">showcasing all of our other resources.</span>
+                </p>
+              </div>
             </div>
           </div>
         </div>
@@ -257,51 +256,62 @@ export default function ProjectPage() {
 
         {/* Static Card Mockup Section */}
         <section className="mb-20 max-w-4xl mx-auto">
-          <h2 className="text-3xl md:text-4xl font-bold text-center mb-12 tracking-tight">Static Card Mockup</h2>
-          <div className="w-full grid grid-cols-1 lg:grid-cols-[3fr_1fr] gap-8 lg:gap-12">
-            {/* Left: Extra Large static image */}
-            <div className="flex items-center justify-center w-full">
-              <div className="bg-white rounded-2xl shadow-lg border border-gray-200 p-2 md:p-3 w-full">
-                <Image 
-                  src="/newsela/images/static.png" 
-                  alt="Static card mockup" 
-                  width={2200} 
-                  height={1250} 
-                  className="object-contain w-full h-auto rounded-xl" 
-                  priority
-                />
+          <div className="bg-gray-100 rounded-3xl shadow-sm border border-gray-200 px-6 md:px-12 py-12">
+            <h2 className="text-3xl md:text-4xl font-bold text-center mb-12 tracking-tight">Static Card Mockup</h2>
+            <div className="flex flex-col gap-8">
+              {/* Top: Extra Large static image */}
+              <div className="flex items-center justify-center w-full">
+                <div className="bg-white/80 backdrop-blur-sm rounded-2xl shadow-sm border border-gray-50 p-2 md:p-3 w-full">
+                  <Image 
+                    src="/newsela/images/static.png" 
+                    alt="Static card mockup" 
+                    width={2200} 
+                    height={1250} 
+                    className="object-contain w-full h-auto rounded-xl" 
+                    priority
+                  />
+                </div>
               </div>
-            </div>
 
-            {/* Right: Numbered explanations */}
-            <div className="flex flex-col justify-between h-full">
-              <ol className="space-y-3 md:space-y-4">
-                <li className="flex items-start gap-3">
-                  <span className="flex-shrink-0 w-7 h-7 md:w-9 md:h-9 rounded-full bg-indigo-100 text-indigo-600 font-bold flex items-center justify-center text-sm md:text-base">1</span>
-                  <div className="text-gray-700 text-sm md:text-base leading-tight">
-                    Shortening the title descriptions and unbolding the lettering creates a <span className="font-semibold">more seamless visual hierarchy</span> making the main message of the card more clear.
+              {/* Bottom: Numbered explanations */}
+              <div className="flex flex-col justify-between h-full">
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-x-8 gap-y-8 items-start">
+                  <div className="flex items-start gap-4">
+                    <span className="flex-shrink-0 w-8 h-8 rounded-full bg-indigo-100 text-indigo-600 font-bold flex items-center justify-center text-base">1</span>
+                    <div className="text-gray-700 text-base leading-tight">
+                      Shortening the title descriptions and unbolding the lettering creates a <span className="font-semibold">more seamless visual hierarchy</span> making the main message of the card more clear.
+                    </div>
                   </div>
-                </li>
-                <li className="flex items-start gap-3">
-                  <span className="flex-shrink-0 w-7 h-7 md:w-9 md:h-9 rounded-full bg-indigo-100 text-indigo-600 font-bold flex items-center justify-center text-sm md:text-base">2</span>
-                  <div className="text-gray-700 text-sm md:text-base leading-tight">
-                    Short but informative card titles give a better representation of what the user can expect to read about and <span className="font-semibold">build anticipation</span> for Newsela's features, <span className="font-semibold">prompting the user to read all cards</span>.
+                  <div className="flex items-start gap-4">
+                    <span className="flex-shrink-0 w-8 h-8 rounded-full bg-indigo-100 text-indigo-600 font-bold flex items-center justify-center text-base">2</span>
+                    <div className="text-gray-700 text-base leading-tight">
+                      Short but informative card titles give a better representation of what the user can expect to read about and <span className="font-semibold">build anticipation</span> for Newsela's features, <span className="font-semibold">prompting the user to read all cards</span>.
+                    </div>
                   </div>
-                </li>
-                <li className="flex items-start gap-3">
-                  <span className="flex-shrink-0 w-7 h-7 md:w-9 md:h-9 rounded-full bg-indigo-100 text-indigo-600 font-bold flex items-center justify-center text-sm md:text-base">3</span>
-                  <div className="text-gray-700 text-sm md:text-base leading-tight">
-                    By having a hover GIF on the webpage (Live Demo), it allows users to get a <span className="font-semibold">better idea of how the product works</span>, showcasing the full potential of Newsela.
+                  <div className="flex items-start gap-4">
+                    <span className="flex-shrink-0 w-8 h-8 rounded-full bg-indigo-100 text-indigo-600 font-bold flex items-center justify-center text-base">3</span>
+                    <div className="text-gray-700 text-base leading-tight">
+                      By having a hover GIF on the webpage (Live Demo), it allows users to get a <span className="font-semibold">better idea of how the product works</span>, showcasing the full potential of Newsela.
+                    </div>
                   </div>
-                </li>
-                <li className="flex items-start gap-3">
-                  <span className="flex-shrink-0 w-7 h-7 md:w-9 md:h-9 rounded-full bg-indigo-100 text-indigo-600 font-bold flex items-center justify-center text-sm md:text-base">4</span>
-                  <div className="text-gray-700 text-sm md:text-base leading-tight">
-                    A quick link to Newsela's library of short form product walkthroughs <span className="font-semibold">gives users a call to action</span> to explore other areas of Newsela like the Youtube channel to become immersed in the ecosystem.
+                  <div className="flex items-start gap-4">
+                    <span className="flex-shrink-0 w-8 h-8 rounded-full bg-indigo-100 text-indigo-600 font-bold flex items-center justify-center text-base">4</span>
+                    <div className="text-gray-700 text-base leading-tight">
+                      A quick link to Newsela's library of short form product walkthroughs <span className="font-semibold">gives users a call to action</span> to explore other areas of Newsela like the Youtube channel to become immersed in the ecosystem.
+                    </div>
                   </div>
-                </li>
-              </ol>
-              <a href="#" className="inline-block bg-indigo-100 text-indigo-700 font-semibold rounded-full px-5 py-2 md:px-6 md:py-2 text-sm md:text-base hover:bg-indigo-200 transition-colors focus:outline-none focus:ring-2 focus:ring-indigo-300 shadow-sm mt-4">Live Demo</a>
+                </div>
+                <div className="mt-8">
+                  <a 
+                    href="https://www.figma.com/proto/dzShAEG5ZJBIn8ngLqesSZ/Newsela-Case-Study?page-id=0%3A1&node-id=49-152&viewport=1322%2C68%2C0.21&t=5bXdK7Zu6VXOWsrl-1&scaling=min-zoom&content-scaling=fixed&starting-point-node-id=49%3A152" 
+                    target="_blank" 
+                    rel="noopener noreferrer"
+                    className="inline-block bg-indigo-50 text-indigo-700 font-semibold rounded-full px-5 py-2 md:px-6 md:py-2 text-base hover:bg-indigo-100 transition-colors focus:outline-none focus:ring-2 focus:ring-indigo-300 shadow-sm"
+                  >
+                    Live Demo
+                  </a>
+                </div>
+              </div>
             </div>
           </div>
         </section>
