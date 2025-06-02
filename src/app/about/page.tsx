@@ -267,7 +267,7 @@ export default function AboutPage() {
                   <motion.div transition={{ duration: 0.15 }}>
                     <div className="pt-2 px-2">
                       <div className="aspect-[3/4] overflow-hidden rounded-sm relative">
-                        <Image src="/camera.jpg" alt="Collage 3" fill className="object-cover" />
+                        <Image src="/camera.JPG" alt="Collage 3" fill className="object-cover" />
                       </div>
                     </div>
                     <div className="py-4 px-2 text-center">
@@ -305,7 +305,7 @@ export default function AboutPage() {
                   <motion.div transition={{ duration: 0.15 }}>
                     <div className="pt-2 px-2">
                       <div className="aspect-[3/4] overflow-hidden rounded-sm relative">
-                        <Image src="/food.jpg" alt="Collage 4" fill className="object-cover" />
+                        <Image src="/food.JPG" alt="Collage 4" fill className="object-cover" />
                       </div>
                     </div>
                     <div className="py-4 px-2 text-center">
