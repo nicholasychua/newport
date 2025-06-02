@@ -18,7 +18,7 @@ export const projects: Project[] = [
     title: "EverWrite",
     description:
       "Designing features to bridge gaps in the user flow for an AI writing assistant.",
-    image: "/newsela/EverWrite.png",
+    image: "/newsela/everwrite.png",
     logo: "/logos/newsela.png",
     link: "/projects/everwrite",
     type: "work",

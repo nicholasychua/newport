@@ -17,18 +17,18 @@ export default function ProjectPage() {
   }
 
   return (
-    <div className="min-h-screen bg-gray-50">
-      <div className="container mx-auto px-4 py-6">
-        <Link href="/?mode=work" className="inline-flex items-center gap-2 text-muted-foreground hover:text-foreground mb-4">
+    <div className="min-h-screen bg-gradient-to-b from-gray-50 to-white">
+      <div className="w-full pt-8 pb-4">
+        <Link href="/?mode=work" className="inline-flex items-center gap-2 text-muted-foreground hover:text-foreground mb-4 pl-6 sm:pl-8">
           <ArrowLeft className="h-4 w-4" />
           <span>Back to work</span>
         </Link>
       </div>
       
       {/* Hero Image Section */}
-      <div className="w-full max-w-5xl mx-auto mb-12">
+      <div className="w-full max-w-4xl mx-auto mb-12 px-8">
         <div className="bg-white rounded-xl shadow-md overflow-hidden">
-          <div className="aspect-[16/9] w-full min-h-[400px] md:min-h-[600px] relative">
+          <div className="aspect-[16/9] w-full min-h-[350px] md:min-h-[500px] relative">
             <Image 
               src="/newsela/images/main-page.png" 
               alt="Instructional resources that connect and deliver" 
@@ -42,7 +42,7 @@ export default function ProjectPage() {
 
       {/* Brand icon + title section */}
       <div className="bg-white pb-12 pt-10">
-        <div className="max-w-5xl mx-auto px-4">
+        <div className="max-w-4xl mx-auto px-8">
           <div className="flex items-center mb-2">
             <div className="h-10 w-10 bg-green-600 rounded-md flex items-center justify-center mr-4">
               <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
@@ -97,9 +97,9 @@ export default function ProjectPage() {
         </div>
       </div>
 
-      <div className="container mx-auto px-2 py-12 max-w-8xl">
+      <div className="container mx-auto px-8 py-12 max-w-5xl">
         {/* Problem Section */}
-        <div className="bg-white rounded-2xl shadow-lg p-10 mb-12 border border-gray-100 hover:shadow-xl transition-shadow focus-within:ring-2 focus-within:ring-indigo-200">
+        <div className="bg-white rounded-2xl shadow-lg p-8 mb-12 border border-gray-100 hover:shadow-xl transition-shadow focus-within:ring-2 focus-within:ring-indigo-200 max-w-4xl mx-auto">
           <motion.div
             initial={{ opacity: 0, scale: 0.98, y: 24 }}
             animate={{ opacity: 1, scale: 1, y: 0 }}
@@ -116,7 +116,7 @@ export default function ProjectPage() {
         </div>
 
         {/* Interface with Numbers Image */}
-        <div className="bg-white rounded-lg shadow-md p-6 mb-8">
+        <div className="bg-white rounded-lg shadow-md p-6 mb-8 max-w-4xl mx-auto">
           <div className="aspect-[16/9] relative">
             <Image 
               src="/newsela/images/interface-numbered.png" 
@@ -128,7 +128,7 @@ export default function ProjectPage() {
         </div>
 
         {/* Numbered Explanations */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-x-12 gap-y-8 mb-16">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-x-12 gap-y-8 mb-16 max-w-4xl mx-auto">
           <div className="flex gap-4 items-start">
             <div className="flex-shrink-0 w-8 h-8 bg-red-100 rounded-full flex items-center justify-center text-red-500 font-bold">
               1
@@ -175,7 +175,7 @@ export default function ProjectPage() {
         </div>
 
         {/* Research Section - now positioned below numbered problems */}
-        <div className="mb-32">
+        <div className="mb-32 max-w-4xl mx-auto">
           <h2 className="text-2xl font-medium mb-8">Research</h2>
           <p className="text-lg mb-6 text-gray-600">
             In the current day and age, attention span is everything. We want to communicate large amounts of information in the least amount of time to keep users hooked onto the product. As a youth myself, I understand this firsthand, but let's see what others have to say.
@@ -184,7 +184,7 @@ export default function ProjectPage() {
             After digging in with user interviews and comparing other e-learning platforms, I noticed the use of short form content being utilized.
             <span className="font-semibold text-gray-800"> Consumers now are hooked into platforms like TikTok due to its short form factor.</span> But how can be utilize this knowledge onto our platform?
           </p>
-          <div className="bg-white rounded-2xl shadow-lg p-10 mt-12 mb-32 border border-gray-100 hover:shadow-xl transition-shadow focus-within:ring-2 focus-within:ring-indigo-200">
+          <div className="bg-white rounded-2xl shadow-lg p-8 mt-12 mb-32 border border-gray-100 hover:shadow-xl transition-shadow focus-within:ring-2 focus-within:ring-indigo-200">
             <motion.div
               initial={{ opacity: 0, scale: 0.98, y: 24 }}
               whileInView={{ opacity: 1, scale: 1, y: 0 }}
@@ -200,7 +200,7 @@ export default function ProjectPage() {
         </div>
 
         {/* Competitive Analysis Section */}
-        <div className="space-y-24 mb-32">
+        <div className="space-y-24 mb-32 max-w-4xl mx-auto">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-start">
             <div>
               <div className="uppercase text-sm font-semibold text-muted-foreground mb-1 tracking-wider">Competitive Analysis</div>
@@ -209,14 +209,14 @@ export default function ProjectPage() {
                 Quizlet implemented videos about their products that play on the webpage, allowing users to see live demos of their products as they scroll. This very clearly shows the product and how it works, capturing the attention of the user to the dynamic screen.
               </p>
             </div>
-            <div className="flex items-center justify-center bg-white rounded-xl shadow-md p-8 min-h-[220px]">
-              <Image src="/placeholder.png" alt="Placeholder" width={320} height={180} className="object-contain" />
+            <div className="flex items-center justify-center bg-white/80 backdrop-blur-sm rounded-xl shadow-sm p-2 min-h-0">
+              <Image src="/newsela/images/quizlet.png" alt="Quizlet screenshot" width={280} height={160} className="object-contain w-full h-auto" />
             </div>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center mt-12">
-            <div className="flex items-center justify-center bg-[#F6FEFF] rounded-xl shadow-md p-8 min-h-[220px]">
-              <Image src="/placeholder.png" alt="Placeholder" width={320} height={180} className="object-contain" />
+            <div className="flex items-center justify-center bg-[#F6FEFF]/90 backdrop-blur-sm rounded-xl shadow-sm p-2 min-h-0">
+              <Image src="/newsela/images/formative.png" alt="Formative screenshot" width={280} height={160} className="object-contain w-full h-auto" />
             </div>
             <div>
               <h2 className="text-2xl font-bold text-gray-800 mb-2">Formative</h2>
@@ -228,7 +228,7 @@ export default function ProjectPage() {
         </div>
 
         {/* User Research Section */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center bg-transparent py-16">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center bg-transparent py-16 max-w-4xl mx-auto">
           <div>
             <div className="uppercase text-sm font-semibold text-muted-foreground mb-2 tracking-wider">User Research</div>
             <h2 className="text-3xl md:text-2xl font-bold text-gray-800 mb-4 leading-tight max-w-xl">
@@ -240,7 +240,7 @@ export default function ProjectPage() {
             <div className="text-base text-muted-foreground font-medium">Madelyn Hui (High School Senior '24)</div>
           </div>
           <div className="flex items-center justify-center">
-            <Image src="/placeholder.png" alt="User research placeholder" width={500} height={300} className="object-contain rounded-xl shadow-md" />
+            <Image src="/newsela/images/userresearch.png" alt="User research photo" width={520} height={320} className="object-contain w-full h-auto rounded-xl shadow-sm" />
           </div>
         </div>
 
@@ -256,17 +256,17 @@ export default function ProjectPage() {
         </div>
 
         {/* Static Card Mockup Section */}
-        <section className="mb-20">
+        <section className="mb-20 max-w-4xl mx-auto">
           <h2 className="text-3xl md:text-4xl font-bold text-center mb-12 tracking-tight">Static Card Mockup</h2>
-          <div className="w-full grid grid-cols-1 lg:grid-cols-[3fr_1fr] gap-8 lg:gap-16">
+          <div className="w-full grid grid-cols-1 lg:grid-cols-[3fr_1fr] gap-8 lg:gap-12">
             {/* Left: Extra Large static image */}
             <div className="flex items-center justify-center w-full">
-              <div className="bg-white rounded-2xl shadow-lg border border-gray-200 p-2 md:p-4 w-full">
+              <div className="bg-white rounded-2xl shadow-lg border border-gray-200 p-2 md:p-3 w-full">
                 <Image 
                   src="/newsela/images/static.png" 
                   alt="Static card mockup" 
-                  width={2400} 
-                  height={1350} 
+                  width={2200} 
+                  height={1250} 
                   className="object-contain w-full h-auto rounded-xl" 
                   priority
                 />
@@ -277,38 +277,38 @@ export default function ProjectPage() {
             <div className="flex flex-col justify-between h-full">
               <ol className="space-y-3 md:space-y-4">
                 <li className="flex items-start gap-3">
-                  <span className="flex-shrink-0 w-8 h-8 md:w-10 md:h-10 rounded-full bg-indigo-100 text-indigo-600 font-bold flex items-center justify-center text-sm md:text-base">1</span>
+                  <span className="flex-shrink-0 w-7 h-7 md:w-9 md:h-9 rounded-full bg-indigo-100 text-indigo-600 font-bold flex items-center justify-center text-sm md:text-base">1</span>
                   <div className="text-gray-700 text-sm md:text-base leading-tight">
                     Shortening the title descriptions and unbolding the lettering creates a <span className="font-semibold">more seamless visual hierarchy</span> making the main message of the card more clear.
                   </div>
                 </li>
                 <li className="flex items-start gap-3">
-                  <span className="flex-shrink-0 w-8 h-8 md:w-10 md:h-10 rounded-full bg-indigo-100 text-indigo-600 font-bold flex items-center justify-center text-sm md:text-base">2</span>
+                  <span className="flex-shrink-0 w-7 h-7 md:w-9 md:h-9 rounded-full bg-indigo-100 text-indigo-600 font-bold flex items-center justify-center text-sm md:text-base">2</span>
                   <div className="text-gray-700 text-sm md:text-base leading-tight">
                     Short but informative card titles give a better representation of what the user can expect to read about and <span className="font-semibold">build anticipation</span> for Newsela's features, <span className="font-semibold">prompting the user to read all cards</span>.
                   </div>
                 </li>
                 <li className="flex items-start gap-3">
-                  <span className="flex-shrink-0 w-8 h-8 md:w-10 md:h-10 rounded-full bg-indigo-100 text-indigo-600 font-bold flex items-center justify-center text-sm md:text-base">3</span>
+                  <span className="flex-shrink-0 w-7 h-7 md:w-9 md:h-9 rounded-full bg-indigo-100 text-indigo-600 font-bold flex items-center justify-center text-sm md:text-base">3</span>
                   <div className="text-gray-700 text-sm md:text-base leading-tight">
                     By having a hover GIF on the webpage (Live Demo), it allows users to get a <span className="font-semibold">better idea of how the product works</span>, showcasing the full potential of Newsela.
                   </div>
                 </li>
                 <li className="flex items-start gap-3">
-                  <span className="flex-shrink-0 w-8 h-8 md:w-10 md:h-10 rounded-full bg-indigo-100 text-indigo-600 font-bold flex items-center justify-center text-sm md:text-base">4</span>
+                  <span className="flex-shrink-0 w-7 h-7 md:w-9 md:h-9 rounded-full bg-indigo-100 text-indigo-600 font-bold flex items-center justify-center text-sm md:text-base">4</span>
                   <div className="text-gray-700 text-sm md:text-base leading-tight">
                     A quick link to Newsela's library of short form product walkthroughs <span className="font-semibold">gives users a call to action</span> to explore other areas of Newsela like the Youtube channel to become immersed in the ecosystem.
                   </div>
                 </li>
               </ol>
-              <a href="#" className="inline-block bg-indigo-100 text-indigo-700 font-semibold rounded-full px-6 py-2 md:px-8 md:py-3 text-sm md:text-base hover:bg-indigo-200 transition-colors focus:outline-none focus:ring-2 focus:ring-indigo-300 shadow-sm mt-4">Live Demo</a>
+              <a href="#" className="inline-block bg-indigo-100 text-indigo-700 font-semibold rounded-full px-5 py-2 md:px-6 md:py-2 text-sm md:text-base hover:bg-indigo-200 transition-colors focus:outline-none focus:ring-2 focus:ring-indigo-300 shadow-sm mt-4">Live Demo</a>
             </div>
           </div>
         </section>
 
 
         {/* Summary Section */}
-        <section className="max-w-3xl mx-auto mt-24 mb-32 px-4">
+        <section className="max-w-2xl mx-auto mt-24 mb-32 px-4">
           <h2 className="text-2xl font-medium mb-6">Summary</h2>
           <p className="text-lg mb-4 text-gray-800">The product card is arguably the most important feature on Newsela's current homepage, providing a simple mix of the product and analysis on why it works. By altering some simple aspects about the card, I received some valuable insights:</p>
           <p className="text-lg mb-4 text-gray-900"><span className="font-semibold">Being able to adapt to users and new constraints on the fly is important.</span> With TikTok and other short form video platforms blowing up recently, I noticed an opportunity to leverage this new way of consuming information and implemented it into the website.</p>

@@ -62,7 +62,7 @@ export function ProjectCard({ project, index }: ProjectCardProps) {
                 <span>{project.year}</span>
               </div>
               {/* Description */}
-              <p className="text-lg md:text-xl text-gray-600 leading-relaxed mb-6 font-normal">
+              <p className="text-lg md:text-lg text-gray-600 leading-relaxed mb-6 font-normal">
                 {project.description}
               </p>
               {/* Button */}
