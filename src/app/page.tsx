@@ -64,15 +64,15 @@ function ModeHandler() {
     <div className="min-h-screen bg-background relative flex flex-col">
       {/* Header Navigation */}
       <header className="w-full fixed top-0 z-50 py-4 md:py-8">
-        <div className="container mx-auto px-4 md:px-6 flex items-center justify-between relative">
-          <div className="flex items-center min-w-[120px] md:min-w-[180px]">
-            <h1 className="text-lg md:text-xl text-orange-500 italic" style={{ fontFamily: 'Pacifico, cursive' }}>
+        <div className="container mx-auto px-4 md:px-6 flex flex-col md:flex-row items-center justify-between relative gap-3 md:gap-0 mt-2 md:mt-0">
+          <div className="flex items-center min-w-0 md:min-w-[180px] w-full md:w-auto justify-center md:justify-start">
+            <h1 className="text-base md:text-xl text-orange-500 italic whitespace-nowrap overflow-hidden text-ellipsis" style={{ fontFamily: 'Pacifico, cursive', minWidth: 0 }}>
               nicholas chua
             </h1>
           </div>
 
           {/* Mode selector - responsive design */}
-          <div className="bg-secondary rounded-full p-1 md:p-1.5 shadow-md flex min-w-[200px] md:min-w-[240px] absolute left-1/2 -translate-x-1/2 z-10">
+          <div className="bg-secondary rounded-full p-1 md:p-1.5 shadow-md flex min-w-0 md:min-w-[240px] w-full md:w-auto justify-center static md:absolute md:left-1/2 md:-translate-x-1/2 md:top-1/2 md:-translate-y-1/2 z-10 mt-3 md:mt-0">
             <button 
               onClick={() => handleModeChange('about')}
               className={`inline-block px-3 md:px-6 py-2 md:py-3 text-sm md:text-base font-medium ${validMode === 'about' ? 'bg-white rounded-full shadow-md' : 'text-muted-foreground'}`}
@@ -93,15 +93,15 @@ function ModeHandler() {
             </button>
           </div>
 
-          <div className="flex items-center min-w-[60px] md:min-w-[80px] justify-end">
+          <div className="flex items-center min-w-0 md:min-w-[80px] w-full md:w-auto justify-center md:justify-end mt-3 md:mt-0">
             <Button
               variant="ghost"
               size="icon"
-              className="rounded-full w-12 h-12 md:w-16 md:h-16"
+              className="rounded-full w-10 h-10 md:w-16 md:h-16"
               onClick={() => router.push("/about")}
               style={{ marginRight: 0, boxShadow: '0 4px 24px 0 rgba(0,0,0,0.10), 0 0 0 1px rgba(0,0,0,0.02)' }}
             >
-              <svg width="44" height="44" viewBox="0 0 44 44" fill="none" xmlns="http://www.w3.org/2000/svg" style={{ display: 'block', margin: 'auto' }}>
+              <svg width="36" height="36" viewBox="0 0 44 44" fill="none" xmlns="http://www.w3.org/2000/svg" style={{ display: 'block', margin: 'auto' }}>
                 <circle cx="22" cy="22" r="20" stroke="#A3A3A3" strokeWidth="2.5" fill="none" />
                 <circle cx="22" cy="18" r="7.5" stroke="#A3A3A3" strokeWidth="2.5" fill="none" />
                 <path d="M10 36c0-6.5 8-8 12-8s12 1.5 12 8" stroke="#A3A3A3" strokeWidth="2.5" fill="none" strokeLinecap="round" />
