@@ -64,15 +64,15 @@ function ModeHandler() {
     <div className="min-h-screen bg-background relative flex flex-col">
       {/* Header Navigation */}
       <header className="w-full fixed top-0 z-50 py-4 md:py-8">
-        <div className="container mx-auto px-4 md:px-6 flex flex-col md:flex-row items-center justify-between relative gap-3 md:gap-0 mt-2 md:mt-0">
-          <div className="flex items-center min-w-0 md:min-w-[180px] w-full md:w-auto justify-center md:justify-start">
-            <h1 className="text-base md:text-xl text-orange-500 italic whitespace-nowrap overflow-hidden text-ellipsis" style={{ fontFamily: 'Pacifico, cursive', minWidth: 0 }}>
+        <div className="container mx-auto px-4 md:px-6 flex flex-row items-center justify-between relative mt-2 md:mt-0">
+          <div className="flex items-center flex-1 min-w-[110px] md:min-w-[180px] w-0 md:w-auto justify-start pr-2">
+            <h1 className="text-base md:text-xl text-orange-500 italic whitespace-nowrap" style={{ fontFamily: 'Pacifico, cursive', minWidth: 0 }}>
               nicholas chua
             </h1>
           </div>
 
           {/* Mode selector - responsive design */}
-          <div className="bg-secondary rounded-full p-1 md:p-1.5 shadow-md flex min-w-0 md:min-w-[240px] w-full md:w-auto justify-center static md:absolute md:left-1/2 md:-translate-x-1/2 md:top-1/2 md:-translate-y-1/2 z-10 mt-3 md:mt-0">
+          <div className="bg-secondary rounded-full p-1 md:p-1.5 shadow-md flex min-w-0 md:min-w-[240px] w-auto justify-center absolute left-1/2 -translate-x-1/2 top-1/2 -translate-y-1/2 z-10">
             <button 
               onClick={() => handleModeChange('about')}
               className={`inline-block px-3 md:px-6 py-2 md:py-3 text-sm md:text-base font-medium ${validMode === 'about' ? 'bg-white rounded-full shadow-md' : 'text-muted-foreground'}`}
@@ -93,7 +93,7 @@ function ModeHandler() {
             </button>
           </div>
 
-          <div className="flex items-center min-w-0 md:min-w-[80px] w-full md:w-auto justify-center md:justify-end mt-3 md:mt-0">
+          <div className="flex items-center flex-1 min-w-0 md:min-w-[80px] w-0 md:w-auto justify-end">
             <Button
               variant="ghost"
               size="icon"
