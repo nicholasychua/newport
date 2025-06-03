@@ -23,7 +23,7 @@ export function DesignShowcase({ images }: DesignShowcaseProps) {
     <div className="w-full mx-auto pt-8 pb-16">
       <div className="mb-8">
         <h2 className="text-3xl font-bold text-gray-900 tracking-tight">Design Work</h2>
-        <p className="text-gray-600 mt-2">Selected visual designs from my portfolio</p>
+        <p className="text-gray-600 mt-2">Consumer products, landing pages, and more</p>
       </div>
 
       {/* Asymmetric 2x2 Grid Layout */}

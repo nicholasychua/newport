@@ -500,7 +500,7 @@ function ContentSection({ mode }: ContentSectionProps) {
           {/* Case Studies Header */}
           <div className="mb-12">
             <h2 className="text-3xl font-bold text-gray-900 tracking-tight">Case Studies</h2>
-            <p className="text-gray-600 mt-2">Selected projects showcasing product design and strategy</p>
+            <p className="text-gray-600 mt-2">Selected projects on product design and growth strategies</p>
           </div>
 
           <div className="space-y-12 mb-16">
