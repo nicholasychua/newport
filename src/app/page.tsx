@@ -15,7 +15,7 @@ import { JobTimeline } from "@/components/job-timeline";
 import { DesignShowcase } from "@/components/design-showcase";
 import { designImages } from "@/lib/design-data";
 
-type ModeType = "work" | "play" | "writing"
+type ModeType = "work" | "about" | "writing"
 
 // Define motion components with proper types
 const MotionDiv = motion.div as React.ComponentType<React.HTMLAttributes<HTMLDivElement> & {
@@ -33,8 +33,8 @@ function ModeHandler() {
   const router = useRouter();
   const searchParams = useSearchParams();
   const modeParam = searchParams.get("mode");
-  const mode = modeParam || "play";
-  const validMode: ModeType = ["play", "work", "writing"].includes(mode) ? (mode as ModeType) : "play";
+  const mode = modeParam || "about";
+  const validMode: ModeType = ["about", "work", "writing"].includes(mode) ? (mode as ModeType) : "about";
   const mainRef = useRef<HTMLDivElement>(null);
   const scrollPositions = useRef<{ [key: string]: number }>({});
   const [isTransitioning, setIsTransitioning] = useState(false);
@@ -74,10 +74,10 @@ function ModeHandler() {
           {/* Mode selector - responsive design */}
           <div className="bg-secondary rounded-full p-1 md:p-1.5 shadow-md flex min-w-[200px] md:min-w-[240px] absolute left-1/2 -translate-x-1/2 z-10">
             <button 
-              onClick={() => handleModeChange('play')}
-              className={`inline-block px-3 md:px-6 py-2 md:py-3 text-sm md:text-base font-medium ${validMode === 'play' ? 'bg-white rounded-full shadow-md' : 'text-muted-foreground'}`}
+              onClick={() => handleModeChange('about')}
+              className={`inline-block px-3 md:px-6 py-2 md:py-3 text-sm md:text-base font-medium ${validMode === 'about' ? 'bg-white rounded-full shadow-md' : 'text-muted-foreground'}`}
             >
-              play
+              about
             </button>
             <button 
               onClick={() => handleModeChange('work')}
@@ -142,7 +142,7 @@ function ModeHandler() {
                 <MapPin className="h-3.5 w-3.5 md:h-4 md:w-4" />
                 <span className="text-base md:text-lg">san francisco, ca</span>
               </div>
-              {validMode === 'play' && (
+              {validMode === 'about' && (
                 <p className="text-gray-500 text-base md:text-lg max-w-xl mx-auto">
                   engineering and design @ uc berkeley
                   <br />
@@ -491,7 +491,7 @@ function ContentSection({ mode }: ContentSectionProps) {
             </a>
           </MotionDiv>
         </>
-      ) : mode === "play" ? (
+      ) : mode === "about" ? (
         <>
           <JobTimeline jobs={jobs} />
         </>

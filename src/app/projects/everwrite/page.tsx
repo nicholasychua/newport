@@ -28,12 +28,13 @@ export default function ProjectPage() {
       {/* Hero Image Section */}
       <div className="w-full max-w-4xl mx-auto mb-12 px-8">
         <div className="bg-white rounded-xl shadow-md overflow-hidden">
-          <div className="aspect-[16/9] w-full min-h-[350px] md:min-h-[500px] relative">
+          <div className="w-full bg-gray-200 rounded-lg mb-2 flex items-center justify-center relative overflow-hidden">
             <Image 
               src="/newsela/everwrite.png" 
               alt="EverWrite AI Writing Assistant" 
-              fill 
-              className="object-contain" 
+              layout="intrinsic" 
+              width={1200} 
+              height={675} 
               priority
             />
           </div>
@@ -99,36 +100,36 @@ export default function ProjectPage() {
 
       <div className="container mx-auto px-8 py-12 max-w-5xl">
         {/* My Role Section (from screenshot) */}
-        <div className="max-w-4xl mx-auto mb-16">
-          <h2 className="text-2xl font-semibold mb-4 text-gray-900 tracking-tight">My Role</h2>
-          <p className="text-lg text-gray-700 mb-8">
+        <div className="max-w-3xl mx-auto mb-16">
+          <h2 className="text-2xl font-semibold mb-6 text-gray-900 tracking-tight">My Role</h2>
+          <p className="text-lg text-gray-700 mb-8 leading-relaxed">
             Using my age and connections as a high school senior, I worked on addressing the problems with EverWrite's AI system as well as possible concerns that would be a problem with implementing this into a classroom. Throughout the process, I consistently consulted teachers and other students for their perspective in the creative process for their insight.
           </p>
         </div>
 
         {/* Problem Section (from screenshot) */}
-        <div className="bg-white rounded-2xl shadow-lg p-8 mb-12 border border-gray-100 hover:shadow-xl transition-shadow focus-within:ring-2 focus-within:ring-indigo-200 max-w-4xl mx-auto">
+        <div className="bg-white rounded-2xl shadow-lg p-12 mb-12 border border-gray-100 hover:shadow-xl transition-shadow focus-within:ring-2 focus-within:ring-indigo-200 max-w-3xl mx-auto">
           <motion.div
             initial={{ opacity: 0, scale: 0.98, y: 24 }}
             animate={{ opacity: 1, scale: 1, y: 0 }}
             transition={{ duration: 0.35, ease: 'easeOut' }}
           >
-            <h2 className="text-2xl font-semibold mb-8 text-gray-800 tracking-tight">Problem</h2>
-            <div className="mb-6">
-              <h3 className="font-semibold text-gray-900 mb-1">AI isn't always accurate.</h3>
-              <p className="text-lg text-gray-700">
+            <h2 className="text-2xl font-semibold mb-10 text-gray-800 tracking-tight">Problem</h2>
+            <div className="mb-8">
+              <h3 className="font-semibold text-gray-900 mb-3">AI isn't always accurate.</h3>
+              <p className="text-lg text-gray-700 leading-relaxed">
                 Although Newsela's AI grading system is accurate, there are still occasional mistakes in recognizing and categorizing different aspects of writing. What student's thesis wasn't detected by the AI? These mishaps can result in unintentional grading mistakes in the classroom.
               </p>
             </div>
-            <div className="mb-6">
-              <h3 className="font-semibold text-gray-900 mb-1">Teachers have no ability to reassess grading from the AI.</h3>
-              <p className="text-lg text-gray-700">
+            <div className="mb-8">
+              <h3 className="font-semibold text-gray-900 mb-3">Teachers have no ability to reassess grading from the AI.</h3>
+              <p className="text-lg text-gray-700 leading-relaxed">
                 Due to the possibility of these mistakes, teachers currently have no ability to quickly reassess possible grading mistakes without going through every single assignment manually. This would not be time efficient and would eliminate the benefits of AI in the first place.
               </p>
             </div>
             <div>
-              <h3 className="font-semibold text-gray-900 mb-1">Lack of student to teacher connection.</h3>
-              <p className="text-lg text-gray-700">
+              <h3 className="font-semibold text-gray-900 mb-3">Lack of student to teacher connection.</h3>
+              <p className="text-lg text-gray-700 leading-relaxed">
                 Currently, EverWrite's platform is almost entirely run by AI and lacks the ability for the student and teacher to discuss the work. In case of possible problems with the AI, student's currently have no way to directly ask questions regarding grading or how their work was assessed.
               </p>
             </div>
@@ -137,86 +138,114 @@ export default function ProjectPage() {
 
         {/* Example Section (from screenshot) */}
         <div className="max-w-4xl mx-auto mb-12">
-          <h3 className="font-medium text-gray-900 mb-2">Example:</h3>
-          <div className="w-full aspect-[16/7] bg-gray-200 rounded-lg mb-2 flex items-center justify-center">
-            <span className="text-gray-400">[Image placeholder: EverWrite UI example]</span>
+          <h3 className="font-medium text-gray-900 mb-4">Example:</h3>
+          <div className="w-full bg-gray-200 rounded-lg mb-4 flex items-center justify-center relative overflow-hidden">
+            <Image 
+              src="/newsela/everwritecase/problemarea.png" 
+              alt="EverWrite UI – Problem Area Example" 
+              layout="intrinsic" 
+              width={1200} 
+              height={630} 
+              priority
+            />
           </div>
-          <p className="text-sm text-gray-600 mt-2 mb-8">
+          <p className="text-sm text-gray-600 mt-3 mb-8">
             Here, the student had a thesis in the third sentence ("Even though there is promise…") but the EverWrite program did not detect it in the checklist.
           </p>
         </div>
 
         {/* Goal Section (from screenshot) */}
-        <div className="max-w-4xl mx-auto mb-16">
-          <h2 className="text-2xl font-semibold mb-4 text-gray-900 tracking-tight">Goal</h2>
-          <div className="mb-6">
-            <span className="font-semibold">Making AI a teacher's friend instead of a enemy.</span>
-            <p className="text-lg text-gray-700 mt-1 mb-4">
+        <div className="max-w-3xl mx-auto mb-16">
+          <h2 className="text-2xl font-semibold mb-6 text-gray-900 tracking-tight">Goal</h2>
+          <div className="mb-8">
+            <span className="font-semibold text-lg">Making AI a teacher's friend instead of a enemy.</span>
+            <p className="text-lg text-gray-700 mt-3 mb-4 leading-relaxed">
               Currently, any teaching product using AI is scary. There can be errors with the program or students who will gain the system to their advantage. Building trust in teachers to use AI products will be essential in integrating them with Newsela's products.
             </p>
           </div>
-          <div className="mb-6">
-            <span className="font-semibold">Fill in the gaps in EverWrite's platform.</span>
-            <p className="text-lg text-gray-700 mt-1 mb-4">
+          <div className="mb-8">
+            <span className="font-semibold text-lg">Fill in the gaps in EverWrite's platform.</span>
+            <p className="text-lg text-gray-700 mt-3 mb-4 leading-relaxed">
               We want to reduce all possible areas of friction as to why a prospective user would not purchase the service in hopes to onboard more users to the platform.
             </p>
           </div>
-          <div className="mb-6">
-            <span className="font-semibold">Retain the teacher and student connection seen in classrooms.</span>
-            <p className="text-lg text-gray-700 mt-1 mb-4">
+          <div className="mb-8">
+            <span className="font-semibold text-lg">Retain the teacher and student connection seen in classrooms.</span>
+            <p className="text-lg text-gray-700 mt-3 mb-4 leading-relaxed">
               While the system does use AI, we want to make sure student's still know they have easy access to help should they need it. Retaining this connection is important to entice students to use the platform.
             </p>
           </div>
           <div>
-            <span className="font-semibold">Incentivizing revision for students while saving the teacher's time.</span>
-            <p className="text-lg text-gray-700 mt-1">
+            <span className="font-semibold text-lg">Incentivizing revision for students while saving the teacher's time.</span>
+            <p className="text-lg text-gray-700 mt-3 leading-relaxed">
               With any changes we make, an another underrated benefit for students is the learning developments that come as a part of revising and checking over their work. We want to encourage students to look back at their mistakes and ask questions while also giving enough time for the teacher to explain errors.
             </p>
           </div>
         </div>
 
         {/* Early Ideation Section (from screenshot) */}
-        <div className="max-w-4xl mx-auto mb-16">
-          <h2 className="text-xl font-semibold mb-4 text-gray-900 tracking-tight">Early Ideation</h2>
-          <p className="text-lg text-gray-700 mb-6">
+        <div className="max-w-3xl mx-auto mb-16">
+          <h2 className="text-xl font-semibold mb-6 text-gray-900 tracking-tight">Early Ideation</h2>
+          <p className="text-lg text-gray-700 mb-8 leading-relaxed">
             Before consulting teacher's opinions, I thought of a few ideas from a student's perspective of what could be helpful in seamlessly implementing AI into the grading process.
           </p>
 
-          <div className="mb-4">
-            <span className="font-semibold">For Students: "Raise Hand" Asking a question about how a section was graded.</span>
-            <p className="text-lg text-gray-700 mt-1 mb-4">
+          <div className="mb-8">
+            <span className="font-semibold text-lg">For Students: "Raise Hand" Asking a question about how a section was graded.</span>
+            <p className="text-lg text-gray-700 mt-3 mb-6 leading-relaxed">
               We want to give students the ability to ask meaningful questions about their work, incentivizing them to ask questions and settle grading issues while reviewing their writing in the process.
             </p>
-            <div className="w-full aspect-[2/1] bg-gray-200 rounded-lg mb-8 flex items-center justify-center">
-              <span className="text-gray-400">[Image placeholder: Raise Hand sketch]</span>
+            <div className="w-full bg-gray-200 rounded-lg mb-8 flex items-center justify-center relative overflow-hidden">
+              <Image 
+                src="/newsela/everwritecase/wireframe1.png" 
+                alt="EverWrite Wireframe 1" 
+                layout="intrinsic" 
+                width={1200} 
+                height={600} 
+                priority
+              />
             </div>
           </div>
 
-          <div className="mb-4">
-            <span className="font-semibold">For Students: "Highlight and Comment": Marking a question</span>
-            <p className="text-lg text-gray-700 mt-1 mb-4">
+          <div className="mb-8">
+            <span className="font-semibold text-lg">For Students: "Highlight and Comment": Marking a question</span>
+            <p className="text-lg text-gray-700 mt-3 mb-6 leading-relaxed">
               In order to make the grading process easier for teachers, student's should be able to directly highlight problem areas in their writing to open the door for more asynchronous resolutions.
             </p>
-            <div className="w-full aspect-[3/1] bg-gray-200 rounded-lg mb-8 flex items-center justify-center">
-              <span className="text-gray-400">[Image placeholder: Highlight and Comment sketch]</span>
+            <div className="w-full bg-gray-200 rounded-lg mb-8 flex items-center justify-center relative overflow-hidden">
+              <Image 
+                src="/newsela/everwritecase/wireframe2.png" 
+                alt="EverWrite Wireframe 2" 
+                layout="intrinsic" 
+                width={1200} 
+                height={600} 
+                priority
+              />
             </div>
           </div>
 
           <div>
-            <span className="font-semibold">For Teachers: "Grade Center" Addressing and correcting grading concerns.</span>
-            <p className="text-lg text-gray-700 mt-1 mb-4">
+            <span className="font-semibold text-lg">For Teachers: "Grade Center" Addressing and correcting grading concerns.</span>
+            <p className="text-lg text-gray-700 mt-3 mb-6 leading-relaxed">
               After students report their errors to their teacher, it should be as simple as possible for the teacher to resolve and explain errors to their students. Having a hub for all of these features would be effective and organized.
             </p>
-            <div className="w-full aspect-[3/1] bg-gray-200 rounded-lg mb-8 flex items-center justify-center">
-              <span className="text-gray-400">[Image placeholder: Grade Center sketch]</span>
+            <div className="w-full bg-gray-200 rounded-lg mb-8 flex items-center justify-center relative overflow-hidden">
+              <Image 
+                src="/newsela/everwritecase/wireframe3.png" 
+                alt="EverWrite Wireframe 3" 
+                layout="intrinsic" 
+                width={1200} 
+                height={600} 
+                priority
+              />
             </div>
           </div>
         </div>
 
         {/* User Research Section (from screenshot) */}
-        <div className="max-w-4xl mx-auto mb-16">
-          <h2 className="text-2xl font-semibold mb-4 text-gray-900 tracking-tight">User Research</h2>
-          <p className="text-lg text-gray-700 mb-8">
+        <div className="max-w-3xl mx-auto mb-16">
+          <h2 className="text-2xl font-semibold mb-6 text-gray-900 tracking-tight">User Research</h2>
+          <p className="text-lg text-gray-700 mb-8 leading-relaxed">
             After scoping out the problem and drawing up wireframes, I wanted to consult teachers for a direct perspective on where they see themselves using products like EverWrite. I asked a total of 4 humanities teachers for their opinions with a set list of questions and recorded the most notable answers to each question below.
           </p>
 
@@ -239,27 +268,27 @@ export default function ProjectPage() {
         </div>
 
         {/* Takeaways Section (from screenshot) */}
-        <div className="max-w-4xl mx-auto mb-16">
-          <h2 className="text-xl font-semibold mb-4 text-gray-900 tracking-tight">Takeaways:</h2>
-          <p className="text-lg text-gray-700 mb-6">
+        <div className="max-w-3xl mx-auto mb-16">
+          <h2 className="text-2xl font-semibold mb-6 text-gray-900 tracking-tight">Takeaways:</h2>
+          <p className="text-lg text-gray-700 mb-8 leading-relaxed">
             By asking specific questions about the use of AI products in the classroom, I was able to get a good sense of why teachers are hesitant to implement AI.
           </p>
-          <div className="space-y-6">
+          <div className="space-y-8">
             <div>
-              <span className="font-semibold">1. The learning curve</span>
-              <p className="text-lg text-gray-700 mt-1">
+              <span className="font-semibold text-lg">1. The learning curve</span>
+              <p className="text-lg text-gray-700 mt-3 leading-relaxed">
                 Teachers have been implementing the same grading process for all of their life of hand-grading and reading. Not only is AI scary, but the process of learning all of these new gadgets is a headache for some teachers. We want to make the onboarding and transition process as simple as possible.
               </p>
             </div>
             <div>
-              <span className="font-semibold">2. Retaining the student → teacher relationship</span>
-              <p className="text-lg text-gray-700 mt-1">
+              <span className="font-semibold text-lg">2. Retaining the student → teacher relationship</span>
+              <p className="text-lg text-gray-700 mt-3 leading-relaxed">
                 Whenever a new automated system is released, one of the first concerns is if it will replace jobs for humans. With these systems, we want to emphasize including teacher's in this process. We need to ask ourselves: why would teachers implement a product that would essentially take their favorite aspects of their job?
               </p>
             </div>
             <div>
-              <span className="font-semibold">3. Guiding students along the learning process, not around it</span>
-              <p className="text-lg text-gray-700 mt-1">
+              <span className="font-semibold text-lg">3. Guiding students along the learning process, not around it</span>
+              <p className="text-lg text-gray-700 mt-3 leading-relaxed">
                 The main concern with any AI learning tool is how students will use it. With products like ChatGPT, it can be a teacher's nightmare trying to decipher if the use case of AI is a productive learning tool or a shortcut around work. We want to make it clear how we provide a productive experience for students, not a harmful one.
               </p>
             </div>
@@ -267,101 +296,146 @@ export default function ProjectPage() {
         </div>
 
         {/* Final Designs Section (from screenshot) */}
-        <div className="max-w-4xl mx-auto mb-16">
-          <h2 className="text-2xl font-semibold mb-4 text-gray-900 tracking-tight">Final Designs</h2>
-          <h3 className="font-semibold mb-2">Before and after</h3>
-          <p className="text-lg text-gray-700 mb-2">
+        <div className="max-w-3xl mx-auto mb-16">
+          <h2 className="text-2xl font-semibold mb-6 text-gray-900 tracking-tight">Final Designs</h2>
+          <h3 className="font-semibold text-lg mb-4">Before and after</h3>
+          <p className="text-lg text-gray-700 mb-4 leading-relaxed">
             Before the redesign, there was lack of human interaction with the program. Almost everything was automated, and teachers were only being used to assign work.
           </p>
-          <p className="text-lg text-gray-700 mb-6">
+          <p className="text-lg text-gray-700 mb-8 leading-relaxed">
             Here's a detailed walkthrough of what I improved post-testing.
           </p>
-          <div className="w-full aspect-[16/7] bg-gray-200 rounded-lg mb-12 flex items-center justify-center">
-            <span className="text-gray-400">[Image placeholder: Before/After UI comparison]</span>
+          <div className="w-full bg-gray-200 rounded-lg mb-12 flex items-center justify-center relative overflow-hidden">
+            <Image 
+              src="/newsela/everwritecase/finaldesign1.png" 
+              alt="EverWrite Final Design Before/After UI Comparison" 
+              layout="intrinsic" 
+              width={1200} 
+              height={630} 
+              priority
+            />
           </div>
         </div>
 
         {/* New Features Section (from screenshot, compact and balanced) */}
-        <div className="max-w-4xl mx-auto mb-12">
+        <div className="max-w-2xl mx-auto my-16">
           <div className="font-semibold text-gray-900 text-sm mb-2">New Features</div>
           <div className="flex items-center mb-2">
-            <div className="border-l-2 border-gray-400 mr-4 h-10" style={{ minHeight: '2.5rem' }}></div>
-            <div>
-              <span className="text-lg font-semibold text-gray-800 leading-snug">Giving clearcut explanations of how a student's work was graded.</span>
+            <div className="border-l-4 border-gray-300 mr-4 pl-4" style={{ minHeight: '2.5rem' }}>
+              <span className="text-2xl md:text-2xl font-semibold text-gray-800 leading-snug">Giving clearcut explanations of how a student's work was graded.</span>
             </div>
           </div>
-          <p className="text-gray-700 text-sm leading-relaxed">
+          <p className="text-gray-700 text-lg leading-relaxed">
             By utilizing the empty space on the side menu, it opens up the door for students to get more clarification on how their work was graded with both an AI explanation and opportunity to ask their teacher.
           </p>
         </div>
 
         {/* AI Explanation Feature Section */}
-        <div className="max-w-4xl mx-auto mb-12">
-          <div className="w-full aspect-[16/9] bg-gray-200 rounded-lg mb-6 flex items-center justify-center">
-            <span className="text-gray-400">[Image placeholder: AI Explanation UI screenshot]</span>
+        <div className="max-w-2xl mx-auto my-16">
+          <div className="w-full bg-gray-200 rounded-lg mb-6 flex items-center justify-center relative overflow-hidden">
+            <Image 
+              src="/newsela/everwritecase/finaldesign2.png" 
+              alt="EverWrite Final Design AI Explanation" 
+              layout="intrinsic" 
+              width={1200} 
+              height={600} 
+              priority
+            />
           </div>
           <div className="flex items-center mb-2">
-            <div className="border-l-2 border-gray-400 mr-4 h-8" style={{ minHeight: '2rem' }}></div>
-            <div>
-              <span className="text-base font-semibold text-gray-800 leading-snug">AI Explanation</span>
+            <div className="border-l-4 border-gray-300 mr-4 pl-4" style={{ minHeight: '2rem' }}>
+              <span className="text-2xl md:text-2xl font-semibold text-gray-800 leading-snug">AI Explanation</span>
             </div>
           </div>
-          <p className="text-gray-700 text-sm leading-relaxed">
+          <p className="text-gray-700 text-lg leading-relaxed">
             In order to increase transparency for how their work was graded, including the AI's explanation allows students to see what exactly was wrong with their writing. If it is still unclear, then they can ask their teacher.
           </p>
         </div>
 
         {/* Getting Teachers Involved Feature Section */}
-        <div className="max-w-4xl mx-auto mb-12">
-          <div className="w-full aspect-[16/9] bg-gray-200 rounded-lg mb-6 flex items-center justify-center">
-            <span className="text-gray-400">[Image placeholder: Ask Teacher UI screenshot]</span>
+        <div className="max-w-2xl mx-auto my-16">
+          <div className="w-full bg-gray-200 rounded-lg mb-6 flex items-center justify-center relative overflow-hidden">
+            <Image 
+              src="/newsela/everwritecase/finaldesign3.png" 
+              alt="EverWrite Final Design Ask Teacher" 
+              layout="intrinsic" 
+              width={1200} 
+              height={600} 
+              priority
+            />
           </div>
           <div className="flex items-center mb-2">
-            <div className="border-l-2 border-gray-400 mr-4 h-8" style={{ minHeight: '2rem' }}></div>
-            <div>
-              <span className="text-base font-semibold text-gray-800 leading-snug">Getting teachers involved</span>
+            <div className="border-l-4 border-gray-300 mr-4 pl-4" style={{ minHeight: '2rem' }}>
+              <span className="text-2xl md:text-2xl font-semibold text-gray-800 leading-snug">Getting teachers involved</span>
             </div>
           </div>
-          <p className="text-gray-700 text-sm leading-relaxed">
+          <p className="text-gray-700 text-lg leading-relaxed">
             Teachers are the backbone of the learning process, so why not utilize them! Adding a section for students to directly ask their teacher about their writing grants students the ability to explore their intellectual curiosity if they are not happy with the grade they received.
           </p>
         </div>
 
         {/* Making Questions Specific Feature Section */}
-        <div className="max-w-4xl mx-auto mb-12">
-          <div className="w-full aspect-[16/9] bg-gray-200 rounded-lg mb-6 flex items-center justify-center">
-            <span className="text-gray-400">[Image placeholder: Highlight UI screenshot 1]</span>
+        <div className="max-w-2xl mx-auto my-16">
+          <div className="w-full bg-gray-200 rounded-lg mb-6 flex items-center justify-center relative overflow-hidden">
+            <Image 
+              src="/newsela/everwritecase/finaldesign4.png" 
+              alt="EverWrite Final Design Highlight UI Screenshot 1" 
+              layout="intrinsic" 
+              width={1200} 
+              height={600} 
+              priority
+            />
           </div>
-          <div className="w-full aspect-[16/9] bg-gray-200 rounded-lg mb-6 flex items-center justify-center">
-            <span className="text-gray-400">[Image placeholder: Highlight UI screenshot 2]</span>
+          <div className="w-full bg-gray-200 rounded-lg mb-6 flex items-center justify-center relative overflow-hidden">
+            <Image 
+              src="/newsela/everwritecase/finaldesign5.png" 
+              alt="EverWrite Final Design Highlight UI Screenshot 2" 
+              layout="intrinsic" 
+              width={1200} 
+              height={600} 
+              priority
+            />
           </div>
           <div className="flex items-center mb-2">
-            <div className="border-l-2 border-gray-400 mr-4 h-8" style={{ minHeight: '2rem' }}></div>
-            <div>
-              <span className="text-base font-semibold text-gray-800 leading-snug">Making questions specific</span>
+            <div className="border-l-4 border-gray-300 mr-4 pl-4" style={{ minHeight: '2rem' }}>
+              <span className="text-2xl md:text-2xl font-semibold text-gray-800 leading-snug">Making questions specific</span>
             </div>
           </div>
-          <p className="text-gray-700 text-sm leading-relaxed">
+          <p className="text-gray-700 text-lg leading-relaxed">
             As teachers look for issues in the writing, letting the student highlight their specific problem area saves time for teachers. This also incentives students to look back at their writing for problems, instead of just accepting their grade and moving on.
           </p>
         </div>
 
         {/* Notification Center & Expanding Interface Section */}
-        <div className="max-w-4xl mx-auto mb-16">
-          <div className="w-full aspect-[16/9] bg-gray-200 rounded-lg mb-10 flex items-center justify-center">
-            <span className="text-gray-400">[Image placeholder: Notification Center UI]</span>
+        <div className="max-w-2xl mx-auto my-16">
+          <div className="w-full bg-gray-200 rounded-lg mb-10 flex items-center justify-center relative overflow-hidden">
+            <Image 
+              src="/newsela/everwritecase/finaldesign6.png" 
+              alt="EverWrite Final Design Notification Center UI" 
+              layout="intrinsic" 
+              width={1200} 
+              height={600} 
+              priority
+            />
           </div>
           <div className="font-semibold text-gray-900 text-base mb-4">Expanding EverWrite's Interface</div>
           <div className="flex mb-4">
-            <div className="border-l-2 border-gray-400 mr-4" style={{ minHeight: '3.5rem' }}></div>
+            <div className="border-l-4 border-gray-300 mr-4 pl-4" style={{ minHeight: '3.5rem' }}></div>
             <div>
-              <span className="text-lg text-gray-800 leading-snug">Having <span className="font-bold">a clean user interface</span> to makes the process smooth for both teachers and students. — Peter Paccone</span>
+              <span className="text-2xl md:text-2xl font-semibold text-gray-800 leading-snug">Having <span className="font-bold">a clean user interface</span> to makes the process smooth for both teachers and students. — Peter Paccone</span>
             </div>
           </div>
-          <p className="text-gray-700 text-sm leading-relaxed mb-6">
+          <p className="text-gray-700 text-lg leading-relaxed mb-6">
             To accelerate the process of teachers looking through these new requests, implementing a notification center would give quick access to reviewing and addressing grading concerns from students.
           </p>
-          <button className="bg-black text-white rounded-lg px-6 py-2 font-medium text-base shadow hover:bg-gray-900 transition-colors">Check out the demo 🎉</button>
+          <a
+            className="bg-black text-white rounded-lg px-6 py-2 font-medium text-base shadow hover:bg-gray-900 transition-colors inline-block text-center"
+            href="https://www.figma.com/proto/T0DKIuC8Kom3QquzEdxZYi/Newsela-EverWrite-Case?page-id=0%3A1&node-id=187-141&starting-point-node-id=187%3A141&scaling=min-zoom&content-scaling=fixed&t=nf9qEBC5s14k2AA2-1"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Check out the demo 🎉
+          </a>
         </div>
 
         {/* Future Steps Section */}
