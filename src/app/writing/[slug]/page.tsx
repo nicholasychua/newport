@@ -7,6 +7,7 @@ import Image from "next/image"
 import { ArrowLeft } from "lucide-react"
 import { Footer } from "@/components/footer"
 import { useEffect } from "react"
+import { motion } from "framer-motion"
 
 export default function ArticlePage() {
   const params = useParams();
@@ -33,7 +34,12 @@ export default function ArticlePage() {
 
       <main className="flex-grow">
         <div className="container mx-auto px-4 pb-12">
-          <article className="max-w-3xl mx-auto">
+          <motion.article
+            initial={{ opacity: 0, y: 40, scale: 0.98 }}
+            animate={{ opacity: 1, y: 0, scale: 1 }}
+            transition={{ duration: 1, ease: [0.4, 0, 0.2, 1] }}
+            className="max-w-3xl mx-auto"
+          >
             <div className="mb-10">
               <div className="text-sm text-orange-500 mb-2">{article.category}</div>
               <h1 className="text-4xl font-heading font-medium mb-6 leading-tight">{article.title}</h1>
@@ -401,7 +407,7 @@ export default function ArticlePage() {
                 </>
               )}
             </div>
-          </article>
+          </motion.article>
         </div>
       </main>
       <Footer />
