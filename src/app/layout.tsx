@@ -3,6 +3,7 @@ import "@/app/globals.css"
 import { Inter, Playfair_Display } from "next/font/google"
 import { ThemeProvider } from "@/components/theme-provider"
 import { cn } from "@/lib/utils"
+import { Analytics } from "@vercel/analytics/next"
 
 const inter = Inter({
   subsets: ["latin"],
@@ -35,6 +36,7 @@ export default function RootLayout({
           <div className="fixed inset-0 bg-noise pointer-events-none"></div>
           {children}
         </ThemeProvider>
+        <Analytics />
       </body>
     </html>
   )
