@@ -126,7 +126,7 @@ function ModeHandler() {
           <div className="absolute bottom-0 left-0 w-full h-48 bg-gradient-to-b from-transparent to-white" />
         </div>
         <div className="relative mx-auto max-w-[560px] w-full z-10">
-          <AnimatePresence mode="wait" initial={false}>
+          <AnimatePresence mode="wait">
             <MotionDiv
               key={mode}
               initial={{ opacity: 0, y: 50 }}
@@ -171,7 +171,7 @@ function ModeHandler() {
           </AnimatePresence>
         </div>
 
-        <AnimatePresence mode="wait" initial={false}>
+        <AnimatePresence mode="wait">
           <MotionDiv
             key={mode}
             initial={{ opacity: 0, y: 50 }}
