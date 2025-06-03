@@ -93,14 +93,12 @@ export function JobTimeline({ jobs }: JobTimelineProps) {
                           // Special formatting for Subspace - building with company container
                           <div className="flex items-center gap-2 -mt-0.5">
                             <span className="text-base text-gray-700">currently building</span>
-                            <a href={job.link || '#'} className="focus:outline-none" tabIndex={0} target="_blank" rel="noopener noreferrer">
-                              <div className="inline-flex items-center gap-2 rounded-full px-3 py-1 border mx-1" style={{ backgroundColor: '#E6F9FB', borderColor: '#A8DDE6' }}>
-                                {job.logo && (
-                                  <img src={job.logo} alt={job.company} className="h-4 w-4 object-contain" />
-                                )}
-                                <span className="font-medium text-gray-900 text-sm">{job.company}</span>
-                              </div>
-                            </a>
+                            <div className="inline-flex items-center gap-2 rounded-full px-3 py-1 border mx-1" style={{ backgroundColor: '#E6F9FB', borderColor: '#A8DDE6' }}>
+                              {job.logo && (
+                                <img src={job.logo} alt={job.company} className="h-4 w-4 object-contain" />
+                              )}
+                              <span className="font-medium text-gray-900 text-sm">{job.company}</span>
+                            </div>
                             <span className="text-base text-gray-700">:)...</span>
                           </div>
                         ) : (

@@ -63,45 +63,45 @@ function ModeHandler() {
   return (
     <div className="min-h-screen bg-background relative flex flex-col">
       {/* Header Navigation */}
-      <header className="w-full fixed top-0 z-50 py-8">
-        <div className="container mx-auto px-6 flex items-center justify-between relative">
-          <div className="flex items-center min-w-[180px]">
-            <h1 className="text-xl text-orange-500 italic" style={{ fontFamily: 'Pacifico, cursive' }}>
+      <header className="w-full fixed top-0 z-50 py-4 md:py-8">
+        <div className="container mx-auto px-4 md:px-6 flex items-center justify-between relative">
+          <div className="flex items-center min-w-[120px] md:min-w-[180px]">
+            <h1 className="text-lg md:text-xl text-orange-500 italic" style={{ fontFamily: 'Pacifico, cursive' }}>
               nicholas chua
             </h1>
           </div>
 
-          {/* Absolutely centered mode selector */}
-          <div className="bg-secondary rounded-full p-1.5 shadow-md flex min-w-[240px] absolute left-1/2 -translate-x-1/2 z-10">
+          {/* Mode selector - responsive design */}
+          <div className="bg-secondary rounded-full p-1 md:p-1.5 shadow-md flex min-w-[200px] md:min-w-[240px] absolute left-1/2 -translate-x-1/2 z-10">
             <button 
               onClick={() => handleModeChange('play')}
-              className={`inline-block px-6 py-3 text-base font-medium ${validMode === 'play' ? 'bg-white rounded-full shadow-md' : 'text-muted-foreground'}`}
+              className={`inline-block px-3 md:px-6 py-2 md:py-3 text-sm md:text-base font-medium ${validMode === 'play' ? 'bg-white rounded-full shadow-md' : 'text-muted-foreground'}`}
             >
               play
             </button>
             <button 
               onClick={() => handleModeChange('work')}
-              className={`inline-block px-6 py-3 text-base font-medium ${validMode === 'work' ? 'bg-white rounded-full shadow-md' : 'text-muted-foreground'}`}
+              className={`inline-block px-3 md:px-6 py-2 md:py-3 text-sm md:text-base font-medium ${validMode === 'work' ? 'bg-white rounded-full shadow-md' : 'text-muted-foreground'}`}
             >
               work
             </button>
             <button 
               onClick={() => handleModeChange('writing')}
-              className={`inline-block px-6 py-3 text-base font-medium ${validMode === 'writing' ? 'bg-white rounded-full shadow-md' : 'text-muted-foreground'}`}
+              className={`inline-block px-3 md:px-6 py-2 md:py-3 text-sm md:text-base font-medium ${validMode === 'writing' ? 'bg-white rounded-full shadow-md' : 'text-muted-foreground'}`}
             >
               writing
             </button>
           </div>
 
-          <div className="flex items-center min-w-[80px] justify-end">
+          <div className="flex items-center min-w-[60px] md:min-w-[80px] justify-end">
             <Button
               variant="ghost"
               size="icon"
-              className="rounded-full w-16 h-16"
+              className="rounded-full w-12 h-12 md:w-16 md:h-16"
               onClick={() => router.push("/about")}
               style={{ marginRight: 0, boxShadow: '0 4px 24px 0 rgba(0,0,0,0.10), 0 0 0 1px rgba(0,0,0,0.02)' }}
             >
-              <svg width="60" height="60" viewBox="0 0 44 44" fill="none" xmlns="http://www.w3.org/2000/svg" style={{ display: 'block', margin: 'auto' }}>
+              <svg width="44" height="44" viewBox="0 0 44 44" fill="none" xmlns="http://www.w3.org/2000/svg" style={{ display: 'block', margin: 'auto' }}>
                 <circle cx="22" cy="22" r="20" stroke="#A3A3A3" strokeWidth="2.5" fill="none" />
                 <circle cx="22" cy="18" r="7.5" stroke="#A3A3A3" strokeWidth="2.5" fill="none" />
                 <path d="M10 36c0-6.5 8-8 12-8s12 1.5 12 8" stroke="#A3A3A3" strokeWidth="2.5" fill="none" strokeLinecap="round" />
@@ -113,15 +113,15 @@ function ModeHandler() {
       </header>
 
       {/* Main content */}
-      <main ref={mainRef} className="container mx-auto px-4 pt-36 pb-24 flex-grow flex flex-col overflow-y-auto">
+      <main ref={mainRef} className="container mx-auto px-4 pt-28 md:pt-36 pb-24 flex-grow flex flex-col overflow-y-auto">
         {/* Full-width background gradient and blobs */}
-        <div aria-hidden="true" className="absolute top-0 left-0 w-full h-[560px] z-0 pointer-events-none">
+        <div aria-hidden="true" className="absolute top-0 left-0 w-full h-[480px] md:h-[560px] z-0 pointer-events-none">
           {/* Soft gradient */}
           <div className="absolute inset-0 bg-gradient-to-br from-orange-50 via-white to-white opacity-80" />
           {/* Blurred blob top left */}
-          <div className="absolute -top-16 -left-20 w-96 h-96 bg-orange-200 rounded-full filter blur-3xl opacity-40" />
+          <div className="absolute -top-16 -left-20 w-72 md:w-96 h-72 md:h-96 bg-orange-200 rounded-full filter blur-3xl opacity-40" />
           {/* Blurred blob bottom right, softer and more inward */}
-          <div className="absolute top-32 right-0 w-[420px] h-[420px] bg-blue-200 rounded-full filter blur-3xl opacity-20" />
+          <div className="absolute top-32 right-0 w-[320px] md:w-[420px] h-[320px] md:h-[420px] bg-blue-200 rounded-full filter blur-3xl opacity-20" />
           {/* Downward fade overlay, taller and more gradual */}
           <div className="absolute bottom-0 left-0 w-full h-48 bg-gradient-to-b from-transparent to-white" />
         </div>
@@ -133,29 +133,29 @@ function ModeHandler() {
               animate={{ opacity: 1 }}
               exit={{ opacity: 0 }}
               transition={{ duration: 1, ease: "easeInOut" }}
-              className="relative text-center max-w-[560px] pt-24 pb-16"
+              className="relative text-center max-w-[560px] pt-16 md:pt-24 pb-12 md:pb-16"
             >
-              <h1 className="text-[80px] font-serif font-medium leading-none mb-8 tracking-tight bg-gradient-to-r from-gray-500 via-gray-700 to-gray-900 bg-clip-text text-transparent">
+              <h1 className="text-[60px] md:text-[80px] font-serif font-medium leading-none mb-6 md:mb-8 tracking-tight bg-gradient-to-r from-gray-500 via-gray-700 to-gray-900 bg-clip-text text-transparent">
                 hi, i'm nicholas
               </h1>
-              <div className="flex items-center justify-center gap-1 text-gray-500 mb-6">
-                <MapPin className="h-4 w-4" />
-                <span className="text-lg">san francisco, ca</span>
+              <div className="flex items-center justify-center gap-1 text-gray-500 mb-4 md:mb-6">
+                <MapPin className="h-3.5 w-3.5 md:h-4 md:w-4" />
+                <span className="text-base md:text-lg">san francisco, ca</span>
               </div>
               {validMode === 'play' && (
-                <p className="text-gray-500 text-lg max-w-xl mx-auto">
+                <p className="text-gray-500 text-base md:text-lg max-w-xl mx-auto">
                   engineering and design @ uc berkeley
                   <br />
-                  building <a href="https://subspace.app" target="_blank" rel="noopener noreferrer" className="text-foreground underline decoration-2 underline-offset-2 decoration-muted-foreground">subspace</a> — an ai productivity platform for students.
+                  building <span className="text-foreground underline decoration-2 underline-offset-2 decoration-muted-foreground">subspace</span> — an ai productivity platform for students.
                 </p>
               )}
               {validMode === 'work' && (
-                <p className="text-gray-500 text-lg max-w-md mx-auto">
+                <p className="text-gray-500 text-base md:text-lg max-w-md mx-auto">
                   working with startups and unicorns to build products that users will love.
                 </p>
               )}
               {validMode === 'writing' && (
-                <p className="text-gray-500 text-lg max-w-md mx-auto">
+                <p className="text-gray-500 text-base md:text-lg max-w-md mx-auto">
                   documenting my thoughts on tech and startups
                   <br />
                   read more on <a href="https://nicholaschua.substack.com" target="_blank" rel="noopener noreferrer" className="text-foreground underline decoration-2 underline-offset-2 decoration-muted-foreground">substack</a>.
