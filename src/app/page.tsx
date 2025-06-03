@@ -126,13 +126,19 @@ function ModeHandler() {
           <div className="absolute bottom-0 left-0 w-full h-48 bg-gradient-to-b from-transparent to-white" />
         </div>
         <div className="relative mx-auto max-w-[560px] w-full z-10">
-          <AnimatePresence mode="wait">
+          <AnimatePresence mode="wait" initial={false}>
             <MotionDiv
               key={mode}
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              exit={{ opacity: 0 }}
-              transition={{ duration: 1, ease: "easeInOut" }}
+              initial={{ opacity: 0, y: 50 }}
+              animate={{ opacity: 1, y: 0 }}
+              exit={{ opacity: 0, y: 20 }}
+              transition={{ 
+                duration: 0.8, 
+                delay: 0.2, 
+                ease: [0.22, 1, 0.36, 1],
+                type: "spring",
+                stiffness: 100
+              }}
               className="relative text-center max-w-[560px] pt-16 md:pt-24 pb-12 md:pb-16"
             >
               <h1 className="text-[60px] md:text-[80px] font-serif font-medium leading-none mb-6 md:mb-8 tracking-tight bg-gradient-to-r from-gray-500 via-gray-700 to-gray-900 bg-clip-text text-transparent">
@@ -165,13 +171,19 @@ function ModeHandler() {
           </AnimatePresence>
         </div>
 
-        <AnimatePresence mode="wait">
+        <AnimatePresence mode="wait" initial={false}>
           <MotionDiv
             key={mode}
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            exit={{ opacity: 0 }}
-            transition={{ duration: 1, ease: "easeInOut" }}
+            initial={{ opacity: 0, y: 50 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: 20 }}
+            transition={{ 
+              duration: 0.8, 
+              delay: 0.3, 
+              ease: [0.22, 1, 0.36, 1],
+              type: "spring",
+              stiffness: 100
+            }}
           >
             <ContentSection mode={validMode} />
           </MotionDiv>
