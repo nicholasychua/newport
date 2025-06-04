@@ -187,8 +187,8 @@ export default function AboutPage() {
                       </div>
                     </div>
                     <div className="py-4 px-2 text-center">
-                      <p className="text-sm font-medium text-gray-700" style={{ fontFamily: 'Caveat, cursive' }}>
-                        My happy place ☀️
+                      <p className="text-sm font-medium text-gray-700" style={{ fontFamily: 'Comic Neue, cursive' }}>
+                        happy place ☀️
                       </p>
                     </div>
                   </motion.div>
@@ -225,8 +225,8 @@ export default function AboutPage() {
                       </div>
                     </div>
                     <div className="py-4 px-2 text-center">
-                      <p className="text-sm font-medium text-gray-700" style={{ fontFamily: 'Caveat, cursive' }}>
-                        Weekend adventures 🌿
+                      <p className="text-sm font-medium text-gray-700" style={{ fontFamily: 'Comic Neue, cursive' }}>
+                        weekend adventures 🌿
                       </p>
                     </div>
                   </motion.div>
@@ -263,8 +263,8 @@ export default function AboutPage() {
                       </div>
                     </div>
                     <div className="py-4 px-2 text-center">
-                      <p className="text-sm font-medium text-gray-700" style={{ fontFamily: 'Caveat, cursive' }}>
-                        filming some stuff
+                      <p className="text-sm font-medium text-gray-700" style={{ fontFamily: 'Comic Neue, cursive' }}>
+                        filming cinematic videos
                       </p>
                     </div>
                   </motion.div>
@@ -301,8 +301,8 @@ export default function AboutPage() {
                       </div>
                     </div>
                     <div className="py-4 px-2 text-center">
-                      <p className="text-sm font-medium text-gray-700" style={{ fontFamily: 'Caveat, cursive' }}>
-                        Foodie adventures 🍜
+                      <p className="text-sm font-medium text-gray-700" style={{ fontFamily: 'Comic Neue, cursive' }}>
+                        big backtivites
                       </p>
                     </div>
                   </motion.div>
