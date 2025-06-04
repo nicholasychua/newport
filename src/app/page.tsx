@@ -40,6 +40,13 @@ function ModeHandler() {
   const scrollPositions = useRef<{ [key: string]: number }>({});
   const [isTransitioning, setIsTransitioning] = useState(false);
 
+  // Artificial loading state for debugging
+  const [loading, setLoading] = useState(true);
+  useEffect(() => {
+    const timer = setTimeout(() => setLoading(false), 2000); // 2 seconds
+    return () => clearTimeout(timer);
+  }, []);
+
   // Save scroll position before transition
   const handleModeChange = (newMode: ModeType) => {
     if (mainRef.current) {
@@ -60,6 +67,41 @@ function ModeHandler() {
     }
     setIsTransitioning(false);
   }, [validMode, isTransitioning]);
+
+  if (loading) {
+    return (
+      <div className="flex flex-col items-center justify-center min-h-screen bg-background font-sans">
+        <span className="text-base text-muted-foreground tracking-tight mb-2 font-medium" style={{ letterSpacing: '-0.01em' }}>
+          Gathering information about Nick…
+        </span>
+        <div className="flex items-center justify-center h-6 mt-1 mb-2 space-x-1">
+          <span className="dot-move bg-primary/80" />
+          <span className="dot-move bg-primary/80 animation-delay-200" />
+          <span className="dot-move bg-primary/80 animation-delay-400" />
+        </div>
+        <style>{`
+          .dot-move {
+            display: inline-block;
+            width: 8px;
+            height: 8px;
+            margin: 0 3px;
+            border-radius: 50%;
+            background: #64748b;
+            animation: dotWave 1.2s cubic-bezier(0.4,0,0.2,1) infinite;
+          }
+          .animation-delay-200 { animation-delay: 0.2s; }
+          .animation-delay-400 { animation-delay: 0.4s; }
+          @keyframes dotWave {
+            0%, 100% { transform: translateY(0); opacity: 0.5; }
+            20% { transform: translateY(-7px); opacity: 1; }
+            40% { transform: translateY(0); opacity: 0.5; }
+            60% { transform: translateY(7px); opacity: 0.5; }
+            80% { transform: translateY(0); opacity: 0.5; }
+          }
+        `}</style>
+      </div>
+    );
+  }
 
   return (
     <div className="min-h-screen bg-background relative flex flex-col">
