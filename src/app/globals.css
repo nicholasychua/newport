@@ -4,6 +4,25 @@
 @tailwind utilities;
 
 @layer base {
+  html {
+    overscroll-behavior: none;
+    background-color: hsl(var(--background));
+  }
+  
+  body {
+    overscroll-behavior: none;
+    background-color: hsl(var(--background));
+    @apply bg-background text-foreground;
+    font-feature-settings: "rlig" 1, "calt" 1;
+    min-height: 100vh;
+    margin: 0;
+    padding-top: env(safe-area-inset-top, 0px);
+  }
+  h1 {
+    @apply tracking-tight;
+    letter-spacing: -0.03em;
+  }
+
   :root {
     --background: 0 0% 100%;
     --foreground: 220 10% 40%;
@@ -53,17 +72,6 @@
 @layer base {
   * {
     @apply border-border;
-  }
-  body {
-    @apply bg-background text-foreground;
-    font-feature-settings: "rlig" 1, "calt" 1;
-    min-height: 100vh;
-    margin: 0;
-    padding-top: env(safe-area-inset-top, 0px);
-  }
-  h1 {
-    @apply tracking-tight;
-    letter-spacing: -0.03em;
   }
 }
 

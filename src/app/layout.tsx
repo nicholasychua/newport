@@ -22,6 +22,12 @@ export const metadata = {
   icons: {
     icon: '/logos/tablogo.png',
   },
+  viewport: {
+    width: 'device-width',
+    initialScale: 1,
+    maximumScale: 1,
+    userScalable: false,
+  },
 }
 
 export default function RootLayout({
@@ -30,8 +36,12 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   return (
-    <html lang="en" suppressHydrationWarning>
-      <body className={cn(inter.variable, playfair.variable, "font-sans antialiased")}>
+    <html lang="en" suppressHydrationWarning className="bg-background overscroll-none">
+      <head>
+        <meta name="apple-mobile-web-app-capable" content="yes" />
+        <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+      </head>
+      <body className={cn(inter.variable, playfair.variable, "font-sans antialiased min-h-screen bg-background overscroll-none")}>
         <ThemeProvider attribute="class" defaultTheme="light" enableSystem disableTransitionOnChange>
           <div className="fixed inset-0 bg-noise pointer-events-none"></div>
           {children}
