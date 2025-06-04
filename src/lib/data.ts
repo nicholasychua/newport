@@ -31,7 +31,7 @@ export const articles: Article[] = [
   {
     id: "1",
     title: "How I (Almost) Won the World's Biggest AI Hackathon...With Zero Coding Experience",
-    excerpt: "Lessons learned from building and shipping AI products that solve real user problems, not just technical ones.",
+    excerpt: "the value proposition of a product manager at hackathons",
     date: "March 15, 2024",
     readTime: "5 min read",
     slug: "building-ai-products",
