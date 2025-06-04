@@ -29,7 +29,7 @@ export function Footer() {
           <div className="flex justify-center space-x-6">
             <motion.div whileHover={{ y: -3 }} transition={{ duration: 0.2 }}>
               <Link
-                href="https://twitter.com"
+                href="https://x.com/nicholasychua"
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label="Twitter"
@@ -40,7 +40,7 @@ export function Footer() {
             </motion.div>
             <motion.div whileHover={{ y: -3 }} transition={{ duration: 0.2 }}>
               <Link
-                href="https://linkedin.com"
+                href="https://www.linkedin.com/in/nicholas-chua-ba870222b/"
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label="LinkedIn"

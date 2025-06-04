@@ -9,7 +9,7 @@ import { Badge } from "@/components/ui/badge"
 import { MapPin } from "lucide-react"
 import { projects, articles, jobs } from "@/lib/data"
 import { useRouter, useSearchParams } from "next/navigation";
-import { useMemo, useState, useRef, useEffect, Suspense } from "react";
+import { useMemo, useState, useRef, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { JobTimeline } from "@/components/job-timeline";
 import { DesignShowcase } from "@/components/design-showcase";
@@ -42,18 +42,39 @@ function ModeHandler() {
 
   // Modified loading state to only show on first visit
   const [loading, setLoading] = useState(true);
+  const [isClient, setIsClient] = useState(false);
+
   useEffect(() => {
-    const hasVisited = localStorage.getItem('hasVisited');
-    if (hasVisited) {
-      setLoading(false);
-    } else {
-      const timer = setTimeout(() => {
-        setLoading(false);
-        localStorage.setItem('hasVisited', 'true');
-      }, 2000);
-      return () => clearTimeout(timer);
-    }
+    setIsClient(true);
   }, []);
+
+  useEffect(() => {
+    if (!isClient) return;
+
+    const initializeLoading = () => {
+      try {
+        const hasVisited = localStorage.getItem('hasVisited');
+        if (hasVisited) {
+          setLoading(false);
+        } else {
+          const timer = setTimeout(() => {
+            setLoading(false);
+            try {
+              localStorage.setItem('hasVisited', 'true');
+            } catch (e) {
+              console.warn('Could not set localStorage:', e);
+            }
+          }, 2000);
+          return () => clearTimeout(timer);
+        }
+      } catch (e) {
+        console.warn('Error accessing localStorage:', e);
+        setLoading(false);
+      }
+    };
+
+    initializeLoading();
+  }, [isClient]);
 
   // Save scroll position before transition
   const handleModeChange = (newMode: ModeType) => {
@@ -237,12 +258,8 @@ function ModeHandler() {
   );
 }
 
-export default function Home() {
-  return (
-    <Suspense fallback={<div>Loading...</div>}>
-      <ModeHandler />
-    </Suspense>
-  );
+export default function Page() {
+  return <ModeHandler />;
 }
 
 interface ContentSectionProps {
