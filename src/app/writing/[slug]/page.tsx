@@ -38,22 +38,22 @@ export default function ArticlePage() {
             initial={{ opacity: 0, y: 40, scale: 0.98 }}
             animate={{ opacity: 1, y: 0, scale: 1 }}
             transition={{ duration: 1, ease: [0.4, 0, 0.2, 1] }}
-            className="max-w-3xl mx-auto"
+            className="max-w-3xl mx-auto bg-[#f8fafc]"
           >
             <div className="mb-10">
               <div className="text-sm text-orange-500 mb-2">{article.category}</div>
-              <h1 className="text-4xl font-heading font-medium mb-6 leading-tight">{article.title}</h1>
+              <h1 className="text-4xl font-heading font-medium mb-6 leading-tight text-gray-900">{article.title}</h1>
               {article.subtitle && (
-                <p className="text-lg text-muted-foreground mb-4 italic">{article.subtitle}</p>
+                <p className="text-lg text-gray-600 mb-4 italic">{article.subtitle}</p>
               )}
-              <div className="flex items-center gap-4 text-muted-foreground">
+              <div className="flex items-center gap-4 text-gray-500">
                 <span>{article.date}</span>
                 <span>•</span>
                 <span>{article.readTime}</span>
               </div>
               <div className="flex flex-wrap gap-2 mt-4">
                 {article.tags.map((tag) => (
-                  <span key={tag} className="text-sm text-muted-foreground bg-muted/50 px-3 py-1 rounded-full">
+                  <span key={tag} className="text-sm text-gray-600 bg-gray-100 px-3 py-1 rounded-full">
                     {tag}
                   </span>
                 ))}
@@ -72,7 +72,7 @@ export default function ArticlePage() {
               </div>
             )}
 
-            <div className="prose prose-lg max-w-none">
+            <div className="prose prose-lg max-w-none prose-gray">
               {article.slug === "building-ai-products" ? (
                 <>
                   <h2 className="font-heading text-2xl font-semibold mb-6">Background:</h2>
@@ -150,8 +150,17 @@ export default function ArticlePage() {
 
                   {/* Figma wireframes image placeholder */}
                   <div className="my-12 flex flex-col items-center">
-                    <div className="w-full max-w-3xl aspect-video bg-gray-200 rounded-lg flex items-center justify-center mb-2">
-                      <span className="text-gray-500 text-lg">[Figma wireframes placeholder]</span>
+                    <div
+                      className="relative rounded-lg overflow-hidden mb-2 shadow-lg"
+                      style={{ aspectRatio: "700 / 417", width: '100%', maxWidth: 700 }}
+                    >
+                      <Image
+                        src="/hackathonwireframes.jpg"
+                        alt="Hackathon Figma wireframes"
+                        fill
+                        className="object-cover rounded-lg"
+                        priority
+                      />
                     </div>
                     <div className="text-xs text-muted-foreground mt-1">my figma wireframes</div>
                   </div>
@@ -172,8 +181,17 @@ export default function ArticlePage() {
 
                   {/* Llama break image placeholder */}
                   <div className="my-12 flex flex-col items-center">
-                    <div className="w-full max-w-2xl aspect-video bg-gray-200 rounded-lg flex items-center justify-center mb-2">
-                      <span className="text-gray-500 text-lg">[Llama petting break placeholder]</span>
+                    <div
+                      className="relative rounded-lg overflow-hidden mb-2 shadow-lg"
+                      style={{ aspectRatio: "700 / 471", width: '100%', maxWidth: 700 }}
+                    >
+                      <Image
+                        src="/hackathonllama.jpg"
+                        alt="Hackathon llama petting break"
+                        fill
+                        className="object-cover rounded-lg"
+                        priority
+                      />
                     </div>
                     <div className="text-xs text-muted-foreground mt-1">llama petting break</div>
                   </div>

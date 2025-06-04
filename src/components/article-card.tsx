@@ -36,9 +36,9 @@ export function ArticleCard({ article }: ArticleCardProps) {
       transition={{ duration: 0.3, ease: "easeOut" }}
     >
       <Link href={`/writing/${article.slug}`}>
-        <Card className="overflow-hidden card-hover border-muted/20">
+        <Card className="overflow-hidden card-hover border-gray-200 bg-white hover:shadow-lg transition-shadow duration-300">
           <div className="relative">
-            <AspectRatio ratio={2 / 1} className="bg-muted image-gradient">
+            <AspectRatio ratio={2 / 1} className="bg-gray-100">
               {article.coverImage && (
                 <Image
                   src={article.coverImage}
@@ -64,14 +64,14 @@ export function ArticleCard({ article }: ArticleCardProps) {
             <div className="space-y-3">
               <div className="flex flex-wrap gap-2">
                 {article.tags.map((tag) => (
-                  <Badge key={tag} variant="secondary" className="font-normal text-xs">
+                  <Badge key={tag} variant="secondary" className="font-normal text-xs bg-gray-100 text-gray-700">
                     {tag}
                   </Badge>
                 ))}
               </div>
-              <h3 className="font-heading text-xl md:text-2xl font-medium">{article.title}</h3>
-              <p className="text-sm text-muted-foreground">{article.date} · {article.readTime}</p>
-              <p className="text-muted-foreground leading-relaxed">{article.excerpt}</p>
+              <h3 className="font-heading text-xl md:text-2xl font-medium text-gray-900">{article.title}</h3>
+              <p className="text-sm text-gray-500">{article.date} · {article.readTime}</p>
+              <p className="text-gray-600 leading-relaxed">{article.excerpt}</p>
             </div>
           </CardContent>
         </Card>

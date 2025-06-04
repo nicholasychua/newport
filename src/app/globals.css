@@ -123,11 +123,6 @@
 html, body, :root {
   background-color: #f8fafc !important;
 }
-@media (prefers-color-scheme: dark) {
-  html, body, :root {
-    background-color: #18181b !important;
-  }
-}
 body::before {
   content: '';
   position: fixed;
@@ -135,9 +130,4 @@ body::before {
   z-index: -1;
   background: #f8fafc;
   pointer-events: none;
-}
-@media (prefers-color-scheme: dark) {
-  body::before {
-    background: #18181b;
-  }
 }

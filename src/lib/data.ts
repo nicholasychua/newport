@@ -30,7 +30,7 @@ export const projects: Project[] = [
 export const articles: Article[] = [
   {
     id: "1",
-    title: "Building AI Products That People Actually Want to Use",
+    title: "How I (Almost) Won the World's Biggest AI Hackathon...With Zero Coding Experience",
     excerpt: "Lessons learned from building and shipping AI products that solve real user problems, not just technical ones.",
     date: "March 15, 2024",
     readTime: "5 min read",
