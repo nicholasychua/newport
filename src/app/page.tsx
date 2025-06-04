@@ -40,11 +40,19 @@ function ModeHandler() {
   const scrollPositions = useRef<{ [key: string]: number }>({});
   const [isTransitioning, setIsTransitioning] = useState(false);
 
-  // Artificial loading state for debugging
+  // Modified loading state to only show on first visit
   const [loading, setLoading] = useState(true);
   useEffect(() => {
-    const timer = setTimeout(() => setLoading(false), 2000); // 2 seconds
-    return () => clearTimeout(timer);
+    const hasVisited = localStorage.getItem('hasVisited');
+    if (hasVisited) {
+      setLoading(false);
+    } else {
+      const timer = setTimeout(() => {
+        setLoading(false);
+        localStorage.setItem('hasVisited', 'true');
+      }, 2000);
+      return () => clearTimeout(timer);
+    }
   }, []);
 
   // Save scroll position before transition
