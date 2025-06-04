@@ -18,8 +18,8 @@ export const designImages: DesignImage[] = [
   },
   {
     id: "design-3",
-    src: "/design/notificationcenter.png",
-    alt: "Notification Center",
+    src: "/newsela/everwrite.png",
+    alt: "EverWrite Feedback Screen",
     width: 1038,
     height: 522
   },

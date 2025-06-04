@@ -38,8 +38,8 @@ export default function ProjectPage() {
           transition={{ duration: 0.6, ease: [0.4, 0, 0.2, 1] }}
           className="w-full max-w-4xl mx-auto mb-12 px-8"
         >
-          <div className="bg-white rounded-xl shadow-md overflow-hidden">
-            <div className="w-full bg-gray-200 rounded-lg mb-2 flex items-center justify-center relative overflow-hidden">
+          <div className="bg-white rounded-xl shadow-md overflow-hidden flex justify-center">
+            <div className="inline-block bg-gray-200 rounded-lg relative overflow-hidden">
               <Image 
                 src="/newsela/everwrite.png" 
                 alt="EverWrite AI Writing Assistant" 
