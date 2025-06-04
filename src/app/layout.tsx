@@ -40,6 +40,8 @@ export default function RootLayout({
       <head>
         <meta name="apple-mobile-web-app-capable" content="yes" />
         <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+        <meta name="theme-color" content="#f8fafc" media="(prefers-color-scheme: light)" />
+        <meta name="theme-color" content="#18181b" media="(prefers-color-scheme: dark)" />
       </head>
       <body className={cn(inter.variable, playfair.variable, "font-sans antialiased min-h-screen bg-background overscroll-none")}>
         <ThemeProvider attribute="class" defaultTheme="light" enableSystem disableTransitionOnChange>
