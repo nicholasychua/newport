@@ -70,12 +70,12 @@ export function JobTimeline({ jobs }: JobTimelineProps) {
                   className="relative"
                 >
                   <motion.div 
-                    className="relative flex items-start gap-3"
+                    className={`relative flex gap-3 ${job.id === "job-9" ? "items-center" : "items-start"}`}
                     whileHover={{ y: -1 }}
                     transition={{ duration: 0.2 }}
                   >
                     {/* Bullet point */}
-                    <div className="w-2 h-2 rounded-full bg-orange-400 mt-2.5 flex-shrink-0"></div>
+                    <div className={`w-2 h-2 rounded-full bg-orange-400 flex-shrink-0 ${job.id === "job-9" ? "mt-0 self-center" : "mt-2.5"}`}></div>
                     
                     {/* Job content */}
                     <div className="flex flex-col space-y-3 w-full">
@@ -85,21 +85,24 @@ export function JobTimeline({ jobs }: JobTimelineProps) {
                           <span className="text-base text-gray-700">{job.description}</span>
                         ) : job.id === "job-8" ? (
                           // Special formatting for Meta hackathon - no company container
-                          <span className="text-base text-gray-700">Won Meta's Global Hackathon (Top 5 of 800+); created a social media algorithm to reduce addiction</span>
+                          <span className="text-base text-gray-700" dangerouslySetInnerHTML={{ __html: job.description }} />
                         ) : job.id === "job-10" ? (
                           // Special formatting for Personal Project - no company container
                           <span className="text-base text-gray-700">Built a web-app to simulate ad campaigns with AI agents; recognized by leaders @ Groq, Vercel, and more</span>
                         ) : job.id === "job-9" ? (
                           // Special formatting for Subspace - building with company container
-                          <div className="flex items-center gap-2 -mt-0.5">
-                            <span className="text-base text-gray-700">currently building</span>
-                            <div className="inline-flex items-center gap-2 rounded-full px-3 py-1 border mx-1" style={{ backgroundColor: '#E6F9FB', borderColor: '#A8DDE6' }}>
+                          <div className="flex items-center sm:gap-2 gap-1 -mt-0.5 flex-wrap">
+                            <span className="text-base text-gray-700 whitespace-nowrap">currently building</span>
+                            <div
+                              className="inline-flex items-center sm:gap-2 gap-1 rounded-full sm:px-3 px-2 sm:py-1 py-0.5 border sm:mx-1 mx-0.5 min-w-0"
+                              style={{ backgroundColor: '#E6F9FB', borderColor: '#A8DDE6' }}
+                            >
                               {job.logo && (
                                 <img src={job.logo} alt={job.company} className="h-4 w-4 object-contain" />
                               )}
-                              <span className="font-medium text-gray-900 text-sm">{job.company}</span>
+                              <span className="font-medium text-gray-900 text-sm truncate max-w-[80px] sm:max-w-none">{job.company}</span>
                             </div>
-                            <span className="text-base text-gray-700">:)...</span>
+                            <span className="text-base text-gray-700 whitespace-nowrap">:)...</span>
                           </div>
                         ) : (
                           <>

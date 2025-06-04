@@ -125,7 +125,7 @@ export const jobs: Job[] = [
     id: "job-8",
     title: "Hackathon Winner",
     company: "Meta",
-    description: "Won Meta's Global Hackathon (Top 5 of 800+); created a social media algorithm to reduce addiction",
+    description: "Won Meta's Global Hackathon (<b>Top 1</b> <b>of 800+</b>); created a social media algorithm to reduce addiction",
     startDate: "March 2023",
     endDate: "March 2023",
     year: 2024,

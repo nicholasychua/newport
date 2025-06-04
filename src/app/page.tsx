@@ -14,6 +14,7 @@ import { motion, AnimatePresence } from "framer-motion";
 import { JobTimeline } from "@/components/job-timeline";
 import { DesignShowcase } from "@/components/design-showcase";
 import { designImages } from "@/lib/design-data";
+import { Header } from "@/components/Header";
 
 type ModeType = "work" | "about" | "writing"
 
@@ -62,16 +63,8 @@ function ModeHandler() {
 
   return (
     <div className="min-h-screen bg-background relative flex flex-col">
-      {/* Header Navigation */}
-      <header className="w-full fixed top-0 z-50 py-4 md:py-8">
-        <div className="container mx-auto px-4 md:px-6 flex flex-row items-center justify-between relative mt-2 md:mt-0">
-          <div className="flex items-center flex-1 min-w-[110px] md:min-w-[180px] w-0 md:w-auto justify-start pr-2">
-            <h1 className="text-base md:text-xl text-orange-500 italic whitespace-nowrap" style={{ fontFamily: 'Pacifico, cursive', minWidth: 0 }}>
-              nicholas chua
-            </h1>
-          </div>
-
-          {/* Mode selector - responsive design */}
+      <Header
+        center={
           <div className="bg-secondary rounded-full p-1 md:p-1.5 shadow-md flex min-w-0 md:min-w-[240px] w-auto justify-center absolute left-1/2 -translate-x-1/2 top-1/2 -translate-y-1/2 z-10">
             <button 
               onClick={() => handleModeChange('about')}
@@ -92,25 +85,24 @@ function ModeHandler() {
               writing
             </button>
           </div>
-
-          <div className="flex items-center flex-1 min-w-0 md:min-w-[80px] w-0 md:w-auto justify-end">
-            <Button
-              variant="ghost"
-              size="icon"
-              className="rounded-full w-10 h-10 md:w-16 md:h-16"
-              onClick={() => router.push("/about")}
-              style={{ marginRight: 0, boxShadow: '0 4px 24px 0 rgba(0,0,0,0.10), 0 0 0 1px rgba(0,0,0,0.02)' }}
-            >
-              <svg width="36" height="36" viewBox="0 0 44 44" fill="none" xmlns="http://www.w3.org/2000/svg" style={{ display: 'block', margin: 'auto' }}>
-                <circle cx="22" cy="22" r="20" stroke="#A3A3A3" strokeWidth="2.5" fill="none" />
-                <circle cx="22" cy="18" r="7.5" stroke="#A3A3A3" strokeWidth="2.5" fill="none" />
-                <path d="M10 36c0-6.5 8-8 12-8s12 1.5 12 8" stroke="#A3A3A3" strokeWidth="2.5" fill="none" strokeLinecap="round" />
-              </svg>
-              <span className="sr-only">About</span>
-            </Button>
-          </div>
-        </div>
-      </header>
+        }
+        right={
+          <Button
+            variant="ghost"
+            size="icon"
+            className="rounded-full w-10 h-10 md:w-16 md:h-16"
+            onClick={() => router.push("/about")}
+            style={{ marginRight: 0, boxShadow: '0 4px 24px 0 rgba(0,0,0,0.10), 0 0 0 1px rgba(0,0,0,0.02)' }}
+          >
+            <svg width="36" height="36" viewBox="0 0 44 44" fill="none" xmlns="http://www.w3.org/2000/svg" style={{ display: 'block', margin: 'auto' }}>
+              <circle cx="22" cy="22" r="20" stroke="#A3A3A3" strokeWidth="2.5" fill="none" />
+              <circle cx="22" cy="18" r="7.5" stroke="#A3A3A3" strokeWidth="2.5" fill="none" />
+              <path d="M10 36c0-6.5 8-8 12-8s12 1.5 12 8" stroke="#A3A3A3" strokeWidth="2.5" fill="none" strokeLinecap="round" />
+            </svg>
+            <span className="sr-only">About</span>
+          </Button>
+        }
+      />
 
       {/* Main content */}
       <main ref={mainRef} className="container mx-auto px-4 pt-28 md:pt-36 pb-24 flex-grow flex flex-col overflow-y-auto">

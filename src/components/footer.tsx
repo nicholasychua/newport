@@ -1,7 +1,7 @@
 "use client"
 
 import Link from "next/link"
-import { Twitter, Linkedin, Dribbble } from "lucide-react"
+import { Twitter, Linkedin, Instagram } from "lucide-react"
 import { motion } from "framer-motion"
 import { useRouter } from "next/navigation"
 
@@ -51,13 +51,13 @@ export function Footer() {
             </motion.div>
             <motion.div whileHover={{ y: -3 }} transition={{ duration: 0.2 }}>
               <Link
-                href="https://dribbble.com"
+                href="https://www.instagram.com/nicholaschuas/"
                 target="_blank"
                 rel="noopener noreferrer"
-                aria-label="Dribbble"
+                aria-label="Instagram"
                 className="text-muted-foreground hover:text-foreground transition-colors"
               >
-                <Dribbble className="h-6 w-6" />
+                <Instagram className="h-6 w-6" color="#9095a2" />
               </Link>
             </motion.div>
           </div>
