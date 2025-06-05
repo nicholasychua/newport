@@ -32,105 +32,23 @@ const MotionDiv = motion.div as React.ComponentType<React.HTMLAttributes<HTMLDiv
 // New component to handle search params
 function ModeHandler() {
   const router = useRouter();
-  const searchParams = useSearchParams();
-  const modeParam = searchParams.get("mode");
-  const mode = modeParam || "about";
-  const validMode: ModeType = ["about", "work", "writing"].includes(mode) ? (mode as ModeType) : "about";
-  const mainRef = useRef<HTMLDivElement>(null);
-  const scrollPositions = useRef<{ [key: string]: number }>({});
+  const [mode, setMode] = useState<ModeType>("about");
+  const [validMode, setValidMode] = useState<ModeType>("about");
   const [isTransitioning, setIsTransitioning] = useState(false);
+  const mainRef = useRef<HTMLDivElement>(null);
 
-  // Modified loading state to only show on first visit
-  const [loading, setLoading] = useState(true);
-  const [isClient, setIsClient] = useState(false);
-
-  useEffect(() => {
-    setIsClient(true);
-  }, []);
-
-  useEffect(() => {
-    if (!isClient) return;
-
-    const initializeLoading = () => {
-      try {
-        const hasVisited = localStorage.getItem('hasVisited');
-        if (hasVisited) {
-          setLoading(false);
-        } else {
-          const timer = setTimeout(() => {
-            setLoading(false);
-            try {
-              localStorage.setItem('hasVisited', 'true');
-            } catch (e) {
-              console.warn('Could not set localStorage:', e);
-            }
-          }, 2000);
-          return () => clearTimeout(timer);
-        }
-      } catch (e) {
-        console.warn('Error accessing localStorage:', e);
-        setLoading(false);
-      }
-    };
-
-    initializeLoading();
-  }, [isClient]);
-
-  // Save scroll position before transition
   const handleModeChange = (newMode: ModeType) => {
-    if (mainRef.current) {
-      scrollPositions.current[validMode] = mainRef.current.scrollTop;
-    }
+    if (newMode === validMode || isTransitioning) return;
+    
     setIsTransitioning(true);
-    router.push(`?mode=${newMode}`);
+    setMode(newMode);
+    
+    // Use a shorter timeout for smoother transitions
+    setTimeout(() => {
+      setValidMode(newMode);
+      setIsTransitioning(false);
+    }, 300);
   };
-
-  // Restore scroll position after transition
-  useEffect(() => {
-    if (mainRef.current && !isTransitioning && scrollPositions.current[validMode] !== undefined) {
-      requestAnimationFrame(() => {
-        if (mainRef.current) {
-          mainRef.current.scrollTop = scrollPositions.current[validMode];
-        }
-      });
-    }
-    setIsTransitioning(false);
-  }, [validMode, isTransitioning]);
-
-  if (loading) {
-    return (
-      <div className="flex flex-col items-center justify-center min-h-screen bg-background font-sans">
-        <span className="text-base text-muted-foreground tracking-tight mb-2 font-medium" style={{ letterSpacing: '-0.01em' }}>
-          Gathering information about Nick…
-        </span>
-        <div className="flex items-center justify-center h-6 mt-1 mb-2 space-x-1">
-          <span className="dot-move bg-primary/80" />
-          <span className="dot-move bg-primary/80 animation-delay-200" />
-          <span className="dot-move bg-primary/80 animation-delay-400" />
-        </div>
-        <style>{`
-          .dot-move {
-            display: inline-block;
-            width: 8px;
-            height: 8px;
-            margin: 0 3px;
-            border-radius: 50%;
-            background: #64748b;
-            animation: dotWave 1.2s cubic-bezier(0.4,0,0.2,1) infinite;
-          }
-          .animation-delay-200 { animation-delay: 0.2s; }
-          .animation-delay-400 { animation-delay: 0.4s; }
-          @keyframes dotWave {
-            0%, 100% { transform: translateY(0); opacity: 0.5; }
-            20% { transform: translateY(-7px); opacity: 1; }
-            40% { transform: translateY(0); opacity: 0.5; }
-            60% { transform: translateY(7px); opacity: 0.5; }
-            80% { transform: translateY(0); opacity: 0.5; }
-          }
-        `}</style>
-      </div>
-    );
-  }
 
   return (
     <div className="min-h-screen bg-background relative flex flex-col">
