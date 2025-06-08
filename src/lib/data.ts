@@ -65,7 +65,7 @@ export const jobs: Job[] = [
     technologies: [],
     logo: "/logos/fintech.svg",
     subTeam: "Startup",
-    link: "#"
+    link: "https://trysubspace.vercel.app/"
   },
   {
     id: "job-3",

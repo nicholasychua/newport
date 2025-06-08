@@ -133,7 +133,7 @@ function ModeHandler() {
                 <p className="text-gray-500 text-base md:text-lg max-w-xl mx-auto">
                   engineering and design @ uc berkeley
                   <br />
-                  building <span className="text-foreground underline decoration-2 underline-offset-2 decoration-muted-foreground">subspace</span> — an ai productivity platform for students.
+                  building <a href="https://trysubspace.vercel.app/" target="_blank" rel="noopener noreferrer" className="text-foreground underline decoration-2 underline-offset-2 decoration-muted-foreground">subspace</a> — an ai productivity platform for students.
                 </p>
               )}
               {validMode === 'work' && (
