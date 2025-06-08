@@ -93,15 +93,17 @@ export function JobTimeline({ jobs }: JobTimelineProps) {
                           // Special formatting for Subspace - building with company container
                           <div className="flex items-center sm:gap-2 gap-1 -mt-0.5 flex-wrap">
                             <span className="text-base text-gray-700 whitespace-nowrap">currently building</span>
-                            <div
-                              className="inline-flex items-center sm:gap-2 gap-1 rounded-full sm:px-3 px-2 sm:py-1 py-0.5 border sm:mx-1 mx-0.5 min-w-0"
-                              style={{ backgroundColor: '#E6F9FB', borderColor: '#A8DDE6' }}
-                            >
-                              {job.logo && (
-                                <img src={job.logo} alt={job.company} className="h-4 w-4 object-contain" />
-                              )}
-                              <span className="font-medium text-gray-900 text-sm truncate max-w-[80px] sm:max-w-none">{job.company}</span>
-                            </div>
+                            <a href={job.link || '#'} className="focus:outline-none" tabIndex={0} target="_blank" rel="noopener noreferrer">
+                              <div
+                                className="inline-flex items-center sm:gap-2 gap-1 rounded-full sm:px-3 px-2 sm:py-1 py-0.5 border sm:mx-1 mx-0.5 min-w-0"
+                                style={{ backgroundColor: '#E6F9FB', borderColor: '#A8DDE6' }}
+                              >
+                                {job.logo && (
+                                  <img src={job.logo} alt={job.company} className="h-4 w-4 object-contain" />
+                                )}
+                                <span className="font-medium text-gray-900 text-sm truncate max-w-[80px] sm:max-w-none">{job.company}</span>
+                              </div>
+                            </a>
                             <span className="text-base text-gray-700 whitespace-nowrap">:)...</span>
                           </div>
                         ) : (
