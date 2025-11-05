@@ -70,12 +70,12 @@ export function JobTimeline({ jobs }: JobTimelineProps) {
                   className="relative"
                 >
                   <motion.div 
-                    className={`relative flex gap-3 ${job.id === "job-9" ? "items-center" : "items-start"}`}
+                    className={`relative flex gap-3 ${job.id === "job-9" || job.id === "job-11" ? "items-center" : "items-start"}`}
                     whileHover={{ y: -1 }}
                     transition={{ duration: 0.2 }}
                   >
                     {/* Bullet point */}
-                    <div className={`w-2 h-2 rounded-full bg-orange-400 flex-shrink-0 ${job.id === "job-9" ? "mt-0 self-center" : "mt-2.5"}`}></div>
+                    <div className={`w-2 h-2 rounded-full bg-orange-400 flex-shrink-0 ${job.id === "job-9" || job.id === "job-11" ? "mt-0 self-center" : "mt-2.5"}`}></div>
                     
                     {/* Job content */}
                     <div className="flex flex-col space-y-3 w-full">
@@ -110,12 +110,13 @@ export function JobTimeline({ jobs }: JobTimelineProps) {
                           <>
                             <span className="text-base text-gray-700">{job.title} at</span>
                             <a href={job.link || '#'} className="focus:outline-none" tabIndex={0} target="_blank" rel="noopener noreferrer">
-                              <div className={`inline-flex items-center gap-2 rounded-full px-3 py-1 border mx-1
+                              <div className={`inline-flex items-center gap-2 rounded-full px-3 ${job.company === "TikTok" ? "py-[1px]" : "py-1"} border mx-1
                                 ${job.company === "Newsela" ? ''
                                   : job.company === "Berkeley SkyDeck" ? ''
                                   : job.company === "Sotira" ? ''
                                   : job.company === "Welfie" ? ''
                                   : job.company === "subspace" ? ''
+                                  : job.company === "TikTok" ? ''
                                   : 'border-gray-200 bg-gray-100'}`}
                                 style={job.company === "Newsela"
                                   ? { backgroundColor: '#E6F0FF', borderColor: '#B2D4FF' }
@@ -127,9 +128,11 @@ export function JobTimeline({ jobs }: JobTimelineProps) {
                                     ? { backgroundColor: '#EAF3F6', borderColor: '#BCD8E4' }
                                   : job.company === "subspace"
                                     ? { backgroundColor: '#E6F9FB', borderColor: '#A8DDE6' }
+                                  : job.company === "TikTok"
+                                    ? { backgroundColor: '#F0F0F0', borderColor: '#D0D0D0' }
                                   : {}}>
                                 {job.logo && (
-                                  <img src={job.logo} alt={job.company} className="h-4 w-4 object-contain" />
+                                  <img src={job.logo} alt={job.company} className={`object-contain ${job.company === "TikTok" ? "h-7 w-7" : "h-4 w-4"}`} />
                                 )}
                                 <span className="font-medium text-gray-900 text-sm">{job.company}</span>
                               </div>

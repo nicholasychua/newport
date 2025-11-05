@@ -65,7 +65,20 @@ export const jobs: Job[] = [
     technologies: [],
     logo: "/logos/fintech.svg",
     subTeam: "Startup",
-    link: "https://trysubspace.vercel.app/"
+    link: "https://usesubspace.live"
+  },
+  {
+    id: "job-11",
+    title: "Product",
+    company: "TikTok",
+    description: "built AI governance models and spearheaded prompt engineering research",
+    startDate: "January 2025",
+    endDate: "Present",
+    year: 2025,
+    technologies: [],
+    logo: "/logos/tiktok.webp",
+    subTeam: "",
+    link: "https://www.tiktok.com"
   },
   {
     id: "job-3",
@@ -130,7 +143,7 @@ export const jobs: Job[] = [
     endDate: "March 2023",
     year: 2024,
     technologies: [],
-    logo: "/logos/meta.svg",
+    logo: "/logos/startup.svg",
     subTeam: "Global Hackathon"
   },
   {
@@ -142,7 +155,7 @@ export const jobs: Job[] = [
     endDate: "May 2023",
     year: 2023,
     technologies: [],
-    logo: "/logos/berkeley.svg",
+    logo: "/logos/startup.svg",
     subTeam: "Student TA"
   },
   {
@@ -154,7 +167,7 @@ export const jobs: Job[] = [
     endDate: "Present",
     year: 2024,
     technologies: [],
-    logo: "/logos/personal.svg",
+    logo: "/logos/startup.svg",
     subTeam: "Personal Project",
     link: "#"
   },

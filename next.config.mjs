@@ -29,7 +29,7 @@ const nextConfig = {
   },
   experimental: {
     // Optimize bundling for faster builds
-    optimizePackageImports: ['lucide-react', 'framer-motion'],
+    optimizePackageImports: ['lucide-react'],
   },
   webpack: (config, { dev, isServer }) => {
     config.resolve.alias = {
