@@ -55,10 +55,23 @@ export const articles: Article[] = [
 
 export const jobs: Job[] = [
   {
+    id: "job-12",
+    title: "Growth Engineer #1",
+    company: "Wispr Flow",
+    description: "built out full-stack growth pipeline (10M+ impressions, 6K → 25K followers)",
+    startDate: "2026",
+    endDate: "Present",
+    year: 2026,
+    technologies: [],
+    logo: "/logos/wisprflow.svg",
+    subTeam: "",
+    link: "https://wisprflow.ai"
+  },
+  {
     id: "job-9",
-    title: "Founder",
+    title: "Founder of",
     company: "subspace",
-    description: "currently building subspace :)...",
+    description: "AI task management platform (1,000+ users)",
     startDate: "January 2025",
     endDate: "Present",
     year: 2025,
@@ -66,6 +79,19 @@ export const jobs: Job[] = [
     logo: "/logos/fintech.svg",
     subTeam: "Startup",
     link: "https://usesubspace.live"
+  },
+  {
+    id: "job-13",
+    title: "Cinematographer",
+    company: "chuafilms",
+    description: "creating new mediums of storytelling w/ companies like ZFellows, YC, Ditto AI, and more",
+    startDate: "2025",
+    endDate: "Present",
+    year: 2026,
+    technologies: [],
+    logo: "/logos/instagram.svg",
+    subTeam: "",
+    link: "https://instagram.com/chuafilms"
   },
   {
     id: "job-11",
@@ -138,7 +164,7 @@ export const jobs: Job[] = [
     id: "job-8",
     title: "Hackathon Winner",
     company: "Meta",
-    description: "Won Meta's Global Hackathon (<b>Top 1</b> <b>of 800+</b>); created a social media algorithm to reduce addiction",
+    description: "Won <a href='https://drive.google.com/file/d/1ZpDRBl2LRX9XbTB5MuB_AaaI35h6zgOs/view?usp=sharing' target='_blank' rel='noopener noreferrer' style='text-decoration:underline;text-underline-offset:2px'>Meta's Global Hackathon</a> (<b>Top 1</b> <b>of 800+</b>); created a social media algorithm to reduce addiction",
     startDate: "March 2023",
     endDate: "March 2023",
     year: 2024,
