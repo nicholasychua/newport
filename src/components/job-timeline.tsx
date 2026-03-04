@@ -88,7 +88,7 @@ export function JobTimeline({ jobs }: JobTimelineProps) {
                           <span className="text-base text-gray-700">Built a <a href="https://devpost.com/software/marketmind" target="_blank" rel="noopener noreferrer" className="underline underline-offset-2 hover:text-gray-900 transition-colors">web-app</a> to simulate ad campaigns with AI agents; recognized by leaders @ Groq, Vercel, and more</span>
                         ) : (
                           <span className="text-base text-gray-700">
-                            {job.title}{job.title.endsWith(' of') || job.id === 'job-13' ? '' : ' at'}{' '}
+                            {job.title}{job.title.endsWith(' of') || job.id === 'job-13' || job.id === 'job-9' ? '' : ' at'}{' '}
                             <a href={job.link || '#'} className="focus:outline-none" tabIndex={0} target="_blank" rel="noopener noreferrer">
                               <span className={`inline-flex items-center gap-2 rounded-full px-3 py-0.5 border align-middle
                                 ${job.company === "Newsela" ? ''

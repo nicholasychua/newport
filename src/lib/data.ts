@@ -69,7 +69,7 @@ export const jobs: Job[] = [
   },
   {
     id: "job-9",
-    title: "Founder of",
+    title: "built",
     company: "subspace",
     description: "AI task management platform (1,000+ users)",
     startDate: "January 2025",
